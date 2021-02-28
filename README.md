@@ -1,5 +1,5 @@
 # gulp_clear
 
 ## команды запуска 
-+ gulp - develop
-+ gulp build - production
++ gulp - режим разработки
++ gulp build - режим для продакшн
