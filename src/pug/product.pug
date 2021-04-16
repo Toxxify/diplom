@@ -1,0 +1,126 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Вторая страница'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .product
+        .container
+            .product__wrapper
+                .product__slider ЗДЕСЬ БУДЕТ СЛАДЕР
+                .product__inner 
+                    .product__name Классическтй комплект со смокингом и желетом
+                    .product__price 65 300 
+                        span ₽
+                    a(href="#").product__favorites
+                    .product__size
+                        .product__title Размер
+                        ul.product__size-list 
+                            li.product__size-item 40
+                            li.product__size-item 42
+                            li.product__size-item 44
+                            li.product__size-item 46
+                            li.product__size-item.not-available 48
+                            li.product__size-item.not-available 50
+                        .product__size-prompt Определите свой размер 
+                        .product__size-help Нет вашего размера
+                    .product__color
+                        .product__title Цвет
+                        ul.product__color-list
+                            li.product__color-item
+                                .product__color-item--one
+                            li.product__color-item
+                                .product__color-item--two
+                            li.product__color-item
+                                .product__color-item--three
+                    a(href="#").product__btn.product__btn--special Купить
+                    a(href="#").product__btn.product__btn--fitting Примерка
+                    a(href="#").product__btn.product__btn--buy Купить в рассрочку
+                    .product__description Приталенный силуэт и заостренные лацканы подчеркивают линию талии, визуально корректируя фигуру до желанной всем "песочные часы". Классика женского смокинга, которую одобрил бы сам Ив Сен Лоран.
+                    .product__structure
+                        span Состав:
+                        |  98% шерсть, 2% эластан, отделка шелком
+                    .product__parameters
+                        label(for="parameters-list").product__title.product__label параметры
+                        input(type="checkbox" id="parameters-list").product__checkbox
+                        ul.product__list
+                            mixin product-list-item(naming, value)
+                                li.product__list-item
+                                    .product__list-naming=naming
+                                    .product__list-value=value
+                            +product-list-item('Вид застёжки:', 'Пуговица, обтянутая атласом')
+                            +product-list-item('Длина изделия:', 'По спинке 69 см')
+                            +product-list-item('Крой:', 'Приталенный')
+                            +product-list-item('Рисунок:', 'Без рисунка')
+                            +product-list-item('Тип карманов:', 'Прорезные "листочки"')
+                            +product-list-item('Конструктивные элементы:', 'Рельефные швы')
+                            +product-list-item('Материал подкладки:', 'Вискоза 100 %')
+                            +product-list-item('Уход за вещами:', 'Химчистка')
+                    .product__additional
+                        label(for="additional-list").product__title.product__label дополнительно
+                        input(type="checkbox" id="additional-list").product__checkbox
+                        ul.product__list
+                            mixin product-list-item(naming, value)
+                                li.product__list-item
+                                    .product__list-naming=naming
+                                    .product__list-value=value
+                            +product-list-item('Для примера:', 'Тут что-то написано')
+                            +product-list-item('Для примера:', 'Тут что-то написано')
+                            +product-list-item('Для примера', 'Тут что-то написано')
+                            +product-list-item('Для примера', 'Тут что-то написано')
+                
+    .offer
+        .container
+            .offer__wrapper 
+                mixin offe-cell(img_src, name, price, feature)
+                    .offer__cell 
+                        img(src=img_src, alt=name).offer__img
+                        .offer__group
+                            .offer__name=name
+                            a(href="#").offer__favorites
+                                <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.5769 4.24603C11.8813 3.62026 9.21613 1.37173 6.85609 1.39471C4.43734 1.41857 0.70379 3.00156 1.0187 7.69219C1.29714 11.8357 12.3919 20.3561 12.3919 20.3561C12.4613 20.4073 12.5334 20.4073 12.6081 20.3561C12.6081 20.3561 23.7029 11.8348 23.9813 7.69219C24.2962 3.00156 20.5627 1.41857 18.143 1.39471C15.4022 1.36819 12.2496 4.40512 12.2496 4.40512L10.1093 6.58736" stroke="#333333" stroke-miterlimit="3.8637"/></svg>
+                        .offer__group
+                            .offer__price=price 
+                            .offer__feature=feature
+                +offe-cell('../assets/imgs/gallery/foto-111.jpg', 'Платье-смокинг длинное', '24 900', 'Подчеркнет линию талии')
+                +offe-cell('../assets/imgs/gallery/foto-112.jpg', 'Белый смокинг и брюки с лампасами', '41 400', 'Подчеркнет линию талии')
+                +offe-cell('../assets/imgs/gallery/foto-113.jpg', 'Классический комплект с бабочкой', '51 800', 'Подчеркнет линию талии')
+                +offe-cell('../assets/imgs/gallery/foto-114.jpg', 'Блуза с баской', '12 900', 'Подчеркнет линию талии')
+
+    .advantages
+        .advantages__block
+            .container
+                .advantages__wrapper
+                    .advantages__img-box
+                        img(src="../assets/imgs/advantages/foto-1.jpg", alt="").advantages__img
+                    .advantages__inner
+                        h2.advantages__title Сшито вручную
+                        ol.advantages__list
+                            li.advantages__item Уровень пошива приравнивается к индивидуальному;
+                            li.advantages__item Создаем лекала для костюмов, которые подчеркивают достоинства и скрывают недостатки фигуры;
+                            li.advantages__item Качественное исполнение: ровные отстрочки, красивая обработка – вы можете носить вещи даже изнаночной стороной;
+                            li.advantages__item Используем современное оборудование и качественные материалы для изготовления изделий;
+                            li.advantages__item Наши швеи занимаются пошивом и конструированием одежды более 20 лет. За это время их навыки доведены до идеала, и они продолжают развиваться и совершенствоваться каждый день.
+        .advantages__block--alt
+            .container
+                .advantages__wrapper
+                    .advantages__inner
+                        h2.advantages__title Закажите доставку
+                        .advantages__text Закажите доставку с выездным стилистом бренда в удобное место по Москве и МО. Вы сможете оценить посадку, качество изделий и не захотите их снимать!
+                        ol.advantages__list.advantages__list--a
+                            li.advantages__item Выберите модели для примерки.
+                            li.advantages__item Оставьте заявку, нажав на кноку ниже.
+                            li.advantages__item Наш стилист подтвердит Вашу заявку и согласует удобное для вас время и место
+                            li.advantages__item В назначеное время стилист привезет заказаные модели и проведет консультацию.
+                            li.advantages__item Вы можете оплатить понравившиеся модели после примерки.
+                            a(href="#").advantages__btn Заказать доставку
+                    .advantages__img-box
+                        img(src="../assets/imgs/advantages/foto-2.jpg", alt="").advantages__img
+
+
+
+
+
+

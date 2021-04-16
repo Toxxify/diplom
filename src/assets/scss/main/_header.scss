@@ -1,0 +1,155 @@
+.header {
+  background: $bg-white;
+  color: $color-dark;
+  padding: 25px 0 13px;
+  &.active {
+    background: #171717;
+    color: $bg-white;
+    height: 100vh;
+  }
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  &__group {
+    display: flex;
+    align-items: center;
+  }
+  &__borger {
+    margin-right: 63px;
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    font-size: 0;
+  }
+  &__social-icon {
+    margin-right: 25px;
+  }
+  &__logo {
+    font-size: 0;
+    position: relative;
+    margin-left: -15px;
+    &::after {
+      content: "Женский смокинг";
+      position: absolute;
+      top: -2px;
+      right: -5px;
+      transform: translateX(100%);
+      font-family: 'Lato';
+      display: inline-block;
+      color: $color-alt;
+      max-width: 72px;
+      font-weight: 500;
+      font-size: 10px;
+      text-transform: uppercase;
+      vertical-align: top;
+      letter-spacing: 0.1em;
+    }
+  }
+  &__phone {
+    margin-right: 53px;
+    margin-bottom: 5px;
+  }
+  &__phone-link {
+    font-family: 'Lato';
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #222222;
+  }
+  &__panel {
+    font-size: 0;
+    display: flex;
+  }
+  &__panel-link {
+    margin: 0 9px 0 15px;
+    position: relative;
+    height: 26px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &::after {
+      content: "0";
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      font-family: 'Lato';
+      font-weight: bold;
+      font-size: 9px;
+      color: #333333;
+    }
+  }
+}
+
+.nav {
+  margin: 0 auto;
+  width: 998px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list-item {
+    min-width: 94px;
+  }
+  &__list-link {
+    text-transform: uppercase;
+    font-family: 'Futura Bk BT';
+    font-size: 14px;
+  }
+}
+
+.topbar-full {
+  display: none;
+  font-family: 'FuturaMediumC';
+  font-weight: 500;
+  &__wrapper {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 124px 0;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    margin-bottom: 50px;
+  }
+  &__list-link {
+    font-size: 19px;
+    line-height: 253%;
+  }
+}
+
+.connection {
+  position: fixed;
+  right: 1.7%;
+  top: 50%;
+  z-index: 10;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__group {
+    margin-top: 20px;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60px;
+    height: 58px;
+    background: #E1C4A9;
+    border-radius: 23px;
+    margin-bottom: 5px;
+  }
+  &__link-top {
+    @include link-alt();
+    transform: rotate(90deg);
+    position: relative;
+    right: -20px;
+  }
+}

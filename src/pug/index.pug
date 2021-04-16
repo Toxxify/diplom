@@ -6,4 +6,96 @@ block vars
     - var pageHeaderClass = ''
 
 block content
-    p контент index страницы
+    .big-slider
+        img(src="../assets/imgs/big-slider/slide-1.jpg", alt="" style="width: 100%")
+
+    .gallery
+        .container
+            .gallery__wrapper
+                mixin gallery-cell(img_src, mod, title)
+                    .gallery__cell(class=mod)
+                        a(href="#").gallery__cell-link
+                            .gallery__cell-title=title
+                            img(src=img_src, alt=title).gallery__cell-img
+                +gallery-cell('../assets/imgs/gallery/foto-1.jpg', 'gallery__cell--1', 'Новинки')
+                +gallery-cell('../assets/imgs/gallery/foto-2.jpg', 'gallery__cell--2', 'Акции')
+                +gallery-cell('../assets/imgs/gallery/foto-3.jpg', 'gallery__cell--3', 'Костюмы')
+                +gallery-cell('../assets/imgs/gallery/foto-4.jpg', 'gallery__cell--4', 'Смокинги')
+                +gallery-cell('../assets/imgs/gallery/foto-5.jpg', 'gallery__cell--5', 'Брюки')
+                +gallery-cell('../assets/imgs/gallery/foto-6.jpg', 'gallery__cell--6', 'Платья')
+                +gallery-cell('../assets/imgs/gallery/foto-7.jpg', 'gallery__cell--7', 'Блузы')
+                +gallery-cell('../assets/imgs/gallery/foto-8.jpg', 'gallery__cell--8', 'Юбки')
+                +gallery-cell('../assets/imgs/gallery/foto-9.jpg', 'gallery__cell--9', 'Топы и жилеты')
+                +gallery-cell('../assets/imgs/gallery/foto-10.jpg', 'gallery__cell--10', 'Аксессуары')
+    
+    .about-brand
+        h2.about-brand__title О бренде
+        .about-brand__wrapper
+            .about-brand__frame
+                img(src="../assets/imgs/foto/about-brand.jpg", alt="").about-brand__frame-img
+            .about-brand__text 
+                p Сегодня ELEAN - это первый в России магазин готового женского смокинга. У нас каждая женщина может подобрать для себя образ со смокингом, такой же как у голливудских див и звезд светской хроники.
+                p Костюм со смокингом ELEAN - выбор звёзд эстрады и кино, телеведущих, fashion-стилистов, успешных женщин-руководителей, представительниц научной и деловой элиты.
+                p История бренда началась задолго до первого показа, который состоялся 12 марта 2016 года, с мечты автора коллекции, Елены Писаревой о собственном бренде элегантной одежды и продолжалась долгие 30 лет накопления профессионального опыта. Вся первая коллекция была выполнена из 100% натурального шелка, в нее вошли жентсвенные платья и костюмы.
+                a.about-brand__btn Подробнее
+
+    .showroom
+        .container
+            h2.showroom__title Наш Шоурум
+            .showroom__wrapper
+                .showroom__img-box
+                    img(src="../assets/imgs/showroom/photo-1.jpg", alt="").showroom__img
+                .showroom__img-box
+                    img(src="../assets/imgs/showroom/photo-2.jpg", alt="").showroom__img 
+                .showroom__img-box
+                    img(src="../assets/imgs/showroom/photo-3.jpg", alt="").showroom__img
+            .appointment
+                h2.appointment__title Записаться на примерку в шоуруме
+                form(action="").appointment__form
+                    input(type="text", name="" placeholder="введите имя").appointment__form-name
+                    input(type="tel", name="" placeholder="введите телефон").appointment__form-phone
+                    input(type="text", name="" placeholder="введите удобное время").appointment__form-date
+                    textarea(name="", placeholder="добавить комментарий").appointment__form-comment
+                    input(type="submit", value="Записаться").appointment__form-btn
+                    .appointment__prompt Поля отмеченные “*” обязательны для заполнения
+
+    .reviews 
+        .container
+            h2.reviews__title Наши звёздные клиенты и отзывы
+            .reviews__slider 
+                .reviews__slider-cell 
+                    img(src="../assets/imgs/reviews/foto-1.jpg", alt="").reviews__slider-img
+                    .reviews__slider-name Инокентий Смоктуновский
+            .reviews__wrapper
+                mixin comment(avatar, name, city, date, message)
+                    .reviews__comment
+                        .reviews__comment-topbar
+                            .reviews__comment-name=name
+                            .reviews__comment-city=city
+                            .reviews__comment-date=date
+                        .reviews__comment-text=message
+                +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
+                +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
+                +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
+                +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
+            a(href="#").reviews__btn Смотреть всё
+
+
+    .instagram
+        .container
+            h2.instagram__title Мы в instagram 
+            .instagram__wrapper
+                mixin instagram(foto_src, avatar_src, name, description)
+                    .instagram__cell
+                        img(src=foto_src, alt="Фотография").instagram__cell-img
+                        .instagram__cell-downbar
+                            img(src=avatar_src, alt=name).instagram__cell-avatar 
+                            .instagram__cell-group
+                                .instagram__cell-name=name
+                                a(href="#").instagram__cell-link Подписаться
+                                .instagram__cell-description=description
+                +instagram('../assets/imgs/instagram/foto-1.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                +instagram('../assets/imgs/instagram/foto-2.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                +instagram('../assets/imgs/instagram/foto-3.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                +instagram('../assets/imgs/instagram/foto-4.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                +instagram('../assets/imgs/instagram/foto-5.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
