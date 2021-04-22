@@ -1,1 +1,85 @@
 @import "line-height";
+
+@mixin section-title() {
+  font-family: 'FuturaBookC';
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: $color-dark;
+  text-transform: uppercase;
+}
+
+@mixin link() {
+  font-family: 'Lato';
+  display: inline-block;
+  font-size: 13px;
+  line-height: 177%;
+  color: #C0C0C0;
+  position: relative;
+  letter-spacing: 0.55px;
+  cursor: pointer;
+  &::before {
+    content: '\005C';
+    position: absolute;
+    top: 0;
+    right: -15px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: -48px;
+    height: 5px;
+    width: 25px;
+    background: url(../imgs/icons/link-arrow.svg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@mixin link-alt() {
+  @include link();
+  &::before {
+    content: '/';
+    left: -15px;
+  }
+  &::after {
+    left: -48px;
+    transform: rotate(180deg);
+  }
+}
+
+@mixin btn-special() {
+  font-family: 'FuturaMediumC';
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  border: 1px solid #D7B494;
+  color: $main;
+  text-transform: uppercase;
+  max-width: 309px;
+  height: 36px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: -15px;
+    width: 29px;
+    height: 1px;
+    background-color: $main;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    width: 29px;
+    height: 1px;
+    background-color: $main;
+  }
+}

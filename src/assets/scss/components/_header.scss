@@ -1,3 +1,6 @@
+// для каждого компонента нужно импортить переменные, чтобы их использовать
+@import "../main/parameters";
+
 .header {
   background: $bg-white;
   color: $color-dark;
@@ -6,6 +9,23 @@
     background: #171717;
     color: $bg-white;
     height: 100vh;
+    & .topbar__social-icon,
+    & .topbar__logo-icon {
+      fill: #ffffff;
+    }
+    & .topbar__phone-link {
+      color: #ffffff;
+    }
+    & .topbar__logo-link {
+      &::after {
+        color: #ffffff;
+      }
+    }
+    & .topbar__borger-link {
+      background: url(../imgs/icons/burger-close.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 }
 .topbar {
@@ -19,6 +39,13 @@
   &__borger {
     margin-right: 63px;
   }
+  &__borger-link {
+    width: 27px;
+    height: 20px;
+    background: url(../imgs/icons/burger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   &__social {
     display: flex;
     align-items: center;
@@ -26,11 +53,27 @@
   }
   &__social-icon {
     margin-right: 25px;
+      fill: #2F2F2F;
+      font-size: 0;
+    &--instagram {
+      height: 18px;
+      width: 18px;
+    }
+    &--vkontakte {
+      width: 20px;
+      height: 12px;
+    }
+    &--facebook {
+      width: 8px;
+      height: 17px;
+    }
   }
   &__logo {
     font-size: 0;
-    position: relative;
     margin-left: -15px;
+  }
+  &__logo-link {
+    position: relative;
     &::after {
       content: "Женский смокинг";
       position: absolute;
@@ -47,6 +90,11 @@
       vertical-align: top;
       letter-spacing: 0.1em;
     }
+  }
+  &__logo-icon {
+    max-width: 140px;
+    max-height: 26px;
+    vertical-align: top;
   }
   &__phone {
     margin-right: 53px;
@@ -86,7 +134,7 @@
 
 .nav {
   margin: 0 auto;
-  width: 998px;
+  max-width: 998px;
   &__list {
     display: flex;
     justify-content: space-between;
@@ -101,8 +149,8 @@
   }
 }
 
-.topbar-full {
-  display: none;
+.full {
+  // display: none;
   font-family: 'FuturaMediumC';
   font-weight: 500;
   &__wrapper {
@@ -128,7 +176,7 @@
   position: fixed;
   right: 1.7%;
   top: 50%;
-  z-index: 10;
+  z-index: 20;
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -152,4 +200,44 @@
     position: relative;
     right: -20px;
   }
+}
+
+@media screen and (max-width: 1380px) {}
+@media screen and (max-width: 1199px) {}
+@media screen and (max-width: 991px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__group,
+    &__logo {
+      flex: 0 0 calc(100%/3);
+    }
+    &__group--two {
+      flex-direction: row-reverse;
+    }
+    &__logo {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+    }
+    &__phone {
+      display: none;
+    }
+  }
+  .nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .topbar {
+    &__social {
+      display: none;
+    }
+    &__logo {
+      justify-content: start;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  
 }

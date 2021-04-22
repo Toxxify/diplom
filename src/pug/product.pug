@@ -9,14 +9,37 @@ block content
     .product
         .container
             .product__wrapper
-                .product__slider ЗДЕСЬ БУДЕТ СЛАДЕР
+                .product__slider-box
+                    .swiper-container.product__slider-main
+                        .swiper-wrapper
+                            .swiper-slide
+                                img(src="../assets/imgs/gallery/foto-11.jpg", alt=name)
+                            .swiper-slide
+                                img(src="../assets/imgs/gallery/foto-10.jpg", alt=name)
+                            .swiper-slide
+                                img(src="../assets/imgs/gallery/foto-12.jpg", alt=name)
+                            .swiper-slide
+                                img(src="../assets/imgs/gallery/foto-13.jpg", alt=name)
+                        .swiper-pagination
+                .swiper-container.product__slider-additional
+                    .swiper-wrapper
+                        .swiper-slide
+                            img(src="../assets/imgs/gallery/foto-11.jpg", alt=name)
+                        .swiper-slide
+                            img(src="../assets/imgs/gallery/foto-10.jpg", alt=name)
+                        .swiper-slide
+                            img(src="../assets/imgs/gallery/foto-12.jpg", alt=name)
+                        .swiper-slide
+                            img(src="../assets/imgs/gallery/foto-13.jpg", alt=name)
+                
+
                 .product__inner 
                     .product__name Классическтй комплект со смокингом и желетом
                     .product__price 65 300 
                         span ₽
                     a(href="#").product__favorites
                     .product__size
-                        .product__title Размер
+                        .product__size-title Размер
                         ul.product__size-list 
                             li.product__size-item 40
                             li.product__size-item 42
@@ -27,24 +50,23 @@ block content
                         .product__size-prompt Определите свой размер 
                         .product__size-help Нет вашего размера
                     .product__color
-                        .product__title Цвет
+                        .product__color-title Цвет
                         ul.product__color-list
-                            li.product__color-item
-                                .product__color-item--one
-                            li.product__color-item
-                                .product__color-item--two
-                            li.product__color-item
-                                .product__color-item--three
-                    a(href="#").product__btn.product__btn--special Купить
-                    a(href="#").product__btn.product__btn--fitting Примерка
-                    a(href="#").product__btn.product__btn--buy Купить в рассрочку
+                            li.product__color-item.product__color-item--one
+                            li.product__color-item.product__color-item--two
+                            li.product__color-item.product__color-item--three
+                    .product__btn-block             
+                        a(href="#").product__btn.product__btn--special Купить
+                        a(href="#").product__btn.product__btn--fitting Примерка
+                        a(href="#").product__btn.product__btn--buy Купить в рассрочку
                     .product__description Приталенный силуэт и заостренные лацканы подчеркивают линию талии, визуально корректируя фигуру до желанной всем "песочные часы". Классика женского смокинга, которую одобрил бы сам Ив Сен Лоран.
                     .product__structure
                         span Состав:
                         |  98% шерсть, 2% эластан, отделка шелком
-                    .product__parameters
-                        label(for="parameters-list").product__title.product__label параметры
-                        input(type="checkbox" id="parameters-list").product__checkbox
+
+                    .product__tab
+                        input(type="checkbox" id="tab1" name="tab-group")
+                        label(for="tab1").product__label Параметры
                         ul.product__list
                             mixin product-list-item(naming, value)
                                 li.product__list-item
@@ -58,9 +80,10 @@ block content
                             +product-list-item('Конструктивные элементы:', 'Рельефные швы')
                             +product-list-item('Материал подкладки:', 'Вискоза 100 %')
                             +product-list-item('Уход за вещами:', 'Химчистка')
-                    .product__additional
-                        label(for="additional-list").product__title.product__label дополнительно
-                        input(type="checkbox" id="additional-list").product__checkbox
+                            
+                    .product__tab
+                        input(type="checkbox" id="tab2" name="tab-group")
+                        label(for="tab2").product__label Дополнительно 
                         ul.product__list
                             mixin product-list-item(naming, value)
                                 li.product__list-item
@@ -70,10 +93,10 @@ block content
                             +product-list-item('Для примера:', 'Тут что-то написано')
                             +product-list-item('Для примера', 'Тут что-то написано')
                             +product-list-item('Для примера', 'Тут что-то написано')
-                
     .offer
         .container
-            .offer__wrapper 
+            .offer__wrapper
+                h2.offer__title Выглядеть блистательно поможет
                 mixin offe-cell(img_src, name, price, feature)
                     .offer__cell 
                         img(src=img_src, alt=name).offer__img
@@ -84,13 +107,23 @@ block content
                         .offer__group
                             .offer__price=price 
                             .offer__feature=feature
-                +offe-cell('../assets/imgs/gallery/foto-111.jpg', 'Платье-смокинг длинное', '24 900', 'Подчеркнет линию талии')
-                +offe-cell('../assets/imgs/gallery/foto-112.jpg', 'Белый смокинг и брюки с лампасами', '41 400', 'Подчеркнет линию талии')
-                +offe-cell('../assets/imgs/gallery/foto-113.jpg', 'Классический комплект с бабочкой', '51 800', 'Подчеркнет линию талии')
-                +offe-cell('../assets/imgs/gallery/foto-114.jpg', 'Блуза с баской', '12 900', 'Подчеркнет линию талии')
+                
+                .swiper-container.offer-slider
+                    .swiper-wrapper
+                        .swiper-slide 
+                            +offe-cell('../assets/imgs/gallery/foto-111.jpg', 'Платье-смокинг длинное', '24 900', 'Подчеркнет линию талии')
+                        .swiper-slide 
+                            +offe-cell('../assets/imgs/gallery/foto-112.jpg', 'Белый смокинг и брюки с лампасами', '41 400', 'Подчеркнет линию талии')
+                        .swiper-slide 
+                            +offe-cell('../assets/imgs/gallery/foto-113.jpg', 'Классический комплект с бабочкой', '51 800', 'Подчеркнет линию талии')
+                        .swiper-slide 
+                            +offe-cell('../assets/imgs/gallery/foto-114.jpg', 'Блуза с баской', '12 900', 'Подчеркнет линию талии')
+                    .swiper-pagination
+                    .swiper-button-prev
+                    .swiper-button-next
 
     .advantages
-        .advantages__block
+        .advantages__block.advantages__block-one
             .container
                 .advantages__wrapper
                     .advantages__img-box
@@ -103,11 +136,11 @@ block content
                             li.advantages__item Качественное исполнение: ровные отстрочки, красивая обработка – вы можете носить вещи даже изнаночной стороной;
                             li.advantages__item Используем современное оборудование и качественные материалы для изготовления изделий;
                             li.advantages__item Наши швеи занимаются пошивом и конструированием одежды более 20 лет. За это время их навыки доведены до идеала, и они продолжают развиваться и совершенствоваться каждый день.
-        .advantages__block--alt
+        .advantages__block.advantages__block-two
             .container
                 .advantages__wrapper
                     .advantages__inner
-                        h2.advantages__title Закажите доставку
+                        h2.advantages__title.advantages__title-two Закажите доставку
                         .advantages__text Закажите доставку с выездным стилистом бренда в удобное место по Москве и МО. Вы сможете оценить посадку, качество изделий и не захотите их снимать!
                         ol.advantages__list.advantages__list--a
                             li.advantages__item Выберите модели для примерки.
