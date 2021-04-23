@@ -16,7 +16,7 @@ $(function () {
         loop: true,
         speed: 1000,
         autoplay: {
-          delay: 5000,
+          delay: 6000,
           disableOnInteraction: false,
         },
         pagination: {
@@ -65,7 +65,7 @@ $(function () {
         loop: true,
         speed: 1000,
         autoplay: {
-          delay: 5000,
+          delay: 6000,
           disableOnInteraction: false,
         },
         pagination: {
@@ -87,24 +87,24 @@ $(function () {
           1200: {
             slidesPerView: 4,
             spaceBetween: 30,
+            centeredSlides: false,
           },
           991: {
             slidesPerView: 3,
-            spaceBetween: 80,
+            spaceBetween: 100,
           },
           767: {
-            slidesPerView: 2,
-            // spaceBetween: 200,
-            spaceBetween: 20,
+            slidesPerView: 'auto',
+            centeredSlides: true,
           },
           576: {
-            // spaceBetween: 80,
-            spaceBetween: 20,
+            slidesPerView: 2,
+            centeredSlides: false,
           },
           320: {
             slidesPerView: 'auto',
             centeredSlides: true,
-            spaceBetween: 20,
+            spaceBetween: 14,
           }
         }
     });
@@ -115,7 +115,7 @@ $(function () {
         loop: true,
         speed: 1000,
         autoplay: {
-          delay: 5000,
+          delay: 6000,
           disableOnInteraction: false,
         },
         pagination: {
@@ -128,7 +128,34 @@ $(function () {
         },
         scrollbar: {
           el: '.swiper-scrollbar',
-        },
+        },breakpoints: {
+          1380: {
+            slidesPerView: 5,
+            spaceBetween: 14,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            centeredSlides: false,
+          },
+          991: {
+            slidesPerView: 3,
+            spaceBetween: 100,
+          },
+          767: {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+          },
+          576: {
+            slidesPerView: 2,
+            centeredSlides: false,
+          },
+          320: {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 14,
+          }
+        }
     });
 
 

@@ -299,19 +299,6 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
-  &__slider {
-    margin-bottom: 92px;
-    &-pagination {
-      padding-top: 20px;
-      position: static;
-    }
-    &-name {
-      margin-top: 13px;
-      font-size: 20px;
-      line-height: 22px;
-      color: #000000;
-    }
-  }
   &__comment {
     font-family: 'FuturaMediumC';
     font-weight: 500;
@@ -373,8 +360,16 @@ body {
 
   /* slider */
   &__slider {
+    margin-bottom: 92px;
     &-box {
       position: relative;
+      // overflow: hidden;
+    }
+    &-name {
+      margin-top: 13px;
+      font-size: 20px;
+      line-height: 22px;
+      color: #000000;
     }
     &-prev {
       left: 0;
@@ -415,6 +410,10 @@ body {
     }
     & .swiper-pagination-bullet {
       background: #D9DBE1;
+    }
+    &-pagination {
+      padding-top: 20px;
+      position: static;
     }
   }
 }

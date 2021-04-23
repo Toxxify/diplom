@@ -1,30 +1,32 @@
 header.header(id="header")
     .container
         .topbar
-            .topbar__group
-                .topbar__borger
-                    a(href="#" onclick="openMenu()").topbar__borger-link
-                        //- img(src="../../assets/imgs/icons/burger.svg" alt="" ).topbar__borger-icon
-                .topbar__social
-                    a.topbar__social-icon(href="#")
-                        +icon('instagram').topbar__social-icon--instagram
-                    a.topbar__social-icon(href="#")
-                        +icon('vkontakte').topbar__social-icon--vkontakte
-                    a.topbar__social-icon(href="#")
-                        +icon('facebook').topbar__social-icon--facebook
+            .topbar__borger
+                a(href="#" onclick="openMenu()").topbar__borger-link
+
+            .topbar__social
+                a.topbar__social-icon(href="#")
+                    +icon('instagram').topbar__social-icon--instagram
+                a.topbar__social-icon(href="#")
+                    +icon('vkontakte').topbar__social-icon--vkontakte
+                a.topbar__social-icon(href="#")
+                    +icon('facebook').topbar__social-icon--facebook
                         
             .topbar__logo
                 a(href="index.html").topbar__logo-link
-                    +icon('logo').topbar__logo-icon
-                    //- img(src="../../assets/imgs/logo.svg", alt="На главную страницу")
-            .topbar__group.topbar__group--two
-                .topbar__phone
-                    a(href="tel:+7(495)1501477").topbar__phone-link +7 (495) 150 - 14 - 77
-                .topbar__panel
-                    a(href="").topbar__panel-link
-                        img(src="../../assets/imgs/icons/heart.svg", alt="Избранное")
-                    a(href="").topbar__panel-link
-                        img(src="../../assets/imgs/icons/basket.svg", alt="Карзина")
+                    +icon('logo').topbar__logo
+                
+            .topbar__phone
+                a(href="tel:+7(495)1501477").topbar__phone-link +7 (495) 150 - 14 - 77
+                
+            .topbar__follow.topbar__follow--favorites
+                a(href="").topbar__follow-link
+                    img(src="../../assets/imgs/icons/heart.svg", alt="Избранное")
+
+            .topbar__follow.topbar__follow--basket
+                a(href="").topbar__follow-link
+                    img(src="../../assets/imgs/icons/basket.svg", alt="Корзина")
+
         nav.nav
             ul.nav__list 
                 li.nav__list-item
@@ -48,9 +50,9 @@ header.header(id="header")
                 .full__inner
                     h3.full__title Категории
                     ul.full__list
-                        mixin full-list-item(linh_href, item)
+                        mixin full-list-item(link_href, item)
                             li.full__list-item
-                                a(href=linh_href).full__list-link=item
+                                a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Юбки')
                         +full-list-item('#', 'Смокинг')
                         +full-list-item('#', 'Костюмы')
@@ -62,9 +64,9 @@ header.header(id="header")
                 .full__inner
                     h3.full__title Коллекции
                     ul.full__list
-                        mixin full-list-item(linh_href, item)
+                        mixin full-list-item(link_href, item)
                             li.full__list-item
-                                a(href=linh_href).full__list-link=item
+                                a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Осень-зима 20-21')
                         +full-list-item('#', 'Вечерние комплекты')
                         +full-list-item('#', 'Предзаказ')
@@ -72,9 +74,9 @@ header.header(id="header")
                 .full__inner
                     h3.full__title Покупателям
                     ul.full__list
-                        mixin full-list-item(linh_href, item)
+                        mixin full-list-item(link_href, item)
                             li.full__list-item
-                                a(href=linh_href).full__list-link=item
+                                a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Доставка')
                         +full-list-item('#', 'Акции')
                         +full-list-item('#', 'Возврат')
@@ -84,9 +86,9 @@ header.header(id="header")
                 .full__inner
                     h3.full__title О бренде
                     ul.full__list
-                        mixin full-list-item(linh_href, item)
+                        mixin full-list-item(link_href, item)
                             li.full__list-item
-                                a(href=linh_href).full__list-link=item
+                                a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Шоурум')
                         +full-list-item('#', 'Отзывы')
                         +full-list-item('#', 'Статьи')
@@ -101,4 +103,4 @@ header.header(id="header")
                 a(href="#").connection__link
                     img(src="../../assets/imgs/icons/smartphone-icon.svg", alt="")
                 a(href="#").connection__link
-                    img(src="../../assets/imgs/icons/dialogue-icon.svg", alt="") 
+                    img(src="../../assets/imgs/icons/dialogue-icon.svg", alt="")

@@ -1,6 +1,6 @@
-// для каждого компонента нужно импортить переменные, чтобы их использовать
-@import "../main/parameters";
+@import "../main/parameters"; // для каждого компонента нужно импортить переменные, чтобы их использовать
 
+/***   HEADER   ***/
 .header {
   background: $bg-white;
   color: $color-dark;
@@ -17,6 +17,7 @@
       color: #ffffff;
     }
     & .topbar__logo-link {
+      fill: #ffffff;
       &::after {
         color: #ffffff;
       }
@@ -28,17 +29,13 @@
     }
   }
 }
+
+
+/***   TOPBAR   ***/
 .topbar {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 90px 105px 1fr 184px 49px 29px;
   margin-bottom: 35px;
-  &__group {
-    display: flex;
-    align-items: center;
-  }
-  &__borger {
-    margin-right: 63px;
-  }
   &__borger-link {
     width: 27px;
     height: 20px;
@@ -69,26 +66,16 @@
     }
   }
   &__logo {
+    height: auto;
+    margin: 0 auto;
+    max-width: 140px;
+    max-height: 26px;
     font-size: 0;
-    margin-left: -15px;
   }
   &__logo-link {
     position: relative;
     &::after {
-      content: "Женский смокинг";
-      position: absolute;
-      top: -2px;
-      right: -5px;
-      transform: translateX(100%);
-      font-family: 'Lato';
-      display: inline-block;
-      color: $color-alt;
-      max-width: 72px;
-      font-weight: 500;
-      font-size: 10px;
-      text-transform: uppercase;
-      vertical-align: top;
-      letter-spacing: 0.1em;
+      @include logo-description();
     }
   }
   &__logo-icon {
@@ -97,7 +84,6 @@
     vertical-align: top;
   }
   &__phone {
-    margin-right: 53px;
     margin-bottom: 5px;
   }
   &__phone-link {
@@ -108,11 +94,8 @@
     line-height: 18px;
     color: #222222;
   }
-  &__panel {
-    font-size: 0;
-    display: flex;
-  }
-  &__panel-link {
+  &__follow {  }
+  &__follow-link {
     margin: 0 9px 0 15px;
     position: relative;
     height: 26px;
@@ -132,6 +115,8 @@
   }
 }
 
+
+/***   NAV   ***/
 .nav {
   margin: 0 auto;
   max-width: 998px;
@@ -149,8 +134,9 @@
   }
 }
 
+
+/***   FULL   ***/
 .full {
-  // display: none;
   font-family: 'FuturaMediumC';
   font-weight: 500;
   &__wrapper {
@@ -172,6 +158,8 @@
   }
 }
 
+
+/***   CONNECTION   ***/
 .connection {
   position: fixed;
   right: 1.7%;
@@ -202,23 +190,15 @@
   }
 }
 
+
+/***   MEDIA   ***/
 @media screen and (max-width: 1380px) {}
 @media screen and (max-width: 1199px) {}
 @media screen and (max-width: 991px) {
   .topbar {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    &__group,
+    grid-template-columns: 90px 105px 1fr 49px 29px;
     &__logo {
-      flex: 0 0 calc(100%/3);
-    }
-    &__group--two {
-      flex-direction: row-reverse;
-    }
-    &__logo {
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
+      margin-left: 50px;
     }
     &__phone {
       display: none;
@@ -230,14 +210,48 @@
 }
 @media screen and (max-width: 767px) {
   .topbar {
+    grid-template-columns: 90px 1fr 49px 29px;
     &__social {
       display: none;
     }
     &__logo {
-      justify-content: start;
+      margin: 0 auto;
     }
   }
 }
 @media screen and (max-width: 576px) {
+  .topbar {
+    grid-template-columns: 40px 40px 1fr 90px;
+    &__borger {
+      transform: scale(.8);
+    }
+    &__logo {
+      margin: 0 auto;
+      max-width: 100px;
+      &-link::after {
+        @include logo-description-alt();
+        top: 4px;
+      }
+    }
+    &__follow--favorites {
+      transform: scale(.8);
+      grid-column: 2;
+      grid-row: 1;
+    }
+    &__follow--basket {
+      transform: scale(.8);
+      grid-column: 4;
+      grid-row: 1;
+      margin-left: auto;
+    }
+  }
   
+  .connection {
+    &__group {
+      transform: scale(.7);
+    }
+    &__link-top {
+      bottom: -30px;
+    }
+  }
 }

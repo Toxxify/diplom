@@ -6,66 +6,66 @@ block vars
     - var pageHeaderClass = ''
 
 block content
-    //- .swiper-container.big-slider
-    //-     .swiper-wrapper
-    //-         img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 1").swiper-slide
-    //-         img(src="../assets/imgs/big-slider/slide-2.jpg", alt="Слайд 2").swiper-slide
-    //-         img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 3").swiper-slide
-    //-         img(src="../assets/imgs/big-slider/slide-2.jpg", alt="Слайд 4").swiper-slide
-    //-         img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 5").swiper-slide
-    //-     .swiper-pagination.big-slider__pagination
+    .swiper-container.big-slider
+        .swiper-wrapper
+            img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 1").swiper-slide
+            img(src="../assets/imgs/big-slider/slide-2.jpg", alt="Слайд 2").swiper-slide
+            img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 3").swiper-slide
+            img(src="../assets/imgs/big-slider/slide-2.jpg", alt="Слайд 4").swiper-slide
+            img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 5").swiper-slide
+        .swiper-pagination.big-slider__pagination
 
-    //- .gallery
-    //-     .container
-    //-         .gallery__wrapper
-    //-             mixin gallery-cell(img_src, title)
-    //-                 .gallery__cell
-    //-                     a(href="#").gallery__cell-link
-    //-                         .gallery__cell-title=title
-    //-                         img(src=img_src, alt=title).gallery__cell-img
-    //-             +gallery-cell('../assets/imgs/gallery/foto-1.jpg', 'Новинки')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-2.jpg', 'Акции')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-3.jpg', 'Костюмы')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-4.jpg', 'Смокинги')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-5.jpg', 'Брюки')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-6.jpg', 'Платья')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-7.jpg', 'Блузы')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-8.jpg', 'Юбки')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-9.jpg', 'Топы и жилеты')
-    //-             +gallery-cell('../assets/imgs/gallery/foto-10.jpg', 'gallery__cell--10', 'Аксессуары')
+    .gallery
+        .container
+            .gallery__wrapper
+                mixin gallery-cell(img_src, title)
+                    .gallery__cell
+                        a(href="#").gallery__cell-link
+                            .gallery__cell-title=title
+                            img(src=img_src, alt=title).gallery__cell-img
+                +gallery-cell('../assets/imgs/gallery/foto-1.jpg', 'Новинки')
+                +gallery-cell('../assets/imgs/gallery/foto-2.jpg', 'Акции')
+                +gallery-cell('../assets/imgs/gallery/foto-3.jpg', 'Костюмы')
+                +gallery-cell('../assets/imgs/gallery/foto-4.jpg', 'Смокинги')
+                +gallery-cell('../assets/imgs/gallery/foto-5.jpg', 'Брюки')
+                +gallery-cell('../assets/imgs/gallery/foto-6.jpg', 'Платья')
+                +gallery-cell('../assets/imgs/gallery/foto-7.jpg', 'Блузы')
+                +gallery-cell('../assets/imgs/gallery/foto-8.jpg', 'Юбки')
+                +gallery-cell('../assets/imgs/gallery/foto-9.jpg', 'Топы и жилеты')
+                +gallery-cell('../assets/imgs/gallery/foto-10.jpg', 'Аксессуары')
     
     //- .about-brand
-    //-     h2.about-brand__title О бренде
-    //-     .about-brand__wrapper
-    //-         .about-brand__frame
-    //-             img(src="../assets/imgs/foto/about-brand.jpg", alt="").about-brand__frame-img
-    //-         p.about-brand__text  Сегодня ELEAN - это первый в России магазин готового женского смокинга. У нас каждая женщина может подобрать для себя образ со смокингом, такой же как у голливудских див и звезд светской хроники.
-    //-         p.about-brand__text  Костюм со смокингом ELEAN - выбор звёзд эстрады и кино, телеведущих, fashion-стилистов, успешных женщин-руководителей, представительниц научной и деловой элиты.
-    //-         p.about-brand__text  История бренда началась задолго до первого показа, который состоялся 12 марта 2016 года, с мечты автора коллекции, Елены Писаревой о собственном бренде элегантной одежды и продолжалась долгие 30 лет накопления профессионального опыта. Вся первая коллекция была выполнена из 100% натурального шелка, в нее вошли жентсвенные платья и костюмы.
-    //-         .about-brand__text
-    //-             a.about-brand__btn Подробнее
+        h2.about-brand__title О бренде
+        .about-brand__wrapper
+            .about-brand__frame
+                img(src="../assets/imgs/foto/about-brand.jpg", alt="").about-brand__frame-img
+            p.about-brand__text  Сегодня ELEAN - это первый в России магазин готового женского смокинга. У нас каждая женщина может подобрать для себя образ со смокингом, такой же как у голливудских див и звезд светской хроники.
+            p.about-brand__text  Костюм со смокингом ELEAN - выбор звёзд эстрады и кино, телеведущих, fashion-стилистов, успешных женщин-руководителей, представительниц научной и деловой элиты.
+            p.about-brand__text  История бренда началась задолго до первого показа, который состоялся 12 марта 2016 года, с мечты автора коллекции, Елены Писаревой о собственном бренде элегантной одежды и продолжалась долгие 30 лет накопления профессионального опыта. Вся первая коллекция была выполнена из 100% натурального шелка, в нее вошли жентсвенные платья и костюмы.
+            .about-brand__text
+                a.about-brand__btn Подробнее
 
-    //- .showroom
-    //-     .container
-    //-         h2.showroom__title Наш Шоурум
-    //-         .swiper-container.showroom__slider
-    //-             .swiper-wrapper
-    //-                 .swiper-slide.showroom__img-box
-    //-                     img(src="../assets/imgs/showroom/photo-1.jpg", alt="").showroom__img
-    //-                 .swiper-slide.showroom__img-box
-    //-                     img(src="../assets/imgs/showroom/photo-2.jpg", alt="").showroom__img 
-    //-                 .swiper-slide.showroom__img-box
-    //-                     img(src="../assets/imgs/showroom/photo-3.jpg", alt="").showroom__img
-    //-             .swiper-pagination
-    //-         .appointment
-    //-             h2.appointment__title Записаться на примерку в шоуруме
-    //-             form(action="").appointment__form
-    //-                 input(type="text", name="" placeholder="введите имя").appointment__form-name
-    //-                 input(type="tel", name="" placeholder="введите телефон").appointment__form-phone
-    //-                 input(type="text", name="" placeholder="введите удобное время").appointment__form-date
-    //-                 textarea(name="", placeholder="добавить комментарий").appointment__form-comment
-    //-                 input(type="submit", value="Записаться").appointment__form-btn
-    //-                 .appointment__prompt Поля отмеченные “*” обязательны для заполнения
+    .showroom
+        .container
+            h2.showroom__title Наш Шоурум
+            .swiper-container.showroom__slider
+                .swiper-wrapper
+                    .swiper-slide.showroom__img-box
+                        img(src="../assets/imgs/showroom/photo-1.jpg", alt="").showroom__img
+                    .swiper-slide.showroom__img-box
+                        img(src="../assets/imgs/showroom/photo-2.jpg", alt="").showroom__img 
+                    .swiper-slide.showroom__img-box
+                        img(src="../assets/imgs/showroom/photo-3.jpg", alt="").showroom__img
+                .swiper-pagination
+            .appointment
+                h2.appointment__title Записаться на примерку в шоуруме
+                form(action="").appointment__form
+                    input(type="text", name="" placeholder="введите имя").appointment__form-name
+                    input(type="tel", name="" placeholder="введите телефон").appointment__form-phone
+                    input(type="text", name="" placeholder="введите удобное время").appointment__form-date
+                    textarea(name="", placeholder="добавить комментарий").appointment__form-comment
+                    input(type="submit", value="Записаться").appointment__form-btn
+                    .appointment__prompt Поля отмеченные “*” обязательны для заполнения
 
 
     .reviews 
@@ -107,29 +107,29 @@ block content
             a(href="#").reviews__btn Смотреть всё
 
 
-    //- .instagram
-    //-     .container
-    //-         h2.instagram__title Мы в instagram
-    //-         .instagram__wrapper
-    //-             mixin instagram(foto_src, avatar_src, name, description)
-    //-                 .instagram__cell
-    //-                     img(src=foto_src, alt="Фотография").instagram__cell-img
-    //-                     .instagram__cell-downbar
-    //-                         img(src=avatar_src, alt=name).instagram__cell-avatar 
-    //-                         .instagram__cell-group
-    //-                             .instagram__cell-name=name
-    //-                             a(href="#").instagram__cell-link Подписаться
-    //-                             .instagram__cell-description=description
-    //-         .swiper-container.instagram__slider
-    //-             .swiper-wrapper
-    //-                 .swiper-slide 
-    //-                     +instagram('../assets/imgs/instagram/foto-1.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )                    
-    //-                 .swiper-slide 
-    //-                     +instagram('../assets/imgs/instagram/foto-2.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
-    //-                 .swiper-slide 
-    //-                     +instagram('../assets/imgs/instagram/foto-3.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
-    //-                 .swiper-slide 
-    //-                     +instagram('../assets/imgs/instagram/foto-4.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
-    //-                 .swiper-slide 
-    //-                     +instagram('../assets/imgs/instagram/foto-5.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
-    //-             .swiper-pagination
+    .instagram
+        .container
+            h2.instagram__title Мы в instagram
+            .instagram__wrapper
+                mixin instagram(foto_src, avatar_src, name, description)
+                    .instagram__cell
+                        img(src=foto_src, alt="Фотография").instagram__cell-img
+                        .instagram__cell-downbar
+                            img(src=avatar_src, alt=name).instagram__cell-avatar 
+                            .instagram__cell-group
+                                .instagram__cell-name=name
+                                a(href="#").instagram__cell-link Подписаться
+                                .instagram__cell-description=description
+            .swiper-container.instagram__slider
+                .swiper-wrapper
+                    .swiper-slide 
+                        +instagram('../assets/imgs/instagram/foto-1.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )                    
+                    .swiper-slide 
+                        +instagram('../assets/imgs/instagram/foto-2.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                    .swiper-slide 
+                        +instagram('../assets/imgs/instagram/foto-3.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                    .swiper-slide 
+                        +instagram('../assets/imgs/instagram/foto-4.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                    .swiper-slide 
+                        +instagram('../assets/imgs/instagram/foto-5.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                .swiper-pagination

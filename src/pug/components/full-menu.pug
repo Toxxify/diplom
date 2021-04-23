@@ -1,0 +1,58 @@
+
+mixin full-list-item(link_href, item)
+    li.full__list-item
+        a(href=link_href).full__list-link=item
+
+.full__wrapper
+    .full__tab
+        input(type="checkbox" id="tab2" name="tab-group")
+        label(for="tab2").full__label Контакты
+        ul.full__list
+            +full-list-item('#', 'Шоурум')
+            +full-list-item('#', 'Отзывы')
+            +full-list-item('#', 'Статьи')
+            +full-list-item('#', 'Блог')
+
+    .full__tab
+        input(type="checkbox" id="tab2" name="tab-group")
+        label(for="tab2").full__label Покупателям
+        ul.full__list
+            +full-list-item('#', 'Доставка')
+            +full-list-item('#', 'Акции')
+            +full-list-item('#', 'Возврат')
+            +full-list-item('#', 'Размерная таблица')
+            +full-list-item('#', 'Примерка')
+            +full-list-item('#', 'Оптовым покупателям')
+
+    .full__tab
+        input(type="checkbox" id="tab2" name="tab-group")
+        label(for="tab2").full__label Коллекции
+        ul.full__list
+            +full-list-item('#', 'Осень-зима 20-21')
+            +full-list-item('#', 'Вечерние комплекты')
+            +full-list-item('#', 'Предзаказ')
+            +full-list-item('#', 'Свадьба и выпускной')
+
+    .full__tab
+        input(type="checkbox" id="tab2" name="tab-group")
+        label(for="tab2").full__label Категории
+        ul.full__list
+            +full-list-item('#', 'Юбки')
+            +full-list-item('#', 'Смокинг')
+            +full-list-item('#', 'Костюмы')
+            +full-list-item('#', 'Аксессуары')
+            +full-list-item('#', 'Брюки')
+            +full-list-item('#', 'Блузы')
+            +full-list-item('#', 'Платья')
+            +full-list-item('#', 'Топы и жилеты')
+
+    .full__tab
+        input(type="checkbox" id="tab2" name="tab-group")
+        label(for="tab2").full__label Покупателям
+        ul.full__title 
+            +full-list-item('#', 'Доставка')
+            +full-list-item('#', 'Акции')
+            +full-list-item('#', 'Возврат')
+            +full-list-item('#', 'Размерная таблица')
+            +full-list-item('#', 'Примерка')
+            +full-list-item('#', 'Оптовым покупателям')
