@@ -21,11 +21,11 @@ header.header(id="header")
                 
             .topbar__follow.topbar__follow--favorites
                 a(href="").topbar__follow-link
-                    img(src="../../assets/imgs/icons/heart.svg", alt="Избранное")
+                    +icon('favorites').topbar__follow-icon
 
             .topbar__follow.topbar__follow--basket
                 a(href="").topbar__follow-link
-                    img(src="../../assets/imgs/icons/basket.svg", alt="Корзина")
+                    img(src="../../assets/imgs/icons/basket.svg", alt="Корзина").topbar__basket-icon
 
         nav.nav
             ul.nav__list 

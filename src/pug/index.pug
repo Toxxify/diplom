@@ -22,7 +22,8 @@ block content
                     .gallery__cell
                         a(href="#").gallery__cell-link
                             .gallery__cell-title=title
-                            img(src=img_src, alt=title).gallery__cell-img
+                            .gallery__cell-wrap
+                                img(src=img_src, alt=title).gallery__cell-img
                 +gallery-cell('../assets/imgs/gallery/foto-1.jpg', 'Новинки')
                 +gallery-cell('../assets/imgs/gallery/foto-2.jpg', 'Акции')
                 +gallery-cell('../assets/imgs/gallery/foto-3.jpg', 'Костюмы')
@@ -34,11 +35,13 @@ block content
                 +gallery-cell('../assets/imgs/gallery/foto-9.jpg', 'Топы и жилеты')
                 +gallery-cell('../assets/imgs/gallery/foto-10.jpg', 'Аксессуары')
     
-    //- .about-brand
+    .about-brand
         h2.about-brand__title О бренде
         .about-brand__wrapper
             .about-brand__frame
+                .about-brand__shutters--left
                 img(src="../assets/imgs/foto/about-brand.jpg", alt="").about-brand__frame-img
+                .about-brand__shutters--right
             p.about-brand__text  Сегодня ELEAN - это первый в России магазин готового женского смокинга. У нас каждая женщина может подобрать для себя образ со смокингом, такой же как у голливудских див и звезд светской хроники.
             p.about-brand__text  Костюм со смокингом ELEAN - выбор звёзд эстрады и кино, телеведущих, fashion-стилистов, успешных женщин-руководителей, представительниц научной и деловой элиты.
             p.about-brand__text  История бренда началась задолго до первого показа, который состоялся 12 марта 2016 года, с мечты автора коллекции, Елены Писаревой о собственном бренде элегантной одежды и продолжалась долгие 30 лет накопления профессионального опыта. Вся первая коллекция была выполнена из 100% натурального шелка, в нее вошли жентсвенные платья и костюмы.
@@ -74,24 +77,23 @@ block content
             .reviews__slider-box
                 .swiper-container.reviews__slider
                     .swiper-wrapper
+                        mixin reviews-slide(foto_src, name)
+                            img(src=foto_src, alt=name)
+                            .reviews__slider-name=name
                         .swiper-slide
-                            img(src="../assets/imgs/reviews/foto-1.jpg", alt="Альбина Джанабаева")
-                            .reviews__slider-name Альбина Джанабаева
+                            +reviews-slide("../assets/imgs/reviews/foto-1.jpg", "Альбина Джанабаева")
                         .swiper-slide
-                            img(src="../assets/imgs/reviews/foto-2.jpg", alt="Екатерина Данилова")
-                            .reviews__slider-name Екатерина Данилова
+                            +reviews-slide("../assets/imgs/reviews/foto-2.jpg", "Екатерина Данилова")
                         .swiper-slide
-                            img(src="../assets/imgs/reviews/foto-3.jpg", alt="Вера Брежнева")
-                            .reviews__slider-name Вера Брежнева
+                            +reviews-slide("../assets/imgs/reviews/foto-3.jpg", "Вера Брежнева")
                         .swiper-slide
-                            img(src="../assets/imgs/reviews/foto-4.jpg", alt="Екатерина Катова")
-                            .reviews__slider-name Екатерина Катова
+                            +reviews-slide("../assets/imgs/reviews/foto-4.jpg", "Екатерина Катова")
                         .swiper-slide
-                            img(src="../assets/imgs/reviews/foto-5.jpg", alt="Ирина Ургант")
-                            .reviews__slider-name Ирина Ургант
+                            +reviews-slide("../assets/imgs/reviews/foto-5.jpg", "Ирина Ургант")
                     .swiper-pagination.reviews__slider-pagination
                 .swiper-button-prev.reviews__slider-prev
                 .swiper-button-next.reviews__slider-next
+
             .reviews__wrapper
                 mixin comment(avatar, name, city, date, message)
                     .reviews__comment
@@ -120,16 +122,17 @@ block content
                                 .instagram__cell-name=name
                                 a(href="#").instagram__cell-link Подписаться
                                 .instagram__cell-description=description
+                                
             .swiper-container.instagram__slider
                 .swiper-wrapper
                     .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto-1.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )                    
+                        +instagram('../assets/imgs/instagram/foto--1.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )                    
                     .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto-2.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                        +instagram('../assets/imgs/instagram/foto--2.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
                     .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto-3.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                        +instagram('../assets/imgs/instagram/foto--3.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
                     .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto-4.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                        +instagram('../assets/imgs/instagram/foto--4.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
                     .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto-5.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                        +instagram('../assets/imgs/instagram/foto--5.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
                 .swiper-pagination

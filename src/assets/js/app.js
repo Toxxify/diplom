@@ -33,7 +33,6 @@ $(function () {
     });
     
     const showroom = new Swiper('.showroom__slider', {
-        slidesPerView: 3,
         watchOverflow: true,
         pagination: {
             el: '.swiper-pagination',
@@ -44,18 +43,11 @@ $(function () {
             slidesPerView: 3,
           },
           576: {
+            spaceBetween: 10,
             slidesPerView: 2,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
           },
           320: {
             slidesPerView: 1,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
           }
       }
     });
@@ -64,10 +56,6 @@ $(function () {
         slidesPerView: 5,
         loop: true,
         speed: 1000,
-        autoplay: {
-          delay: 6000,
-          disableOnInteraction: false,
-        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -114,46 +102,39 @@ $(function () {
         spaceBetween: 9,
         loop: true,
         speed: 1000,
-        autoplay: {
-          delay: 6000,
-          disableOnInteraction: false,
-        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
         },
         scrollbar: {
           el: '.swiper-scrollbar',
         },breakpoints: {
           1380: {
             slidesPerView: 5,
-            spaceBetween: 14,
           },
           1200: {
             slidesPerView: 4,
-            spaceBetween: 30,
-            centeredSlides: false,
+            // spaceBetween: 30,
+            // centeredSlides: false,
           },
           991: {
             slidesPerView: 3,
-            spaceBetween: 100,
+            // spaceBetween: 100,
           },
           767: {
+            // slidesPerView: 2,
             slidesPerView: 'auto',
-            centeredSlides: true,
+            // slidesPerView: 'auto',
+            // centeredSlides: true,
           },
           576: {
-            slidesPerView: 2,
-            centeredSlides: false,
+            slidesPerView: 'auto',
+            // centeredSlides: false,
           },
           320: {
             slidesPerView: 'auto',
-            centeredSlides: true,
-            spaceBetween: 14,
+            // centeredSlides: true,
+            // spaceBetween: 14,
           }
         }
     });

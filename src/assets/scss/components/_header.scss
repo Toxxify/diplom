@@ -10,7 +10,8 @@
     color: $bg-white;
     height: 100vh;
     & .topbar__social-icon,
-    & .topbar__logo-icon {
+    & .topbar__logo-icon,
+    & .topbar__follow-icon{
       fill: #ffffff;
     }
     & .topbar__phone-link {
@@ -34,7 +35,7 @@
 /***   TOPBAR   ***/
 .topbar {
   display: grid;
-  grid-template-columns: 90px 105px 1fr 184px 49px 29px;
+  grid-template-columns: 90px 105px 1fr 185px 48px 29px;
   margin-bottom: 35px;
   &__borger-link {
     width: 27px;
@@ -113,6 +114,10 @@
       color: #333333;
     }
   }
+  &__follow-icon {
+    width: 23px;
+    height: 20px;
+  }
 }
 
 
@@ -145,6 +150,7 @@
     display: flex;
     justify-content: space-around;
     padding: 124px 0;
+    background: #171717;
   }
   &__title {
     font-weight: 500;
@@ -162,7 +168,7 @@
 /***   CONNECTION   ***/
 .connection {
   position: fixed;
-  right: 1.7%;
+  right: 1%;
   top: 50%;
   z-index: 20;
   &__wrapper {
@@ -170,7 +176,7 @@
     flex-direction: column;
   }
   &__group {
-    margin-top: 20px;
+    margin-top: 45px;
   }
   &__link {
     display: flex;
@@ -186,14 +192,30 @@
     @include link-alt();
     transform: rotate(90deg);
     position: relative;
-    right: -20px;
   }
 }
 
 
 /***   MEDIA   ***/
 @media screen and (max-width: 1380px) {}
-@media screen and (max-width: 1199px) {}
+@media screen and (max-width: 1199px) {
+.full {
+  &__wrapper {
+    flex-wrap: wrap;
+    justify-content: start;
+    padding-top: 84px;
+  }
+  &__inner {
+    flex: 0 0 33%;
+  }
+  &__title {
+    margin: 40px 0 30px;
+  }
+  &__list-link {
+    line-height: 200%;
+  }
+}
+}
 @media screen and (max-width: 991px) {
   .topbar {
     grid-template-columns: 90px 105px 1fr 49px 29px;
