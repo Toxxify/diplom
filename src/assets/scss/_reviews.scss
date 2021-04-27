@@ -1,0 +1,43 @@
+.reviews {
+  &__title {
+    @include section-title();
+    margin-bottom: 30px;
+  }
+}
+
+.video-reviews-swiper {
+  margin-bottom: 50px;
+  &__slide {
+    width: auto;
+  }
+  &__video {
+    overflow: hidden;
+    height: 401px;
+    width: 323px;
+    margin-bottom: 20px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      background: #ffffff url(../imgs/icons/play.svg) 58% center no-repeat;
+      display: block;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+  &__name {
+    max-width: 295px;
+    font-family: 'HelveticaNeueCyr';
+    font-size: 15px;
+    line-height: 127%;
+    letter-spacing: 0.05em;
+    color: #272727;
+  }
+  &__preview {
+    width: 100%;
+  }
+}

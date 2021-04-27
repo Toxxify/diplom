@@ -1,0 +1,185 @@
+/***   CLIENTS SLIDER   ***/
+.client-swiper {
+  font-family: 'FuturaMediumC';
+  font-weight: 500;
+  margin-bottom: 90px;
+  &__box {
+    position: relative;
+  }
+  &__name {
+    margin-top: 13px;
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+  }
+  &__prev,
+  &__next {
+    top: 40%;
+    width: 56px; 
+    height: 56px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    &::after {
+      content: '';
+      font-family: sans-serif;
+      background: url(../../assets/imgs/icons/slider-btn-arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 12px;
+      width: 7px;
+      display: block;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      width: 34px;
+      height: 34px;
+      border: 1px solid #E1E1E1;
+      border-radius: 50%;
+    }
+  }
+  &__slide {
+    width: auto;
+  }
+  &__prev {
+    left: 0;
+    transform: translateX(-50%);
+  }
+  &__next {
+    right: 0;
+    transform: translateX(50%);
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+  &__pagination {
+    padding-top: 18px;
+    position: static;
+  }
+
+  & .swiper-pagination-bullet {
+    background: #D9DBE1;
+  }
+}
+
+
+/***   TEXT REVIEWS   ***/
+.text-reviews {
+  padding-bottom: 68px;
+  font-family: 'FuturaMediumC';
+  font-weight: 500;
+  &__title {
+    @include section-title();
+    margin-bottom: 38px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__comment {
+    font-family: 'FuturaMediumC';
+    font-weight: 500;
+    flex: 0 0 50%;
+    max-width: 564px;
+    margin-bottom: 56px;
+    margin-left: auto;
+    &:nth-child(odd) {
+      margin-right: 28px;
+    }
+  }
+  &__comment-topbar {
+    margin-bottom: 10px;
+    display: flex;
+  }
+  &__comment-name {
+    font-size: 18px;
+    line-height: 122%;
+    margin-right: 5px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -90px;
+      top: -25px;
+      width: 60px;
+      height: 60px;
+      background: url(../imgs/icons/avatar-icon.svg);
+      background-size: cover;
+    }
+  }
+  &__comment-city {
+    font-size: 18px;
+    line-height: 122%;
+    margin-right: 5px;
+    color: $color-gray;
+  }
+  &__comment-date {
+    float: right;
+    margin-left: auto;
+    font-size: 13px;
+    line-height: 192%;
+    letter-spacing: 0.06em;
+    color: $color-gray;
+  }
+  &__comment-text {
+    font-size: 18px;
+    line-height: 128%;
+    color: $color-black;
+    border: 1px dashed $color-gray;
+    box-sizing: border-box;
+    padding: 20px 28px 24px;
+  }
+  &__btn {
+    @include btn-special();
+    display: block;
+    margin: -15px auto 0;
+  }
+}
+
+
+/***   MEDIA QUERIES   ***/
+@media screen and (max-width: 1500px) {}
+
+@media screen and (max-width: 1380px) {
+  .text-reviews {
+    &__comment {
+      flex: 0 0 48%;
+      margin-right: auto;
+      margin-left: auto;
+      &:nth-child(odd) {
+        margin-right: auto;
+    }
+    }
+    &__comment-name {
+      margin-left: 80px;
+      margin-bottom: 20px;
+      &::before {
+        left: -80px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 991px) {
+  .text-reviews {
+    &__comment {
+      flex: 0 0 100%;
+    }
+  }
+  .client-swiper {
+    &__next,
+    &__prev {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {}
+
+@media screen and (max-width: 576px) {
+  .client-swiper__img {
+    height: 410px; 
+  }
+}

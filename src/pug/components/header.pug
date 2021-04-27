@@ -40,7 +40,7 @@ header.header(id="header")
                 li.nav__list-item
                     a(href="#").nav__list-link О бренде
                 li.nav__list-item
-                    a(href="#").nav__list-link Шоурум
+                    a(href="showroom.html").nav__list-link Шоурум
                 li.nav__list-item
                     a(href="#").nav__list-link Контакты
                     
@@ -90,7 +90,7 @@ header.header(id="header")
                             li.full__list-item
                                 a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Шоурум')
-                        +full-list-item('#', 'Отзывы')
+                        +full-list-item('reviews.html', 'Отзывы')
                         +full-list-item('#', 'Статьи')
                         +full-list-item('#', 'Блог')
                 .full__inner
@@ -100,7 +100,7 @@ header.header(id="header")
         .connection__wrapper
             a(href="#header").connection__link-top вверх
             .connection__group
-                a(href="#").connection__link
+                a(href="#").connection__link.connection__link-telephone
                     img(src="../../assets/imgs/icons/smartphone-icon.svg", alt="")
-                a(href="#").connection__link
+                a(href="#").connection__link.connection__link-post
                     img(src="../../assets/imgs/icons/dialogue-icon.svg", alt="")

@@ -1,0 +1,29 @@
+extends layout/layout
+
+block vars
+  - var pageTitle = 'Вторая страница'
+  - var pageBodyClass = ''
+  - var pageHeaderClass = ''
+
+block content
+  .reviews
+    .container
+
+      h2.reviews__title Отзывы
+      .swiper-container.video-reviews-swiper
+        .swiper-wrapper
+
+          mixin video-reviews-slide(src, name)
+            .swiper-slide.video-reviews-swiper__slide
+              .video-reviews-swiper__video 
+                img(src=src, alt=name).video-reviews-swiper__preview
+              .video-reviews-swiper__name=name
+
+          +video-reviews-slide("../assets/imgs/reviews/video-preview-1.jpg", "Образ со смокингом")
+          +video-reviews-slide("../assets/imgs/reviews/video-preview-2.jpg", "Образ с красным смокингом и черным топом")
+          +video-reviews-slide("../assets/imgs/reviews/video-preview-3.jpg", "Синий костюм с брюками")
+          +video-reviews-slide("../assets/imgs/reviews/video-preview-4.jpg", "Образ с костюмом")
+        .swiper-pagination
+
+      h2.reviews__title Наши звёздные клиенты
+      include components/clients-and-review

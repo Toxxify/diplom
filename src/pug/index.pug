@@ -39,74 +39,44 @@ block content
         h2.about-brand__title О бренде
         .about-brand__wrapper
             .about-brand__frame
-                .about-brand__shutters--left
-                img(src="../assets/imgs/foto/about-brand.jpg", alt="").about-brand__frame-img
-                .about-brand__shutters--right
+                .about-brand__inner
+                    .about-brand__shutters--left
+                    img(src="../assets/imgs/foto/about-brand.jpg", alt="").about-brand__frame-img
+                    .about-brand__shutters--right
             p.about-brand__text  Сегодня ELEAN - это первый в России магазин готового женского смокинга. У нас каждая женщина может подобрать для себя образ со смокингом, такой же как у голливудских див и звезд светской хроники.
             p.about-brand__text  Костюм со смокингом ELEAN - выбор звёзд эстрады и кино, телеведущих, fashion-стилистов, успешных женщин-руководителей, представительниц научной и деловой элиты.
             p.about-brand__text  История бренда началась задолго до первого показа, который состоялся 12 марта 2016 года, с мечты автора коллекции, Елены Писаревой о собственном бренде элегантной одежды и продолжалась долгие 30 лет накопления профессионального опыта. Вся первая коллекция была выполнена из 100% натурального шелка, в нее вошли жентсвенные платья и костюмы.
             .about-brand__text
-                a.about-brand__btn Подробнее
+                a(href="#").about-brand__btn Подробнее
 
     .showroom
         .container
-            h2.showroom__title Наш Шоурум
-            .swiper-container.showroom__slider
-                .swiper-wrapper
-                    .swiper-slide.showroom__img-box
-                        img(src="../assets/imgs/showroom/photo-1.jpg", alt="").showroom__img
-                    .swiper-slide.showroom__img-box
-                        img(src="../assets/imgs/showroom/photo-2.jpg", alt="").showroom__img 
-                    .swiper-slide.showroom__img-box
-                        img(src="../assets/imgs/showroom/photo-3.jpg", alt="").showroom__img
-                .swiper-pagination
-            .appointment
-                h2.appointment__title Записаться на примерку в шоуруме
-                form(action="").appointment__form
-                    input(type="text", name="" placeholder="введите имя").appointment__form-name
-                    input(type="tel", name="" placeholder="введите телефон").appointment__form-phone
-                    input(type="text", name="" placeholder="введите удобное время").appointment__form-date
-                    textarea(name="", placeholder="добавить комментарий").appointment__form-comment
-                    input(type="submit", value="Записаться").appointment__form-btn
-                    .appointment__prompt Поля отмеченные “*” обязательны для заполнения
+            include components/our-showroom
+            //- h2.showroom__title Наш Шоурум
+            //- .swiper-container.showroom__slider
+            //-     .swiper-wrapper
+            //-         .swiper-slide.showroom__img-box
+            //-             img(src="../assets/imgs/showroom/photo-1.jpg", alt="").showroom__img
+            //-         .swiper-slide.showroom__img-box
+            //-             img(src="../assets/imgs/showroom/photo-2.jpg", alt="").showroom__img 
+            //-         .swiper-slide.showroom__img-box
+            //-             img(src="../assets/imgs/showroom/photo-3.jpg", alt="").showroom__img
+            //-     .swiper-pagination
+            //- .appointment
+            //-     h2.appointment__title Записаться на примерку в шоуруме
+            //-     form(action="").appointment__form
+            //-         input(type="text", name="" placeholder="введите имя").appointment__form-name
+            //-         input(type="tel", name="" placeholder="введите телефон").appointment__form-phone
+            //-         input(type="text", name="" placeholder="введите удобное время").appointment__form-date
+            //-         textarea(name="", placeholder="добавить комментарий").appointment__form-comment
+            //-         input(type="submit", value="Записаться").appointment__form-btn
+            //-         .appointment__prompt Поля отмеченные “*” обязательны для заполнения
 
 
     .reviews 
         .container
             h2.reviews__title Наши звёздные клиенты и отзывы
-            .reviews__slider-box
-                .swiper-container.reviews__slider
-                    .swiper-wrapper
-                        mixin reviews-slide(foto_src, name)
-                            img(src=foto_src, alt=name)
-                            .reviews__slider-name=name
-                        .swiper-slide
-                            +reviews-slide("../assets/imgs/reviews/foto-1.jpg", "Альбина Джанабаева")
-                        .swiper-slide
-                            +reviews-slide("../assets/imgs/reviews/foto-2.jpg", "Екатерина Данилова")
-                        .swiper-slide
-                            +reviews-slide("../assets/imgs/reviews/foto-3.jpg", "Вера Брежнева")
-                        .swiper-slide
-                            +reviews-slide("../assets/imgs/reviews/foto-4.jpg", "Екатерина Катова")
-                        .swiper-slide
-                            +reviews-slide("../assets/imgs/reviews/foto-5.jpg", "Ирина Ургант")
-                    .swiper-pagination.reviews__slider-pagination
-                .swiper-button-prev.reviews__slider-prev
-                .swiper-button-next.reviews__slider-next
-
-            .reviews__wrapper
-                mixin comment(avatar, name, city, date, message)
-                    .reviews__comment
-                        .reviews__comment-topbar
-                            .reviews__comment-name=name
-                            .reviews__comment-city=city
-                            .reviews__comment-date=date
-                        .reviews__comment-text=message
-                +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
-                +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
-                +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
-                +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
-            a(href="#").reviews__btn Смотреть всё
+            include components/clients-and-review
 
 
     .instagram

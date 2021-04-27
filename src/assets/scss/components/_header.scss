@@ -168,7 +168,7 @@
 /***   CONNECTION   ***/
 .connection {
   position: fixed;
-  right: 1%;
+  right: 1.75%;
   top: 50%;
   z-index: 20;
   &__wrapper {
@@ -186,12 +186,53 @@
     height: 58px;
     background: #E1C4A9;
     border-radius: 23px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  &__link-post {
+    position: relative;
+    &::after {
+      content: '1';
+      position: absolute;
+      top: -5px;
+      right: -3px;
+      width: 20px;
+      height: 20px;
+      display: block;
+      border-radius: 50%;
+      background-color: $attention;
+      color: $color-white;
+      text-align: center;
+      line-height: 20px;
+      font-family: 'Proxima Nova';
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 167%;
+      letter-spacing: 0.1em;
+    }
   }
   &__link-top {
     @include link-alt();
     transform: rotate(90deg);
     position: relative;
+  }
+  &__link-top {
+    /* решение проблемы (всё дело в абсолютах) перекрывает то что написано сверху*/
+    font-family: 'Lato';
+    display: inline-block;
+    font-size: 13px;
+    line-height: 177%;
+    color: #C0C0C0;
+    position: relative;
+    letter-spacing: 0.55px;
+    padding-right: 60px;
+    cursor: pointer;
+    padding-left: 60px;
+    padding-right: 0;
+    transform: rotate(90deg);
+    position: absolute;
+    letter-spacing: 0.1em;
+    top: -22.2%;
+    left: 4px;
   }
 }
 

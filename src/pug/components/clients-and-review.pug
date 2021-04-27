@@ -1,0 +1,29 @@
+.client-swiper__box
+    .swiper-container.client-swiper
+        .swiper-wrapper
+            mixin reviews-slide(foto_src, name)
+                .swiper-slide.client-swiper__slide
+                    img(src=foto_src, alt=name).client-swiper__img
+                    .client-swiper__name=name
+            +reviews-slide("../assets/imgs/reviews/foto-1.jpg", "Альбина Джанабаева")
+            +reviews-slide("../assets/imgs/reviews/foto-2.jpg", "Екатерина Данилова")
+            +reviews-slide("../assets/imgs/reviews/foto-3.jpg", "Вера Брежнева")
+            +reviews-slide("../assets/imgs/reviews/foto-4.jpg", "Екатерина Катова")
+            +reviews-slide("../assets/imgs/reviews/foto-5.jpg", "Ирина Ургант")
+        .swiper-pagination.client-swiper__pagination
+    .swiper-button-prev.client-swiper__prev
+    .swiper-button-next.client-swiper__next
+
+.text-reviews__wrapper
+    mixin comment(avatar, name, city, date, message)
+        .text-reviews__comment
+            .text-reviews__comment-topbar
+                .text-reviews__comment-name=name
+                .text-reviews__comment-city=city
+                .text-reviews__comment-date=date
+            .text-reviews__comment-text=message
+    +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
+    +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
+    +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
+    +comment('', 'Ирина','г. Москва','26 Марта 2017','Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')
+a(href="#").text-reviews__btn Смотреть всё

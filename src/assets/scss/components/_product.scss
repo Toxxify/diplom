@@ -1,4 +1,5 @@
 /***   PRODUCT   ***/
+
 .product {
   font-family: 'FuturaMediumC';
   font-weight: 500;
@@ -62,16 +63,11 @@
       &::before {
         content: "";
         position: absolute;
-        // border-left: 1px solid $color-light;
-        // top: 30%;
-        // left: 28%;
-        // width: 141%;
-        // height: 141%;
-        // transform: rotate(45deg);
-        background: url(../../imgs/icons/cross-out.svg);
+        /* решение было в том что неверно указан путь */
+        background: url(../imgs/icons/cross-out.svg);
         background-position: center;
         top: 0;
-        height: 0;
+        left: 0;
         width: 100%;
         height: 100%;
       }
@@ -353,29 +349,13 @@
   font-weight: 400;
   color: #C0A78F;
   padding-bottom: 105px;
-  &__block-one {
-    // clip-path: polygon(0 0, 100% 0%, 1620px 100%, 0 100%);
-    // background: linear-gradient(90deg, $bg-page 49%, #252831 49%);
-    position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin-left: 1340px;
-      // transform: translateX(100%);
-      height: 100%;
-      width: calc(100vw - 1380px);
-      background: linear-gradient(to top left, rgba(0, 0, 0, 0) 50%, red 50%);
-    }
-  }
-  &__block-two {
-    // clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-    // background: linear-gradient(90deg, #252831 51%, $bg-page 51%);
-  }
   &__wrapper {
     display: flex;
     font-size: 0;
+  }
+  &__block {
+    /* кастыль который убирает зазор в один пиксель */
+    margin-top: -1px;
   }
   &__inner {
     padding: 65px 45px 65px 41px;
@@ -386,6 +366,26 @@
     max-width: 50%;
     position: relative;
     background: #252831;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      /* решение проблемы (накинул 20 px чтобы не мешал скрол)*/
+      width: calc((100vw - 1360px) / 2);
+      max-width: 300px;
+    }
+    &--one::after {
+      left: 100%;
+      background: linear-gradient(to top left, rgba(0, 0, 0, 0) 50%, #252831 50%);
+
+    }
+    &--two::after {
+      left: 1px;
+      right: 100%;
+      background: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 50%, #252831 50%);
+      transform: translateX(-100%);
+    }
   }
   &__title {
     @include section-title();

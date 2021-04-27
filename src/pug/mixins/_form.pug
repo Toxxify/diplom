@@ -1,0 +1,8 @@
+mixin form()
+  form(action="").appointment__form
+      input(type="text", name="" placeholder="введите имя").appointment__form-name
+      input(type="tel", name="" placeholder="введите телефон").appointment__form-phone
+      input(type="text", name="" placeholder="введите удобное время").appointment__form-date
+      textarea(name="", placeholder="добавить комментарий").appointment__form-comment
+      input(type="submit", value="Записаться").appointment__form-btn
+      .appointment__prompt Поля отмеченные “*” обязательны для заполнения

@@ -1,7 +1,7 @@
 
 function openMenu() {
-  var full = document.getElementById("full");
-  var header = document.getElementById("header");
+  let full = document.getElementById("full");
+  let header = document.getElementById("header");
   full.classList.toggle("hidden")
   header.classList.toggle("active")
 }
@@ -32,71 +32,7 @@ $(function () {
         },
     });
     
-    const showroom = new Swiper('.showroom__slider', {
-        watchOverflow: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-          991: {
-            slidesPerView: 3,
-          },
-          576: {
-            spaceBetween: 10,
-            slidesPerView: 2,
-          },
-          320: {
-            slidesPerView: 1,
-          }
-      }
-    });
-    
-    const reviews = new Swiper('.reviews__slider', {
-        slidesPerView: 5,
-        loop: true,
-        speed: 1000,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        scrollbar: {
-          el: '.swiper-scrollbar',
-        },
-        breakpoints: {
-          1380: {
-            slidesPerView: 5,
-            spaceBetween: 14,
-          },
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            centeredSlides: false,
-          },
-          991: {
-            slidesPerView: 3,
-            spaceBetween: 100,
-          },
-          767: {
-            slidesPerView: 'auto',
-            centeredSlides: true,
-          },
-          576: {
-            slidesPerView: 2,
-            centeredSlides: false,
-          },
-          320: {
-            slidesPerView: 'auto',
-            centeredSlides: true,
-            spaceBetween: 14,
-          }
-        }
-    });
-    
+        
     const instagram = new Swiper('.instagram__slider', {
         slidesPerView: 5,
         spaceBetween: 9,
@@ -173,6 +109,52 @@ $(function () {
           prevEl: '.swiper-button-prev',
         },
       });
+
+        
+
+  new Swiper('.showroom-swiper', {
+      watchOverflow: true,
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+      breakpoints: {
+        991: {
+          spaceBetween: 0,
+          slidesPerView: 3,
+        },
+        576: {
+          spaceBetween: 10,
+          slidesPerView: 2,
+        },
+        320: {
+          slidesPerView: 1,
+        }
+    }
+  });
+  
+  new Swiper('.video-reviews-swiper', {
+    slidesPerView: 4,
+    spaceBetween: 14,
+    watchOverflow: true,
+    slidesPerView: 'auto', /* для слайда в CSS указать width: auto; */
+  });
+  
+  new Swiper('.client-swiper', {
+    slidesPerView: 5,
+    spaceBetween: 14,
+    watchOverflow: true,
+    loop: true,
+    slidesPerView: 'auto', /* для слайда в CSS указать width: auto; */
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 });
 
 
