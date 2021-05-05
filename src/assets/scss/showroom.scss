@@ -1,0 +1,40 @@
+.showroom {
+  padding: 68px 0 50px;
+  background: $bg-page;
+  .showroom-gallery__title {
+    text-align: center;
+    display: block;
+    border-bottom: 0;
+    margin-bottom: 13px;
+  }
+  .showroom-gallery__slider {
+    margin-bottom: 90px;
+  }
+  .showroom-gallery__img {
+
+  }
+  .showroom-form {
+    border: 1px dashed #CBC8C8;
+    padding: 104px 0 41px;
+    margin-bottom: 45px;
+  }
+  
+  .footer {
+    background: $bg-page;
+  }
+}
+
+
+/***   MEDIA QUERIES   ***/
+@media screen and (max-width: 1500px) {}
+@media screen and (max-width: 1380px) {}
+@media screen and (max-width: 1199px) {
+  .showroom {
+    .showroom-gallery__slider {
+      margin-bottom: 20px;
+    }
+  }
+}
+@media screen and (max-width: 991px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 576px) {}

@@ -1,0 +1,198 @@
+.contacts {
+  padding: 70px 0 90px;
+  background: $bg-page;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  &__block {
+    &--map {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      height: 100%;
+    }
+    &--data {
+      padding-top: 20px;
+      padding-left: 65px;
+      margin-bottom: 0px;
+    }
+    &--form {
+      padding-left: 65px;
+    }
+  }
+  &__title {
+    @include section-title();
+    margin-bottom: 35px;
+    &--address {
+      text-align: left;
+    }
+  }
+  &__map {
+    height: 100%;
+    width: 100%;
+  }
+  &__list {
+    margin-bottom: 50px;
+    &--multicolumn {
+      column-count: 2;
+    }
+  }
+  &__item {
+    font-family: 'HelveticaNeueCyr';
+    font-size: 15px;
+    line-height: 147%;
+    letter-spacing: 0.05em;
+    color: #000000;
+    margin-bottom: 20px;
+    &--phone,
+    &--email,
+    &--whatsapp,
+    &--ip,
+    &--registry,
+    &--working-time,
+    &--address {
+      position: relative;
+      padding-left: 35px;
+      &::before {
+        position: absolute;
+        content: '';
+        height: 22px;
+        width: 22px;
+        left: 0;
+        display: block;
+      }
+    }
+    &--phone::before {
+      background: url(../imgs/icons/icon-phone.svg) center no-repeat;
+    }
+    &--email::before {
+      background: url(../imgs/icons/icon-letter.svg) center no-repeat;
+    }
+    &--whatsapp::before {
+      background: url(../imgs/icons/icon-call.svg) center no-repeat;
+    }
+    &--ip::before {
+      background: url(../imgs/icons/icon-document.svg) center no-repeat;
+    }
+    &--registry::before {
+      background: url(../imgs/icons/icon-information.svg) center no-repeat;
+    }
+    &--working-time::before {
+      background: url(../imgs/icons/icon-clock.svg) center no-repeat;
+    }
+    &--address::before {
+      background: url(../imgs/icons/icon-compass.svg) center no-repeat;
+    }
+  }
+  
+  .showroom-form {
+    @include showroom-form--md();
+    &__title {
+      font-size: 21px;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 1380px) {
+  .contacts__list--multicolumn {
+    column-count: 1;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .contacts {
+    &__wrapper {
+      grid-template-columns: 1fr;
+    }
+    &__list--multicolumn {
+      column-count: 2;
+    }
+    &__block {
+      &--map {
+        grid-column: 1;
+        grid-row: 2;
+        height: 700px;
+        margin-bottom: 40px;
+      }
+      &--data {
+        grid-row: 1;
+        padding-left: 0;
+      }
+      &--form {
+        grid-row: 3;
+        padding-left: 0;
+        max-width: 700px;
+        margin: 0 auto;
+      }      
+    }
+    .showroom-form {
+      @include showroom-form();
+      margin-top: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 767px) {
+  .contacts {
+    &__list--multicolumn {
+      column-count: 1;
+    }
+    .showroom-form {
+      @include showroom-form--md();
+      margin-top: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contacts {
+    &__block {
+      &--data {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      &--map {
+        margin: 0 -10px;
+      }
+    }
+    &__title--address {
+      font-family: 'FuturaMediumC';
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 125%;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+    &__item {
+      &--ip,
+      &--registry {
+        display: none;
+      }
+    }
+    .showroom-form {
+      @include showroom-form--sm ();
+      border: 1px solid #DCDCDC;
+      padding: 80px 20px 40px;
+      margin: 20px;
+    }
+    .showroom-form__title {
+      text-align: center;
+      font-size: 20px;
+      width: 260px;
+      margin: 0 auto 20px;
+    }
+    .showroom-form__title::before {
+      top: -66px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 44px;
+      height: 46px;
+      background: url(../imgs/icons/dress-icon.svg);
+    }
+  }
+}

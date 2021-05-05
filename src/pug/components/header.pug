@@ -5,12 +5,7 @@ header.header(id="header")
                 a(href="#" onclick="openMenu()").topbar__borger-link
 
             .topbar__social
-                a.topbar__social-icon(href="#")
-                    +icon('instagram').topbar__social-icon--instagram
-                a.topbar__social-icon(href="#")
-                    +icon('vkontakte').topbar__social-icon--vkontakte
-                a.topbar__social-icon(href="#")
-                    +icon('facebook').topbar__social-icon--facebook
+                include social-list
                         
             .topbar__logo
                 a(href="index.html").topbar__logo-link
@@ -38,11 +33,11 @@ header.header(id="header")
                 li.nav__list-item
                     a(href="#").nav__list-link Покупателям
                 li.nav__list-item
-                    a(href="#").nav__list-link О бренде
+                    a(href="brand.html").nav__list-link О бренде
                 li.nav__list-item
                     a(href="showroom.html").nav__list-link Шоурум
                 li.nav__list-item
-                    a(href="#").nav__list-link Контакты
+                    a(href="contacts.html").nav__list-link Контакты
                     
     .full(id="full").hidden
         .container
@@ -81,7 +76,7 @@ header.header(id="header")
                         +full-list-item('#', 'Акции')
                         +full-list-item('#', 'Возврат')
                         +full-list-item('#', 'Размерная таблица')
-                        +full-list-item('#', 'Примерка')
+                        +full-list-item('trying-on.html', 'Примерка')
                         +full-list-item('#', 'Оптовым покупателям')
                 .full__inner
                     h3.full__title О бренде

@@ -1,0 +1,22 @@
+/***   SHOWROOM FORM   ***/
+.showroom-form {
+  @include showroom-form();
+}
+
+
+/***   MEDIA QUERIES   ***/
+@media screen and (max-width: 1500px) {}
+@media screen and (max-width: 1380px) {}
+@media screen and (max-width: 1199px) {}
+@media screen and (max-width: 991px) {}
+@media screen and (max-width: 767px) {
+  .showroom-form {
+    @include showroom-form--md();
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .showroom-form {
+    @include showroom-form--sm();
+  }
+}

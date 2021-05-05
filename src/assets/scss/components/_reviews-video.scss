@@ -1,12 +1,7 @@
-.reviews {
-  &__title {
-    @include section-title();
-    margin-bottom: 30px;
+.reviews-video {
+  &__slider {
+    margin-bottom: 50px;
   }
-}
-
-.video-reviews-swiper {
-  margin-bottom: 50px;
   &__slide {
     width: auto;
   }

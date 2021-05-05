@@ -1,0 +1,34 @@
+extends layout/layout
+
+block vars
+  - var pageTitle = 'Вторая страница'
+  - var pageBodyClass = ''
+  - var pageHeaderClass = ''
+
+block content 
+  .contacts 
+    .container
+      h2.contacts__title Контакты
+      .contacts__wrapper
+
+        .contacts__block.contacts__block--map
+          iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A81fdc4e2f6baf3d9e81059cf43bf5c90d8b63d88720fa221c237302fb0e20385&amp;source=constructor" frameborder="0").contacts__map
+
+        .contacts__block.contacts__block--data
+          ul.contacts__list.contacts__list--multicolumn
+            li.contacts__item.contacts__item--phone
+              a(href="tel:+84951501477") ТЕЛ.: 8 (495) 150-14-77
+            li.contacts__item.contacts__item--email
+              a(href="mailto:info@eleanboutique.ru") EMAIL: info@eleanboutique.ru
+            li.contacts__item.contacts__item--whatsapp
+              a(href="tel:+79777282738") WHATSAPP: +7 (977) 728-27-38
+            li.contacts__item.contacts__item--ip ИП ПИСАРЕВА Е.М.
+            li.contacts__item.contacts__item--registry ОГРНИП 307610509600011
+
+          h2.contacts__title.contacts__title--address Адрес и режим работы
+          ul.contacts__list
+            li.contacts__item.contacts__item--working-time с 9.00 до 21.00 шоурум: с 12.00 до 21.00
+            li.contacts__item.contacts__item--address АДРЕС: г. Москва, Новая площадь 8, стр.2, 5 этаж
+        
+        .contacts__block.contacts__block--form
+          include components/showroom-form

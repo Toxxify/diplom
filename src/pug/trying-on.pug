@@ -1,0 +1,83 @@
+extends layout/layout
+
+block vars
+  - var pageTitle = 'Вторая страница'
+  - var pageBodyClass = ''
+  - var pageFooterClass = 'footer--trying-on'
+
+block content
+  .trying-on
+    .container
+      h2.trying-on__title Примерка
+      .trying-on__wrapper
+        .trying-on__block
+          h3.trying-on__subtitle По москве
+          ul.trying-on__list 
+            li.trying-on__item Вы можете примерить и подобрать желанный образ изделий в нашем шоуруме.
+            li.trying-on__item В удобное место и время можно заказать примерку со стилистом бренда, подобрать желанный образ и получить индивидуальные рекомендации. Примерка может занимать до 2-х часов.
+            li.trying-on__item Также можно заказать доставку с возможностью примерки перед покупкой, в течение 15-ти минут.
+
+        .trying-on__block
+          h3.trying-on__subtitle По России
+          ul.trying-on__list 
+            li.trying-on__item Заказы по России отправляются по полной предоплате на сайте картой любого банка, без комиссии.
+            li.trying-on__item Можно сделать доставку с возможностью примерки в течение 15-ти минут, об этом нужно сообщить менеджеру при подтверждении заказа. Если изделие Вам не подходит, Вы можете сразу же его отдать курьеру. Затем связаться с нами по телефону 8 495 150 14 77, чтобы оформить обмен или возврат. Подробнее здесь (ссылка на страницу обмен и возврат)
+
+        .trying-on__block.trying-on__block--bg
+          h3.trying-on__subtitle.trying-on__subtitle--block Таблица размеров
+          .table
+            .table-row.table-row--header
+              .table-header Размеры
+              .table-header Грудь
+              .table-header Талия
+              .table-header Бедра
+              .table-header Рукав
+            .table-row
+              .table-date 40
+                span XS
+              .table-date 80
+              .table-date 60
+              .table-date 88
+              .table-date 40
+            .table-row
+              .table-date 42
+                span S
+              .table-date 84
+              .table-date 64
+              .table-date 92
+              .table-date 40
+            .table-row
+              .table-date 44
+                span M
+              .table-date 88
+              .table-date 68
+              .table-date 96
+              .table-date 40
+            .table-row
+              .table-date 46
+                span L
+              .table-date 92
+              .table-date 72
+              .table-date 100
+              .table-date 40
+            .table-row
+              .table-date 48
+                span XL
+              .table-date 96
+              .table-date 76
+              .table-date 104
+              .table-date 41
+            .table-row
+              .table-date 50
+                span 2XL
+              .table-date 100
+              .table-date 80
+              .table-date 108
+              .table-date 41
+
+        .trying-on__block.trying-on__block--bg
+          h3.trying-on__subtitle Видео примерок
+          include components/reviews-video
+
+        .trying-on__block.trying-on__block--bg
+          include components/showroom-form

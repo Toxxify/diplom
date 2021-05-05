@@ -1,0 +1,28 @@
+.social-link {
+  margin-right: 25px;
+  fill: #2F2F2F;
+  font-size: 0;
+}
+.social-icon {
+  &--instagram {
+    height: 18px;
+    width: 18px;
+    &:hover {
+      fill: #3f729b;
+    }
+  }
+  &--vkontakte {
+    width: 20px;
+    height: 12px;
+    &:hover {
+      fill: #5d84ae;
+    }
+  }
+  &--facebook {
+    width: 8px;
+    height: 17px;
+    &:hover {
+      fill: #3b5998;
+    }
+  }
+}

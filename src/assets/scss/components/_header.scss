@@ -49,23 +49,6 @@
     align-items: center;
     font-size: 0;
   }
-  &__social-icon {
-    margin-right: 25px;
-      fill: #2F2F2F;
-      font-size: 0;
-    &--instagram {
-      height: 18px;
-      width: 18px;
-    }
-    &--vkontakte {
-      width: 20px;
-      height: 12px;
-    }
-    &--facebook {
-      width: 8px;
-      height: 17px;
-    }
-  }
   &__logo {
     height: auto;
     margin: 0 auto;
@@ -134,8 +117,11 @@
   }
   &__list-link {
     text-transform: uppercase;
-    font-family: 'Futura Bk BT';
+    font-family: 'FuturaMediumC';
     font-size: 14px;
+    &:hover {
+      color: darken($color: $main, $amount: 30%);
+    }
   }
 }
 

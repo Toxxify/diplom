@@ -1,0 +1,56 @@
+/***   SHOWROOM   ***/
+.showroom-gallery {
+  text-align: center;
+  &__title {
+    @include section-title();
+    display: inline-block;
+    border-bottom: 1px solid $main;
+    margin-bottom: 13px;
+    padding-bottom: 2px;
+  }
+}
+.showroom-gallery {
+  &__slider {
+    padding: 21px 0;
+    margin-bottom: 50px;
+  }
+  &__slide {
+    height: 522px;
+    &:first-child {
+      margin-top: 21px;
+    }
+    &:last-child {
+      margin-top: -21px;
+    }
+  }
+  &__img {
+    width: 100%;
+  }
+  &__pagination {
+    position: relative;
+    bottom: 0px;
+  }
+  & .swiper-pagination-bullet {
+    background: #D9DBE1;
+  }
+}
+
+
+
+
+/***   MEDIA QUERIES   ***/
+@media screen and (max-width: 1500px) {}
+@media screen and (max-width: 1380px) {}
+@media screen and (max-width: 1199px) {}
+@media screen and (max-width: 991px) {
+  .showroom-gallery {
+    &__slide {
+      &:first-child,
+      &:last-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 576px) {}

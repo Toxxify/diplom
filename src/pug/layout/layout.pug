@@ -11,7 +11,8 @@ include ../utilities/global_mixin
 block vars
     - var pageTitle
     - var pageBodyClass
-    - var pageHeaderClass
+    - var pageMainClass
+    - var pageFooterClass
 
 doctype html
 html(lang='ru-RU')
@@ -41,10 +42,12 @@ html(lang='ru-RU')
         .wrapper
             //- подключаем шапку в общий шаблон всех страниц
             include ../components/header
-            .main
-                block content
-            //- подключаем футер в общий шаблон всех страниц
-            include ../components/footer
+            .main-foter
+                .main(class=pageMainClass)
+                    block content
+                //- подключаем футер в общий шаблон всех страниц
+                footer.footer(class=pageFooterClass)
+                    include ../components/footer
         //- Модальные окна
         //- include ../components/modals
            

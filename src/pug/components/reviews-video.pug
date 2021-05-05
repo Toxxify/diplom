@@ -1,0 +1,14 @@
+.swiper-container.reviews-video__slider
+  .swiper-wrapper
+
+    mixin reviews-video-slide(src, name)
+      .swiper-slide.reviews-video__slide
+        .reviews-video__video 
+          img(src=src, alt=name).reviews-video__preview
+        .reviews-video__name=name
+
+    +reviews-video-slide("../assets/imgs/reviews/video-preview-1.jpg", "Образ со смокингом")
+    +reviews-video-slide("../assets/imgs/reviews/video-preview-2.jpg", "Образ с красным смокингом и черным топом")
+    +reviews-video-slide("../assets/imgs/reviews/video-preview-3.jpg", "Синий костюм с брюками")
+    +reviews-video-slide("../assets/imgs/reviews/video-preview-4.jpg", "Образ с костюмом")
+  .swiper-pagination.reviews-video__pagination

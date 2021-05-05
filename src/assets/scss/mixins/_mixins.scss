@@ -11,6 +11,17 @@
   text-transform: uppercase;
 }
 
+
+@mixin block-title() {
+  font-family: 'FuturaMediumC';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 111%;
+  letter-spacing: 0.05em;
+  color: $color-dark;
+  text-transform: uppercase;
+}
+
 @mixin link() {
   font-family: 'Lato';
   display: inline-block;
@@ -107,4 +118,161 @@
   @include logo-description();
   color: #191919;
   line-height: 10px;
+}
+
+@mixin blackout() {
+  font-size: 0;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, .25);
+  }
+}
+
+@mixin showroom-form() {
+  &__title {
+    @include section-title();
+    position: relative;
+    margin-bottom: 37px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -66px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 44px;
+      height: 50px;
+      background: url(../imgs/icons/dress-icon.svg) no-repeat;
+    }
+  }
+  &__form {
+    max-width: 898px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__name,
+  &__phone,
+  &__date {
+    font-family: 'FuturaMediumC';
+    flex: 0 0 calc(100%/3);
+    height: 60px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 0;
+    margin-bottom: 20px;
+    padding: 0 16px;
+    text-transform: uppercase;
+  }
+  &__name {
+    border-left: 1px solid #000;
+  }
+  &__comment {
+    font-family: 'FuturaMediumC';
+    flex: 0 0 calc(100% - 180px);
+    height: 100px;
+    text-transform: uppercase;
+    padding: 21px 18px;
+    resize: none;
+    margin-bottom: 17px;
+  }
+  &__btn {
+    width: 180px;
+    height: 60px;
+    font-family: 'FuturaMediumC';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 192%;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #000000;
+    text-transform: uppercase;
+    background: #fff;
+    border: 1px solid #000;
+    border-left: 0;
+    margin-bottom: 20px;
+  }
+  &__prompt {
+    font-family: 'FuturaMediumC';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    color: #9D9DAD;
+    text-align: left;
+  }
+}
+
+@mixin showroom-form--md() {
+  padding: 0;
+  &__title {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 20px;
+    &::before {
+      top: -10px;
+      right: 18px;
+      width: 31px;
+      height: 34px;
+      background-size: 100%;
+    }
+  }
+  &__name,
+  &__phone {
+    flex: 0 0 50%;
+  }
+  &__date {
+    flex: 0 0 100%;
+    border-left: 1px solid #000;
+  }
+  &__comment {
+    flex: 0 0 calc(100% - 180px);
+    height: 130px;
+  }
+  &__btn {
+    margin-left: auto;
+    border-top: 1px solid #000;
+  }
+  &__prompt {
+    display: none;
+  }
+}
+
+@mixin showroom-form--sm() {
+  &__title {
+    @include section-title();
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 125%;
+    &::before {
+      top: -66px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 44px;
+      height: 50px;
+    }
+  }
+  &__name,
+  &__phone,
+  &__date {
+    flex: 0 0 100%;
+    border-left: 1px solid #000;
+  }
+  &__comment {
+    flex: 0 0 100%;
+    height: 120px;
+    margin-bottom: 0;
+  }
+  &__btn {
+    margin-left: auto;
+    border-left: 1px solid #000;
+    border-top: none; 
+  }
 }

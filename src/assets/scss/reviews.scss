@@ -1,0 +1,8 @@
+.reviews {
+  background: $bg-page;
+  &__title {
+    @include section-title();
+    margin-bottom: 30px;
+  }
+}
+

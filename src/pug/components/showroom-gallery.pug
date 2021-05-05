@@ -1,0 +1,10 @@
+h2.showroom-gallery__title Наш Шоурум
+.swiper-container.showroom-gallery__slider
+  .swiper-wrapper
+    mixin showroom-swiper-slide(img_src, desc)
+      .swiper-slide.showroom-gallery__slide
+        img(src=img_src, alt=desc).showroom-gallery__img
+    +showroom-swiper-slide("../assets/imgs/showroom/photo-1.jpg", "фотография шоурума")
+    +showroom-swiper-slide("../assets/imgs/showroom/photo-2.jpg", "фотография шоурума")
+    +showroom-swiper-slide("../assets/imgs/showroom/photo-3.jpg", "фотография шоурума")
+  .swiper-pagination.showroom-gallery__pagination

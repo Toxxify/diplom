@@ -10,27 +10,7 @@ function openMenu() {
 
 $(function () {
     'use strict';
-    // Application.init();
 
-    const big = new Swiper('.big-slider', {
-        loop: true,
-        speed: 1000,
-        autoplay: {
-          delay: 6000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        scrollbar: {
-          el: '.swiper-scrollbar',
-        },
-    });
     
         
     const instagram = new Swiper('.instagram__slider', {
@@ -112,7 +92,22 @@ $(function () {
 
         
 
-  new Swiper('.showroom-swiper', {
+
+  new Swiper('.big-slider', {
+    loop: true,
+    speed: 1000,
+    effect: 'fade',
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+  });
+  
+  new Swiper('.showroom-gallery__slider', {
       watchOverflow: true,
       pagination: {
           el: '.swiper-pagination',
@@ -133,11 +128,15 @@ $(function () {
     }
   });
   
-  new Swiper('.video-reviews-swiper', {
+  new Swiper('.reviews-video__slider', {
     slidesPerView: 4,
     spaceBetween: 14,
     watchOverflow: true,
     slidesPerView: 'auto', /* для слайда в CSS указать width: auto; */
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   });
   
   new Swiper('.client-swiper', {
@@ -147,8 +146,8 @@ $(function () {
     loop: true,
     slidesPerView: 'auto', /* для слайда в CSS указать width: auto; */
     pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+      el: '.swiper-pagination',
+      clickable: true,
     },
     navigation: {
       nextEl: '.swiper-button-next',

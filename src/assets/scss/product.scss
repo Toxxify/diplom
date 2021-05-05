@@ -5,9 +5,10 @@
   font-weight: 500;
   padding: 50px 0 86px;
   color: $color-dark;
+  background: $bg-page;
   @mixin product-title() {
     font-size: 15px;
-    line-height:140%;
+    line-height: 140%;
     text-transform: uppercase;
   }
   &__wrapper {

@@ -3,6 +3,7 @@ extends layout/layout
 block vars
     - var pageTitle = 'Главная страница'
     - var pageBodyClass = 'homepage'
+    - var pageMainClass = 'main-index'
     - var pageHeaderClass = ''
 
 block content
@@ -49,28 +50,10 @@ block content
             .about-brand__text
                 a(href="#").about-brand__btn Подробнее
 
-    .showroom
+    .showroom-section
         .container
-            include components/our-showroom
-            //- h2.showroom__title Наш Шоурум
-            //- .swiper-container.showroom__slider
-            //-     .swiper-wrapper
-            //-         .swiper-slide.showroom__img-box
-            //-             img(src="../assets/imgs/showroom/photo-1.jpg", alt="").showroom__img
-            //-         .swiper-slide.showroom__img-box
-            //-             img(src="../assets/imgs/showroom/photo-2.jpg", alt="").showroom__img 
-            //-         .swiper-slide.showroom__img-box
-            //-             img(src="../assets/imgs/showroom/photo-3.jpg", alt="").showroom__img
-            //-     .swiper-pagination
-            //- .appointment
-            //-     h2.appointment__title Записаться на примерку в шоуруме
-            //-     form(action="").appointment__form
-            //-         input(type="text", name="" placeholder="введите имя").appointment__form-name
-            //-         input(type="tel", name="" placeholder="введите телефон").appointment__form-phone
-            //-         input(type="text", name="" placeholder="введите удобное время").appointment__form-date
-            //-         textarea(name="", placeholder="добавить комментарий").appointment__form-comment
-            //-         input(type="submit", value="Записаться").appointment__form-btn
-            //-         .appointment__prompt Поля отмеченные “*” обязательны для заполнения
+            include components/showroom-gallery
+            include components/showroom-form
 
 
     .reviews 
