@@ -1,47 +1,56 @@
+include contact-details
+
 .container
     mixin full-list-item(link_href, item)
         li.footer-full__list-item
             a(href=link_href).footer-full__list-link=item
     .footer-full__wrapper
-        .footer-full__tab
-            input(type="checkbox" id="tab-1" name="tab-group")
-            label(for="tab-1").footer-full__label Коллекции
-            ul.footer-full__list
-                +full-list-item('#', 'Осень-зима 20-21')
-                +full-list-item('#', 'Вечерние комплекты')
-                +full-list-item('#', 'Предзаказ')
-                +full-list-item('#', 'Свадьба и выпускной')
-        .footer-full__tab
-            input(type="checkbox" id="tab-2" name="tab-group")
-            label(for="tab-2").footer-full__label Шоурум
-            ul.footer-full__list
-                +full-list-item('#', 'раз')
-                +full-list-item('#', 'два')
-                +full-list-item('#', 'три')
-        .footer-full__tab
-            input(type="checkbox" id="tab-3" name="tab-group")
-            label(for="tab-3").footer-full__label Покупателям
-            ul.footer-full__list
-                +full-list-item('#', 'Доставка')
-                +full-list-item('#', 'Акции')
-                +full-list-item('#', 'Возврат')
-                +full-list-item('#', 'Размерная таблица')
-                +full-list-item('#', 'Примерка')
-                +full-list-item('#', 'Оптовым покупателям')
-        .footer-full__tab
-            input(type="checkbox" id="tab-4" name="tab-group")
-            label(for="tab-4").footer-full__label Компания
-            ul.footer-full__list
-                +full-list-item('#', 'раз')
-                +full-list-item('#', 'два')
-                +full-list-item('#', 'три')
-        .footer-full__tab
-            input(type="checkbox" id="tab-5" name="tab-group")
-            label(for="tab-5").footer-full__label Отзывы
-            ul.footer-full__list
-                +full-list-item('#', 'раз')
-                +full-list-item('#', 'два')
-                +full-list-item('#', 'три')
+
+        //- .footer-full__tab
+        //-     input(type="checkbox" id="tab-1" name="tab-group")
+        //-     label(for="tab-1").footer-full__label Коллекции
+        //-     ul.footer-full__list
+        //-         +full-list-item('#', 'Осень-зима 20-21')
+        //-         +full-list-item('#', 'Вечерние комплекты')
+        //-         +full-list-item('#', 'Предзаказ')
+        //-         +full-list-item('#', 'Свадьба и выпускной')
+        //- .footer-full__tab
+
+        //-     input(type="checkbox" id="tab-2" name="tab-group")
+        //-     label(for="tab-2").footer-full__label Шоурум
+        //-     ul.footer-full__list
+        //-         +full-list-item('#', 'раз')
+        //-         +full-list-item('#', 'два')
+        //-         +full-list-item('#', 'три')
+        //- .footer-full__tab
+
+        //-     input(type="checkbox" id="tab-3" name="tab-group")
+        //-     label(for="tab-3").footer-full__label Покупателям
+        //-     ul.footer-full__list
+        //-         +full-list-item('#', 'Доставка')
+        //-         +full-list-item('#', 'Акции')
+        //-         +full-list-item('#', 'Возврат')
+        //-         +full-list-item('#', 'Размерная таблица')
+        //-         +full-list-item('#', 'Примерка')
+        //-         +full-list-item('#', 'Оптовым покупателям')
+        //- .footer-full__tab
+
+        //-     input(type="checkbox" id="tab-4" name="tab-group")
+        //-     label(for="tab-4").footer-full__label Компания
+        //-     ul.footer-full__list
+        //-         +full-list-item('#', 'раз')
+        //-         +full-list-item('#', 'два')
+        //-         +full-list-item('#', 'три')
+        //- .footer-full__tab
+
+        //-     input(type="checkbox" id="tab-5" name="tab-group")
+        //-     label(for="tab-5").footer-full__label Отзывы
+        //-     ul.footer-full__list
+        //-         +full-list-item('#', 'раз')
+        //-         +full-list-item('#', 'два')
+        //-         +full-list-item('#', 'три')
+        include full-menu
+
         .footer-full__tab
             input(type="checkbox" id="tab-6" name="tab-group")
             label(for="tab-6").footer-full__label Контакты
@@ -53,21 +62,22 @@
                 li.footer-full__list-item
                     a(href="mailto:http://info@eleanboutique.ru") EMAIL: info@eleanboutique.ru
                 li.footer-full__list-item г. Москва, Новая площадь 8, стр.2, 5 этаж
-        .footer-ful__form
-            .footer-full__label Подписаться на новости
-            form(action="").footer__form
+        .footer-full__tab
+            input(type="checkbox" id="tab-7" name="tab-group")
+            label(for="tab-7").footer-full__label Подписаться на новости
+            form(action="").footer-full__form.footer-full__list
                 .step-one
-                    input(type="email", name="" placeholder="E-MAIL").footer__form-email
-                    a(href="") 
+                    input(type="email", name="", placeholder="Введите адрес электронной почты").footer-full__form-email
+                    a(href="").footer-full__next
                 .step-two
-                    input(type="text", name="" placeholder="ИМЯ").footer__form-name
-                    a(href="") 
+                    input(type="text", name="", placeholder="ИМЯ").footer-full__form-name
+                    a(href="").footer-full__next
                 .step-three
-                    input(type="checkbox", name="", id="footer-confidentiality").footer__form-checkbox
-                    label(for="footer-confidentiality").footer__form-label
+                    input(type="checkbox", name="", id="footer-confidentiality--sm").footer-full__form-checkbox
+                    label(for="footer-confidentiality").footer-full__form-label
                         span Я согласен 
                         | с политикой конфиденциальности
-                    button(type="submit").footer__form-btn Подписаться
+                    button(type="submit").footer-full__form-btn Подписаться
 
 
 
@@ -79,11 +89,11 @@
                 +icon('logo').footer__logo
 
         .footer__group-data
-            a(href="tel:+8 (495) 150-14-77").footer__data-phone ТЕЛ.: 8 (495) 150-14-77
-            a(href="tel:+7 (977) 728-27-38").footer__data-whatsapp WHATSAPP: +7 (977) 728-27-38
+            +contact-phone()
+            +contact-whatsapp()
             
         .footer__group-email
-            a(href="mailto:http://info@eleanboutique.ru") EMAIL: info@eleanboutique.ru
+            +contact-email()
 
         .footer__group-nav
             .footer__nav
@@ -103,14 +113,14 @@
 
         .footer__group-address
             .footer__address-title Адрес
-            .footer__address-text г. Москва, Новая площадь 8, стр.2, 5 этаж
+            +contact-address()
 
         .footer__group-mode
             .footer__mode-title Режим работы
-            .footer__mode-text с 9.00 до 21.00 шоурум: с 12.00 до 21.00
+            +working-hours()
 
         .footer__group-social
-                include social-list
+            include social-list
 
         .footer__group-form
             form(action="").footer__form

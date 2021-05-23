@@ -1,10 +1,9 @@
 extends layout/layout
 
 block vars
-    - var pageTitle = 'Главная страница'
+    - var pageTitle = 'Главная'
     - var pageBodyClass = 'homepage'
     - var pageMainClass = 'main-index'
-    - var pageHeaderClass = ''
 
 block content
     .swiper-container.big-slider
@@ -56,9 +55,9 @@ block content
             include components/showroom-form
 
 
-    .reviews 
+    .reviews-section 
         .container
-            h2.reviews__title Наши звёздные клиенты и отзывы
+            h2.reviews-section__title Наши звёздные клиенты и отзывы
             include components/clients-and-review
 
 
@@ -67,25 +66,21 @@ block content
             h2.instagram__title Мы в instagram
             .instagram__wrapper
                 mixin instagram(foto_src, avatar_src, name, description)
-                    .instagram__cell
-                        img(src=foto_src, alt="Фотография").instagram__cell-img
-                        .instagram__cell-downbar
-                            img(src=avatar_src, alt=name).instagram__cell-avatar 
-                            .instagram__cell-group
-                                .instagram__cell-name=name
-                                a(href="#").instagram__cell-link Подписаться
-                                .instagram__cell-description=description
+                    .swiper-slide.instagram__slider-slide
+                        .instagram__cell
+                            img(src=foto_src, alt="Фотография").instagram__cell-img
+                            .instagram__cell-downbar
+                                img(src=avatar_src, alt=name).instagram__cell-avatar 
+                                .instagram__cell-group
+                                    .instagram__cell-name=name
+                                    a(href="#").instagram__cell-link Подписаться
+                                    .instagram__cell-description=description
                                 
             .swiper-container.instagram__slider
                 .swiper-wrapper
-                    .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto--1.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )                    
-                    .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto--2.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
-                    .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto--3.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
-                    .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto--4.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
-                    .swiper-slide 
-                        +instagram('../assets/imgs/instagram/foto--5.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania' )
+                    +instagram('../assets/imgs/instagram/foto--1.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania')
+                    +instagram('../assets/imgs/instagram/foto--2.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania')
+                    +instagram('../assets/imgs/instagram/foto--3.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania')
+                    +instagram('../assets/imgs/instagram/foto--4.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania')
+                    +instagram('../assets/imgs/instagram/foto--5.jpg', '../assets/imgs/instagram/avatar.jpg','elean_official', 'Кофемания / Coffeemania')
                 .swiper-pagination

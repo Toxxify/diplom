@@ -1,8 +1,61 @@
 extends layout/layout
 
 block vars
-    - var pageTitle = 'Вторая страница'
-    - var pageBodyClass = ''
-    - var pageHeaderClass = ''
+  - var pageTitle = 'Каталог'
+  - var pageBodyClass = ''
+  - var pageHeaderClass = ''
 
 block content
+  .catalog 
+    .container
+      h2.catalog__title Смокинги
+      .catalog__wrapper 
+        .catalog__categories
+          h3.catalog__subtitle Категории
+          ul.catalog__list
+            mixin catalog-item(link, name, active)
+              li.catalog__list-item(class=active)
+                a(href=link).catalog__list-link=name
+            +catalog-item('#', 'Новинки', '')
+            +catalog-item('#', 'Юбки', '')
+            +catalog-item('#', 'Смокинг', 'active')
+            +catalog-item('#', 'Костюмы', '')
+            +catalog-item('#', 'Аксессуары', '')
+            +catalog-item('#', 'Брюки', '')
+            +catalog-item('#', 'Блузы', '')
+            +catalog-item('#', 'Платья', '')
+            +catalog-item('#', 'Топы и жилеты', '')
+          h3.catalog__subtitle Колекции
+          ul.catalog__list
+            +catalog-item('#', 'Осень-зима 20-21')
+            +catalog-item('#', 'Вечерние комплекты')
+            +catalog-item('#', 'Предзаказ')
+            +catalog-item('#', 'Свадьба и выпускной')
+                
+        .catalog__gallery
+          include components/product-card
+          +product-card('../assets/imgs/gallery/foto-21.jpg', 'Жакет-смокинг с лацканами', '23 900 ₽', 'Подчеркнет линию талии', 'qwer111')
+          +product-card('../assets/imgs/gallery/foto-22.jpg', 'Классический комплект с смокингом и жилетом', '65 300 ₽', 'Мировая классика', 'qwer112')
+          +product-card('../assets/imgs/gallery/foto-11.jpg', 'Белый жакет смокинг', '26 900 ₽', 'Подчеркнет линию талии', 'qwer113')
+          +product-card('../assets/imgs/gallery/foto-23.jpg', 'Жакет-смокинг бархатный', '29 500 ₽', 'Подчеркнет линию талии', 'qwer114')
+          +product-card('../assets/imgs/gallery/foto-4.jpg', 'Жакет-смокинг прямой', '21 900 ₽', 'Подчеркнет линию талии', 'qwer115')
+          +product-card('../assets/imgs/gallery/foto-24.jpg', 'Белый смокинг с брюками-клёш', '40 400 ₽', 'Подчеркнет линию талии', 'qwer116')
+          +product-card('../assets/imgs/gallery/foto-25.jpg', 'Жакет - смокинг приталенный синий', '26 900 ₽', 'Подчеркнет линию талии', 'qwer117')
+          +product-card('../assets/imgs/gallery/foto-111.jpg', 'Платье-смокинг длинное', '24 900 ₽', 'Подчеркнет линию талии', 'qwer118')
+          +product-card('../assets/imgs/gallery/foto-112.jpg', 'Белый смокинг и брюки с лампасами', '41 400 ₽', 'Подчеркнет линию талии', 'qwer119')
+          +product-card('../assets/imgs/gallery/foto-113.jpg', 'Классический комплект с бабочкой', '51 800 ₽', 'Подчеркнет линию талии', 'qwer120')
+          +product-card('../assets/imgs/gallery/foto-26.jpg', 'Жакет-смокинг', '21 900 ₽', 'Подчеркнет линию талии', 'qwer121')
+          +product-card('../assets/imgs/gallery/foto-27.jpg', 'Платье-смокинг молочное', '26 900 ₽', 'Подчеркнет линию талии', 'qwer122')
+          +product-card('../assets/imgs/gallery/foto-28.jpg', 'Топ с кружевом черный', '6000 ₽', 'Подчеркнет линию талии', 'qwer123')
+          +product-card('../assets/imgs/gallery/foto-8.jpg', 'Юбка - карандаш', '10 700 ₽', 'Подчеркнет линию талии', 'qwer124')
+          +product-card('../assets/imgs/gallery/foto-114.jpg', 'Блуза с баской', '12 900 ₽', 'Подчеркнет линию талии', 'qwer125')
+          +product-card('../assets/imgs/gallery/foto-29.jpg', 'Брюки зауженные', '10 700 ₽', 'Подчеркнет линию талии', 'qwer126')
+          +product-card('../assets/imgs/gallery/foto-30.jpg', 'Жакет-смокинг с лацканами', '13 500 ₽', 'Подчеркнет линию талии', 'qwer127')
+          +product-card('../assets/imgs/gallery/foto-9.jpg', 'Красный приталенный смокинг', '26 900 ₽', 'Подчеркнет линию талии', 'qwer128')
+          +product-card('../assets/imgs/gallery/foto-31.jpg', 'Брюки клёш', '10 700 ₽', 'Подчеркнет линию талии', 'qwer129')
+          +product-card('../assets/imgs/gallery/foto-32.jpg', 'Костюм бархатный', '49 000 ₽', 'Подчеркнет линию талии', 'qwer130')
+          +product-card('../assets/imgs/gallery/foto-24.jpg', 'Жакет-смокинг с лацканами', '23 900 ₽', 'Подчеркнет линию талии', 'qwer131')
+          +product-card('../assets/imgs/gallery/foto-25.jpg', 'Жакет-смокинг с лацканами', '23 900 ₽', 'Подчеркнет линию талии', 'qwer132')
+      .catalog__loading
+        a(href="##").catalog__loading-btn
+

@@ -5,18 +5,45 @@
   background: $bg-white;
   color: $color-dark;
   padding: 25px 0 13px;
+  position: sticky;
+  top: 0;
+  z-index: 9;
   &.active {
     background: #171717;
     color: $bg-white;
     height: 100vh;
-    & .topbar__social-icon,
-    & .topbar__logo-icon,
-    & .topbar__follow-icon{
+  overflow: auto;
+    & .social-icon {
       fill: #ffffff;
+      &--instagram:hover { fill: #3f729b; }
+      &--vkontakte:hover { fill: #5d84ae; }
+      &--facebook:hover { fill: #3b5998; }
     }
     & .topbar__phone-link {
-      color: #ffffff;
+      color: #ffffff;  
+      &:hover { color: $main; }
     }
+    .topbar__favorites-link::after {
+      color: #ffffff;  
+    }
+    & .topbar__favorites-icon {
+      fill: #ffffff;
+      &:hover { fill: $main; }
+    }
+    & .topbar__basket-icon {
+      path {
+        stroke: #ffffff;
+      }
+      .icon-cart-fill {
+        fill: transparent;
+      }
+      &:hover {
+        path {
+          stroke: #E1C4A9;
+        }
+      } 
+    }
+    
     & .topbar__logo-link {
       fill: #ffffff;
       &::after {
@@ -27,6 +54,12 @@
       background: url(../imgs/icons/burger-close.svg);
       background-repeat: no-repeat;
       background-position: center;
+    }
+  }
+  & .full__list-link {
+    transition: color .2s;
+    &:hover {
+      color: $main;
     }
   }
 }
@@ -77,9 +110,10 @@
     font-size: 14px;
     line-height: 18px;
     color: #222222;
+    @include hover-text();
   }
   &__follow {  }
-  &__follow-link {
+  &__favorites-link {
     margin: 0 9px 0 15px;
     position: relative;
     height: 26px;
@@ -97,12 +131,33 @@
       color: #333333;
     }
   }
-  &__follow-icon {
+  &__favorites-icon {
     width: 23px;
     height: 20px;
+    &:hover {
+      fill: $main;
+    }
+  }
+  &__basket-icon {
+    height: 22px;
+    width: 20px;
+    &:hover {
+      path {
+        stroke: #E1C4A9;
+      }
+      .icon-cart-fill {
+        fill: #FFF;
+      }
+    } 
   }
 }
 
+#icon-cart path {
+  fill: red;
+}
+.icon-cart-fill:hover {
+  fill: red;
+}
 
 /***   NAV   ***/
 .nav {
@@ -173,6 +228,11 @@
     background: #E1C4A9;
     border-radius: 23px;
     margin-bottom: 8px;
+    transition: all .6s;
+    &:hover {
+      border-radius: 50%;
+      background: darken(#E1C4A9, 5%);
+    }
   }
   &__link-post {
     position: relative;
@@ -230,7 +290,7 @@
   &__wrapper {
     flex-wrap: wrap;
     justify-content: start;
-    padding-top: 84px;
+    padding: 80px 0;
   }
   &__inner {
     flex: 0 0 33%;
@@ -302,5 +362,11 @@
     &__link-top {
       bottom: -30px;
     }
+  }
+  .header {
+  }
+  .full__wrapper {
+    padding: 0;
+    display: block;
   }
 }

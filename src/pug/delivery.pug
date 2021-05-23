@@ -8,7 +8,7 @@ block vars
 block content
   .delivery 
     .container 
-      .delivery__title Доставка
+      h2.delivery__title Доставка
       .delivery__action
         .delivery__action-item Обмен
         .delivery__action-item Возврат
@@ -17,4 +17,19 @@ block content
         .delivery__block 
           img(src="", alt="").delivery__img
         .delivery__block 
-        h3.delivery__subtitle Виды доставки
+          h2.delivery__subtitle Виды доставки
+          .delivery__text 
+            p.delivery__paragraph Механизм нашей работы продуман до мелочей. Вам не придется беспокоиться и долго ждать.
+            p.delivery__paragraph Служба доставки работает без выходных с 8 утра до 1 часа ночи. Мы осуществляем доставку по Москве и ближайшему Подмосковью.
+            p.delivery__paragraph Оформляя заказ, просто выберите подходящий вам временной интервал и мы доставим ваши продукты точно в указанное время.
+            p.delivery__paragraph Срок доставки с момента подтверждения заказа — 1-3 дня.
+          .delivery__text
+            p.delivery__paragraph Доставка во все регионы осуществляется по 100% предоплате на нашем сайте любой картой, курьерской службой до двери. 
+            p.delivery__paragraph При покупке на сумму от 15 000₽ доставка в подарок, в остальных случаях 500₽, за границу 1 200₽.
+      h2.delivery__subtitle Вопросы и ответы
+        .questions
+          mixin questions-item(questions, answer)
+            .questions__item
+              .questions__question=questions
+              .questions__answer=answer
+          +questions-item('Есть ли доставка заграницу ?', 'Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.')

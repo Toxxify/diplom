@@ -1,0 +1,3 @@
+mixin item-size(item_size, item_id, in_stock)
+  input(type="radio", name="qwer" id=item_id).size-selection__item
+  label(for=item_id, class=in_stock).size-selection__label=item_size

@@ -15,12 +15,18 @@ header.header(id="header")
                 a(href="tel:+7(495)1501477").topbar__phone-link +7 (495) 150 - 14 - 77
                 
             .topbar__follow.topbar__follow--favorites
-                a(href="").topbar__follow-link
-                    +icon('favorites').topbar__follow-icon
+                a(href="favorites.html").topbar__favorites-link
+                    +icon('favorites').topbar__favorites-icon
 
             .topbar__follow.topbar__follow--basket
-                a(href="").topbar__follow-link
-                    img(src="../../assets/imgs/icons/basket.svg", alt="Корзина").topbar__basket-icon
+                a(href="#cart", id="cartBtn").topbar__follow-link
+                    svg(width='20' height='22' viewbox='0 0 20 22' fill='none' xmlns='http://www.w3.org/2000/svg').topbar__basket-icon
+                        path(d='M3.67929 20.8598H0.499023V4.50195H3.73406' stroke='#333333' stroke-miterlimit='3.8637')
+                        path(d='M5.89062 5.18856C5.89062 5.18856 5.89062 5.36384 5.89062 3.76822C5.89062 2.17355 7.09758 0.880859 8.58649 0.880859C10.0754 0.880859 11.2824 2.17355 11.2824 3.76822C11.2824 5.36288 11.2824 5.18856 11.2824 5.18856' stroke='#333333' stroke-miterlimit='3.8637')
+                        path(d='M3.75879 4.50195H19.499V20.8598H3.75879V4.50195Z' fill='#E1C4A9').icon-cart-fill
+                        path(d='M3.75879 4.50195H19.499V20.8598H3.75879V4.50195Z' stroke='black' stroke-miterlimit='3.8637')
+                        path(d='M9.12598 6.27259C9.12598 6.27259 9.12598 4.90562 9.12598 3.47365C9.12598 2.04167 10.3329 0.880859 11.8218 0.880859C13.3108 0.880859 14.5177 2.04167 14.5177 3.47365C14.5177 4.90562 14.5177 6.27259 14.5177 6.27259' stroke='#333333' stroke-miterlimit='3.8637')
+
 
         nav.nav
             ul.nav__list 
@@ -29,9 +35,9 @@ header.header(id="header")
                 li.nav__list-item
                     a(href="catalog.html").nav__list-link Категории
                 li.nav__list-item
-                    a(href="#").nav__list-link Наши коллекции
+                    a(href="catalog.html").nav__list-link Наши коллекции
                 li.nav__list-item
-                    a(href="#").nav__list-link Покупателям
+                    a(href="delivery.html").nav__list-link Покупателям
                 li.nav__list-item
                     a(href="brand.html").nav__list-link О бренде
                 li.nav__list-item
@@ -42,12 +48,12 @@ header.header(id="header")
     .full(id="full").hidden
         .container
             .full__wrapper
+                mixin full-list-item(link_href, item)
+                    li.full__list-item
+                        a(href=link_href).full__list-link=item
                 .full__inner
                     h3.full__title Категории
                     ul.full__list
-                        mixin full-list-item(link_href, item)
-                            li.full__list-item
-                                a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Юбки')
                         +full-list-item('#', 'Смокинг')
                         +full-list-item('#', 'Костюмы')
@@ -59,9 +65,6 @@ header.header(id="header")
                 .full__inner
                     h3.full__title Коллекции
                     ul.full__list
-                        mixin full-list-item(link_href, item)
-                            li.full__list-item
-                                a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Осень-зима 20-21')
                         +full-list-item('#', 'Вечерние комплекты')
                         +full-list-item('#', 'Предзаказ')
@@ -69,9 +72,6 @@ header.header(id="header")
                 .full__inner
                     h3.full__title Покупателям
                     ul.full__list
-                        mixin full-list-item(link_href, item)
-                            li.full__list-item
-                                a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Доставка')
                         +full-list-item('#', 'Акции')
                         +full-list-item('#', 'Возврат')
@@ -81,15 +81,28 @@ header.header(id="header")
                 .full__inner
                     h3.full__title О бренде
                     ul.full__list
-                        mixin full-list-item(link_href, item)
-                            li.full__list-item
-                                a(href=link_href).full__list-link=item
                         +full-list-item('#', 'Шоурум')
                         +full-list-item('reviews.html', 'Отзывы')
                         +full-list-item('#', 'Статьи')
                         +full-list-item('#', 'Блог')
                 .full__inner
                     h3.full__title Контакты
+                    ul.full__list
+                        li.footer-full__list-item
+                            a(href="tel:+8 (495) 150-14-77") ТЕЛ.: 8 (495) 150-14-77
+                        li.footer-full__list-item
+                            a(href="tel:+7 (977) 728-27-38") WHATSAPP: +7 (977) 728-27-38
+                        li.footer-full__list-item
+                            a(href="mailto:http://info@eleanboutique.ru") EMAIL: info@eleanboutique.ru
+                        li.footer-full__list-item г. Москва, Новая площадь 8, стр.2, 5 этаж
+                //- .full-menu__tab
+                //-     input(type="checkbox" id="tab-1" name="tab-group")
+                //-     label(for="tab-1").full-menu__label Коллекции
+                //-     ul.full-menu__list
+                //-         +full-list-item('#', 'Осень-зима 20-21')
+                //-         +full-list-item('#', 'Вечерние комплекты')
+                //-         +full-list-item('#', 'Предзаказ')
+                //-         +full-list-item('#', 'Свадьба и выпускной')
 
     .connection
         .connection__wrapper

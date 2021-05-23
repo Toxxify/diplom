@@ -46,7 +46,7 @@
     transform: translateX(-50%);
   }
   &__next {
-    right: 0;
+    right: 5px;
     transform: translateX(50%);
     &::after {
       transform: rotate(180deg);
@@ -90,22 +90,26 @@
   &__comment-topbar {
     margin-bottom: 10px;
     display: flex;
-  }
-  &__comment-name {
-    font-size: 18px;
-    line-height: 122%;
-    margin-right: 5px;
     position: relative;
+  }
+  &__comment-avatar {
+    position: absolute;
+    left: -90px;
+    top: -25px;
+    border-radius: 50%;
     &::before {
       content: '';
       position: absolute;
-      left: -90px;
-      top: -25px;
       width: 60px;
       height: 60px;
       background: url(../imgs/icons/avatar-icon.svg);
       background-size: cover;
     }
+  }
+  &__comment-name {
+    font-size: 18px;
+    line-height: 122%;
+    margin-right: 5px;
   }
   &__comment-city {
     font-size: 18px;
@@ -130,7 +134,7 @@
     padding: 20px 28px 24px;
   }
   &__btn {
-    @include btn-special();
+    @include btn--special();
     display: block;
     margin: -15px auto 0;
   }
@@ -148,7 +152,10 @@
       margin-left: auto;
       &:nth-child(odd) {
         margin-right: auto;
+      }
     }
+    &__comment-avatar {
+      left: 0px;
     }
     &__comment-name {
       margin-left: 80px;

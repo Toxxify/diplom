@@ -37,30 +37,30 @@
       column-count: 2;
     }
   }
-  &__item {
+  &__item,
+  &__item div,
+  &__item a {
     font-family: 'HelveticaNeueCyr';
+    font-weight: 300;
     font-size: 15px;
     line-height: 147%;
     letter-spacing: 0.05em;
     color: #000000;
+  }
+  &__item {
     margin-bottom: 20px;
-    &--phone,
-    &--email,
-    &--whatsapp,
-    &--ip,
-    &--registry,
-    &--working-time,
-    &--address {
-      position: relative;
-      padding-left: 35px;
-      &::before {
-        position: absolute;
-        content: '';
-        height: 22px;
-        width: 22px;
-        left: 0;
-        display: block;
-      }
+    position: relative;
+    padding-left: 35px;
+    &::before {
+      position: absolute;
+      content: '';
+      height: 22px;
+      width: 22px;
+      left: 0;
+      display: block;
+    }
+    .contact-details__address {
+      display: inline;
     }
     &--phone::before {
       background: url(../imgs/icons/icon-phone.svg) center no-repeat;

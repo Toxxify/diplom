@@ -6,25 +6,34 @@
 @import 'main/reset'; // сброс стилей для кроссбраузерности
 // @import 'main/common'; // общие стили
 // @import 'main/grid'; // базовая 12ти колоночная сетка для сайта(сделана на основе bootstrap), классы .container/.row/.col-md-6 и т.д.
-$bg-page: #fafafa;
-$bg-alt: #252831;
-$bg-white: #ffffff;
+
 $color-white: #FFFFFF;
 $color-light: #DADADA;
 $color-black: #000000;
 $color-dark: #222222;
 $color-gray: #B8B5B5;
 $color-alt: #8D8D8D;
+
+$bg-page: #fafafa;
+$bg-alt: #252831;
+$bg-white: #ffffff;
+$bg-btn: #222222;
+
 $main: #D7B494;
 $attention: #E20613;
+
 
 @import 'index';
 @import 'product';
 @import 'contacts';
+@import 'catalog';
 @import 'reviews';
 @import 'showroom';
 @import 'trying-on';
 @import 'brand';
+@import 'favorites';
+@import 'registration';
+
 @import 'components/footer';
 @import 'components/header';
 @import 'components/clients-and-review';
@@ -32,6 +41,11 @@ $attention: #E20613;
 @import 'components/showroom-form';
 @import 'components/reviews-video';
 @import 'components/social-list';
+@import 'components/size-selection';
+@import 'components/product-card';
+@import 'components/contact-details';
+@import 'components/full-menu';
+@import 'components/modals';
 
 
 a {
@@ -42,7 +56,8 @@ a {
 body {
   background: $bg-page;
 }
-footer {
+
+.main-foter {
   background: $bg-page;
 }
 .container {
@@ -55,6 +70,9 @@ footer {
   opacity: 0;
   height: 0;
   width: 0;
+}
+.scroll-hidden {
+  overflow: hidden;
 }
 
 

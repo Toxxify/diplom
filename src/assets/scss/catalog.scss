@@ -1,0 +1,71 @@
+.catalog {
+  font-family: 'FuturaMediumC';
+  padding: 65px 0 90px;
+  &__title {
+    @include section-title();
+    margin-bottom: 30px;
+  }
+  &__wrapper {
+    display: flex;
+    margin: 0 -10px;
+  }
+  &__categories {
+    max-width: 200px;
+    width: 100%;
+    padding: 8px 10px;
+  }
+  &__gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 12px;
+    width: 100%;
+  }
+  &__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  &__list {
+    margin-bottom: 25px;
+  }
+  &__list-item.active {
+    .catalog__list-link {
+      color: $main;
+      border-bottom: 1px solid $main;
+    }
+  }
+  &__list-link {
+    font-weight: 500;
+    font-size: 15px;
+    color: #222222;
+    transition: color .2s;
+    margin-bottom: 17px;
+    &:hover {
+      color: $main;
+    }
+  }
+  &__loading {
+    margin-top: 40px;
+    &-btn {
+      padding: 10px;
+      position: relative;
+      display: block;
+      left: 57.5%;
+      background: url(../imgs/icons/loading-btn.svg);
+      width: 24px;
+      height: 24px;
+      display: block;
+      &:hover {
+        animation: spin 2s linear 0s infinite;
+        @keyframes spin {
+          from {transform:rotate(0deg);}
+          to {transform:rotate(-360deg);}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.size-selection {
+  &__item {
+    overflow: hidden;
+    margin: 0;
+    &:checked + .size-selection__label {
+      color: $color-white;
+      background-color: $main;
+      &::before {
+        border-color: $main;
+      }
+    }
+  }
+  &__label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    user-select: none;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 49px;
+      height: 49px;
+      border: 1px solid $color-dark;
+      line-height: 50px;
+      text-align: center;
+      left: 0;
+      z-index: 2;
+    }
+    &.not-available {
+      color: $color-light;
+      position: relative;
+      cursor: auto;
+      pointer-events: none;
+      &::before {
+        content: "";
+        position: absolute;
+        background: url(../imgs/icons/cross-out.svg);
+        background-position: center;
+        top: 0;
+        left: 0;
+        border-color: $color-light;
+        z-index: 1;
+      }
+      &:hover {
+        color: $color-light;
+        &::before {
+          border-color: $color-light;
+          z-index: 1;
+        }
+      }
+    }
+    &:hover {
+      color: $main;
+      &::before {
+        border: 1px solid $main;
+        z-index: 3;
+      }
+    }
+  }
+}

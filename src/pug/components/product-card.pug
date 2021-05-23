@@ -1,0 +1,11 @@
+mixin product-card(img_src, name, price, feature, id_product)
+  a(href="product.html").product-card__cell
+    img(src=img_src, alt=name).product-card__img
+    .product-card__top-bar
+      .product-card__name=name
+      input(type="checkbox", name="like", id=id_product).product-card__checkbox
+      label(for=id_product).product-card__label
+        +icon('favorites').product-card__favorites-icon
+    .product-card__down-bar
+      .product-card__price=price 
+      .product-card__feature=feature

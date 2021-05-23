@@ -1,0 +1,155 @@
+@mixin full-title() {
+  font-size: 15px;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+.full-menu {
+  &__wrapper {
+    display: none;
+  }
+  &__tab input,
+  &__list {
+    display: none;
+  }
+  &__tab {
+    color: $color-dark;
+    margin-top: -1px;
+  }
+  &__label {
+    @include full-title();
+    position: relative;
+    padding: 14px 13px;
+    display: block;
+    cursor: pointer;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+  }
+  &__list {
+    padding: 0px 13px;
+    border-bottom: 1px solid #E6E6E6;
+  }
+  &__list-item {
+    display: flex;
+    font-size: 15px;
+    line-height: 130%;
+    color: #242424;
+    margin-bottom: 21px;
+  }
+  &__list-naming {
+    flex: 0 0 55%;
+  }
+  &__list-value {
+    font-family: 'FuturaBookC';
+    font-weight: normal;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      height: 1px;
+      width: 40px;
+      bottom: -10px;
+      left: -10px;
+      display: block;
+      background-color: #E6E6E6;
+    }
+  }
+  &__tab :checked + &__label {
+    border-bottom: none;
+  }
+  &__label:after, 
+  &__tab :checked + &__label:after {
+    position: absolute;
+    content: '';
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    background-size: cover;
+  }
+  &__label:after {
+    background: url(../imgs/icons/plus.svg);
+    width: 11px;
+    height: 11px;
+  }
+  &__tab :checked + .full-menu__label:after {
+    background: url(../imgs/icons/minus.svg);
+    width: 11px;
+    height: 1px;
+  }
+  &__tab :checked ~ .full-menu__list {
+    display: block;
+  }
+  &__next {
+    width: 22px;
+    height: 2px;
+    background: gray;
+  }
+  &__form { 
+    .step-one,
+    .step-two {
+    display: flex;
+    input {
+      font-family: 'FuturaMediumC';
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 30px;
+      letter-spacing: 0.1em;
+      height: 30px;
+      
+      display: block;
+      border: none;
+      background: $bg-page;
+      width: 80%;
+      &::placeholder {
+        color: #000000;
+      }
+    }
+  }
+
+  }
+  .full-menu__form-email {
+    &::placeholder {
+      color: red;
+      font-size: 22px;
+    }
+
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: 1380px) {
+}
+
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 576px) {
+  .footer-full {
+    &__wrapper {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+}
+
+/* 
+описать два состояния:
+1) развёрнутое при котором список показывается целиком
+2) свёрнутое которое показывается только тогда когда ширина меньше указанного значения (применяются дополнительные стили).
+
+- Разный набор стилей для футера и хеадера
+- в футере должно быть на два пункта больше чем в хеадере
+- в футере собственная форма со своими стилями
+*/

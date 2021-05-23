@@ -1,0 +1,15 @@
+.contact-details {
+  font-family: 'FuturaMediumC';
+  font-weight: 500;
+  &__address,
+  &__mode {
+    font-size: 14px;
+  }
+  &__phone,
+  &__whatsapp,
+  &__email {
+    @include hover-text();
+    font-size: 15px;
+    display: block;
+  }
+}

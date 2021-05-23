@@ -7,6 +7,9 @@
     border-bottom: 1px solid $main;
     margin-bottom: 13px;
     padding-bottom: 2px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 .showroom-gallery {
@@ -15,7 +18,7 @@
     margin-bottom: 50px;
   }
   &__slide {
-    height: 522px;
+    // height: 522px;
     &:first-child {
       margin-top: 21px;
     }

@@ -1,0 +1,77 @@
+include contact-details 
+include size-selection
+
+.cart(id="cart")
+  .cart__wrapper(id="cartWrapper")
+    .cart__header
+      .cart__group.cart__group--header
+        .cart__title Корзина
+        a(href="##").cart__close.close
+          +icon('modal-close').cart__close-icon
+
+    .cart__list
+      mixin product(img_src, name, price, size, count)
+        .cart__product
+          .cart__product-img-box
+            img(src=img_src, alt=name).cart__product-img
+          .cart__product-name=name
+          .cart__price=price
+          .cart__product-size=size
+          .cart__product-amount Количество
+          .cart__product-counter
+            .cart__product-reduce –
+            .cart__product-count=count
+            .cart__product-add +
+          .cart__product-delete Удалить
+      +product('../assets/imgs/gallery/foto-112.jpg', 'Белый смокинг и брюки с лампасами', '41 400 ₽', 'Размер 46', 1)
+      +product('../assets/imgs/gallery/foto-9.jpg', 'Красный приталенный смокинг', '26 900 ₽', 'Размер 50', 2)
+
+    .cart__footer
+      .cart__group.cart__group--footer
+        .cart__title Итого:
+        .cart__price 57 200 ₽
+      a(href="#").cart__btn Оформить заказ
+
+
+
+.pre-order#preOrder
+  .pre-order__wrapper(id="preOrderWrapper")
+    .pre-order__close
+      .pre-order__close-text Закрыть
+      a(href="##").pre-order__close-btn.preOrderClose
+        +icon('modal-close').pre-order__close-icon
+    .pre-order__title Оформить предзаказ
+    .pre-order__subtitle Если вашего размера нети в наличии, вы можете оформить предзаказ.
+    .pre-order__block 
+      .pre-order__item Срок доставки от 1 до 3-ех недель.
+      .pre-order__item Для оформления заказа необходимо внести предоплату 
+        b в размере 50%.
+      .pre-order__item
+        span Предзаказов в этом месяце: 26
+      .pre-order__item Для получения подробной информации оставьте заявку или позвоните нам по телефону
+      .pre-order__item
+        +contact-phone()
+        +contact-whatsapp()
+
+    form.pre-order-form
+      .pre-order-form__input
+        input(type="text", name="" placeholder="введите имя").pre-order-form__name
+      .pre-order-form__input
+        input(type="tel", name="" placeholder="введите телефон").pre-order-form__phone
+      .pre-order-form__input
+        input(type="mail", name="" placeholder="введите e-mail").pre-order-form__email
+      textarea(name="", placeholder="добавить комментарий").pre-order-form__comment
+      
+      .pre-order-form-selection
+        +item-size('40', 'size-selection-modal-1', '')
+        +item-size('42', 'size-selection-modal-2', '')
+        +item-size('44', 'size-selection-modal-3', 'not-available')
+        +item-size('46', 'size-selection-modal-4', '')
+        +item-size('48', 'size-selection-modal-5', '')
+        +item-size('50', 'size-selection-modal-6', 'not-available')
+
+      input(type="checkbox", name="", id="2222").pre-order-form__checkbox
+      label(for="2222").pre-order-form__label Я согласен с 
+        span политикой конфиденциальности
+      input(type="submit", value="Оформить примерку").pre-order-form__btn
+

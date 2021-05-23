@@ -31,6 +31,7 @@
   position: relative;
   letter-spacing: 0.55px;
   padding-right: 60px;
+  transition: all .4s;
   cursor: pointer;
   &::before {
     content: '\005C';
@@ -48,6 +49,13 @@
     background: url(../imgs/icons/link-arrow.svg);
     background-position: center;
     background-size: cover;
+    transition: all .4s;
+  }
+  &:hover {
+    color: $color-dark;
+  }
+  &:hover::after {
+    right: 5px;
   }
 }
 
@@ -63,9 +71,52 @@
     left: 10px;
     transform: rotate(180deg);
   }
+  &:hover::after {
+    left: 5px;
+  }
 }
 
-@mixin btn-special() {
+
+@mixin btn() {
+  font-family: 'FuturaMediumC';
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 3px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  height: 50px;
+}
+@mixin btn--common() {
+  @include btn();
+  border: 1px solid #E3E3E3;
+  color: #454545;
+  background: $bg-white;
+  &:hover {
+    background: darken($bg-white, 4%);
+  }
+}
+@mixin btn--main() {
+  @include btn();
+  color: $color-white;
+  background: #C0A78F;
+  border-radius: 0px;
+  &:hover {
+    background: darken(#C0A78F, 4%);
+  }
+}
+@mixin btn--alt() {
+  @include btn();
+  width: 100%;
+  color: $color-white;
+  background: $bg-btn;
+  &:hover {
+    background: lighten($bg-btn, 4%);
+  }
+}
+
+@mixin btn--special() {
   font-family: 'FuturaMediumC';
   font-weight: 500;
   font-size: 13px;
@@ -78,23 +129,38 @@
   max-width: 309px;
   height: 36px;
   position: relative;
-  &::before {
+  &::before, &::after {
     content: '';
     position: absolute;
     top: 15px;
-    right: -15px;
     width: 29px;
     height: 1px;
     background-color: $main;
   }
+  &::before {
+    right: -15px;
+    transition: all .4s;
+  }
   &::after {
-    content: '';
-    position: absolute;
-    top: 15px;
     left: -15px;
-    width: 29px;
-    height: 1px;
-    background-color: $main;
+    transition: all .4s;
+  }
+  transition: all .3s;
+  &:hover {
+    background: $main;
+    color: #fff;
+    &::before {
+      right: -35px;
+      height: 3px;
+      transition: all .4s;
+      transform: rotate(90deg);
+    }
+    &::after {
+      left: -35px;
+      height: 3px;
+      transition: all .4s;
+      transform: rotate(-90deg);
+    }
   }
 }
 
@@ -139,7 +205,7 @@
   &__title {
     @include section-title();
     position: relative;
-    margin-bottom: 37px;
+    margin-bottom: 36px;
     &::before {
       content: '';
       position: absolute;
@@ -157,47 +223,61 @@
     display: flex;
     flex-wrap: wrap;
   }
+  &__input {
+    flex: 0 0 calc(100%/3);
+    position: relative;
+    margin-bottom: 20px;
+    &::after {
+      content: '*';
+      position: absolute;
+      font-size: 18px;
+      line-height: 9px;
+      top: 47%;
+      right: 12px;
+      color: #c1c1c1;
+    }
+  }
   &__name,
   &__phone,
-  &__date {
+  &__date,
+  &__comment,
+  &__btn {
+    width: 100%;
     font-family: 'FuturaMediumC';
-    flex: 0 0 calc(100%/3);
-    height: 60px;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-right: 1px solid #000;
-    border-left: 0;
-    margin-bottom: 20px;
-    padding: 0 16px;
     text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+    border: 1px solid #000;
+    border-left: 0;
+    height: 60px;
+    letter-spacing: 0.06em;
+    padding: 0 16px;
   }
   &__name {
     border-left: 1px solid #000;
   }
   &__comment {
-    font-family: 'FuturaMediumC';
     flex: 0 0 calc(100% - 180px);
-    height: 100px;
-    text-transform: uppercase;
     padding: 21px 18px;
-    resize: none;
     margin-bottom: 17px;
+    resize: none;
+    height: 100px;
+    border-left: 1px solid #000;
   }
   &__btn {
     width: 180px;
-    height: 60px;
-    font-family: 'FuturaMediumC';
-    font-weight: 500;
-    font-size: 13px;
     line-height: 192%;
     text-align: center;
     letter-spacing: 0.1em;
     color: #000000;
-    text-transform: uppercase;
     background: #fff;
-    border: 1px solid #000;
-    border-left: 0;
     margin-bottom: 20px;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover {
+      background: $main;
+      color: #fff;
+    }
   }
   &__prompt {
     font-family: 'FuturaMediumC';
@@ -205,7 +285,6 @@
     font-size: 14px;
     line-height: 129%;
     color: #9D9DAD;
-    text-align: left;
   }
 }
 
@@ -223,13 +302,15 @@
       background-size: 100%;
     }
   }
-  &__name,
-  &__phone {
-    flex: 0 0 50%;
-  }
-  &__date {
-    flex: 0 0 100%;
-    border-left: 1px solid #000;
+  &__input {
+    &--name,
+    &--phone {
+      flex: 0 0 50%;
+    }
+    &--date {
+      flex: 0 0 100%;
+      border-left: 1px solid #000;
+    }
   }
   &__comment {
     flex: 0 0 calc(100% - 180px);
@@ -259,11 +340,13 @@
       height: 50px;
     }
   }
-  &__name,
-  &__phone,
-  &__date {
-    flex: 0 0 100%;
-    border-left: 1px solid #000;
+  &__input {
+    &--name,
+    &--phone,
+    &--date {
+      flex: 0 0 100%;
+      border-left: 1px solid #000;
+    }
   }
   &__comment {
     flex: 0 0 100%;
@@ -274,5 +357,11 @@
     margin-left: auto;
     border-left: 1px solid #000;
     border-top: none; 
+  }
+}
+
+@mixin hover-text() {
+  &:hover {
+    color: darken($color: $main, $amount: 30%);
   }
 }

@@ -55,17 +55,37 @@
   }
 
 }
-.footer--brand {
+.footer.footer--brand  {
   background: $bg-alt;
   color: $color-white;
   .footer__logo {
     fill: #ffffff;
   }
-  .footer__social-icon {
-    fill: #ffffff;
+  .social-icon {
+    &--instagram {
+      fill: #ffffff;
+      &:hover {
+        fill: #3f729b;
+      }
+    }
+    &--vkontakte {
+      fill: #ffffff;
+      &:hover {
+        fill: #5d84ae;
+      }
+    }
+    &--facebook {
+      fill: #ffffff;
+      &:hover {
+        fill: #3b5998;
+      }
+    }
   }
   .footer__nav-link {
     color: $color-white;
+    &:hover {
+      color: darken($color: $main, $amount: 30%);
+    }
   }
 }
 

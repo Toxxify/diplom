@@ -1,57 +1,83 @@
 mixin full-list-item(link_href, item)
-    li.full__list-item
-        a(href=link_href).full__list-link=item
+    li.full-menu__list-item
+        a(href=link_href).full-menu__list-link=item
 
-.full__wrapper
-    .full__tab
-        input(type="checkbox" id="tab2" name="tab-group")
-        label(for="tab2").full__label Контакты
-        ul.full__list
-            +full-list-item('#', 'Шоурум')
-            +full-list-item('#', 'Отзывы')
-            +full-list-item('#', 'Статьи')
-            +full-list-item('#', 'Блог')
+.full-menu__tab
+    input(type="checkbox" id="tab-1" name="tab-group")
+    label(for="tab-1").full-menu__label Коллекции
+    ul.full-menu__list
+        +full-list-item('#', 'Осень-зима 20-21')
+        +full-list-item('#', 'Вечерние комплекты')
+        +full-list-item('#', 'Предзаказ')
+        +full-list-item('#', 'Свадьба и выпускной')
 
-    .full__tab
-        input(type="checkbox" id="tab2" name="tab-group")
-        label(for="tab2").full__label Покупателям
-        ul.full__list
-            +full-list-item('#', 'Доставка')
-            +full-list-item('#', 'Акции')
-            +full-list-item('#', 'Возврат')
-            +full-list-item('#', 'Размерная таблица')
-            +full-list-item('#', 'Примерка')
-            +full-list-item('#', 'Оптовым покупателям')
+.full-menu__tab
+    input(type="checkbox" id="tab-2" name="tab-group")
+    label(for="tab-2").full-menu__label Шоурум
+    ul.full-menu__list
+        +full-list-item('#', 'Первый пункт')
+        +full-list-item('#', 'Второй пункт')
+        +full-list-item('#', 'Третий пункт')
+        +full-list-item('#', 'Четвёртый пункт')
+        +full-list-item('#', 'Пятый пункт')
 
-    .full__tab
-        input(type="checkbox" id="tab2" name="tab-group")
-        label(for="tab2").full__label Коллекции
-        ul.full__list
-            +full-list-item('#', 'Осень-зима 20-21')
-            +full-list-item('#', 'Вечерние комплекты')
-            +full-list-item('#', 'Предзаказ')
-            +full-list-item('#', 'Свадьба и выпускной')
 
-    .full__tab
-        input(type="checkbox" id="tab2" name="tab-group")
-        label(for="tab2").full__label Категории
-        ul.full__list
-            +full-list-item('#', 'Юбки')
-            +full-list-item('#', 'Смокинг')
-            +full-list-item('#', 'Костюмы')
-            +full-list-item('#', 'Аксессуары')
-            +full-list-item('#', 'Брюки')
-            +full-list-item('#', 'Блузы')
-            +full-list-item('#', 'Платья')
-            +full-list-item('#', 'Топы и жилеты')
+.full-menu__tab
+    input(type="checkbox" id="tab-3" name="tab-group")
+    label(for="tab-3").full-menu__label Покупателям
+    ul.full-menu__list
+        +full-list-item('#', 'Доставка')
+        +full-list-item('#', 'Акции')
+        +full-list-item('#', 'Возврат')
+        +full-list-item('#', 'Размерная таблица')
+        +full-list-item('#', 'Примерка')
+        +full-list-item('#', 'Оптовым покупателям')
 
-    .full__tab
-        input(type="checkbox" id="tab2" name="tab-group")
-        label(for="tab2").full__label Покупателям
-        ul.full__title 
-            +full-list-item('#', 'Доставка')
-            +full-list-item('#', 'Акции')
-            +full-list-item('#', 'Возврат')
-            +full-list-item('#', 'Размерная таблица')
-            +full-list-item('#', 'Примерка')
-            +full-list-item('#', 'Оптовым покупателям')
+.full-menu__tab
+    input(type="checkbox" id="tab-4" name="tab-group")
+    label(for="tab-4").full-menu__label О компании
+    ul.full-menu__list
+        +full-list-item('#', 'О бренде')
+        +full-list-item('#', 'Об основателях')
+        +full-list-item('#', 'Контакты')
+        +full-list-item('#', 'Блог')
+
+.full-menu__tab
+    input(type="checkbox" id="tab-5" name="tab-group")
+    label(for="tab-5").full-menu__label Отзывы
+    ul.full-menu__list
+        +full-list-item('#', 'Первый пункт')
+        +full-list-item('#', 'Второй пункт')
+        +full-list-item('#', 'Третий пункт')
+        +full-list-item('#', 'Четвёртый пункт')
+        +full-list-item('#', 'Пятый пункт')
+
+
+
+
+
+
+
+
+    //- .full-menu__tab
+    //-     input(type="checkbox" id="tab2" name="tab-group")
+    //-     label(for="tab2").full__label Контакты
+    //-     ul.full__list
+    //-         +full-list-item('#', 'Шоурум')
+    //-         +full-list-item('#', 'Отзывы')
+    //-         +full-list-item('#', 'Статьи')
+    //-         +full-list-item('#', 'Блог')
+
+    //- .full-menu__tab
+    //-     input(type="checkbox" id="tab2" name="tab-group")
+    //-     label(for="tab2").full__label Категории
+    //-     ul.full__list
+    //-         +full-list-item('#', 'Юбки')
+    //-         +full-list-item('#', 'Смокинг')
+    //-         +full-list-item('#', 'Костюмы')
+    //-         +full-list-item('#', 'Аксессуары')
+    //-         +full-list-item('#', 'Брюки')
+    //-         +full-list-item('#', 'Блузы')
+    //-         +full-list-item('#', 'Платья')
+    //-         +full-list-item('#', 'Топы и жилеты')
+

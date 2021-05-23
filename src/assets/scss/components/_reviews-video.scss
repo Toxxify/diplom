@@ -11,7 +11,8 @@
     width: 323px;
     margin-bottom: 20px;
     position: relative;
-    &::after {
+    @include blackout();
+    &::before {
       content: '';
       position: absolute;
       bottom: 18px;
@@ -22,6 +23,14 @@
       height: 58px;
       border-radius: 50%;
       cursor: pointer;
+      z-index: 2;
+    }
+    &:hover {
+      cursor: pointer;
+      &::after {
+        transition: all .2s;
+        background-color: rgba(0, 0, 0, 0);
+      }
     }
   }
   &__name {

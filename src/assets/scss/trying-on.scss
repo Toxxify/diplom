@@ -93,8 +93,7 @@
     &__video  {
       width: 100%;
       height: 250px;
-      &::after {
-        background: #ffffff url(../imgs/icons/play.svg) 58% center no-repeat;
+      &::before {
         width: 42px;
         height: 42px;
         background-size: 35%;
@@ -118,12 +117,14 @@
   
 }
 
-.footer--trying-on {
-  background: none;
-}
-/* общий фон у двух блоков */
-.main-foter {
-  background: url(../imgs/trying-on-bg.jpg) bottom no-repeat;
+body.tr-on {
+  /* общий фон у двух блоков */
+  .main-foter {
+    background: url(../imgs/trying-on-bg.jpg) bottom no-repeat; 
+  }
+  .footer--trying-on {
+    background: none;
+  }
 }
 
 @media screen and (max-width: 1380px) {
@@ -136,8 +137,8 @@
 }
 
 @media screen and (max-width: 991px) {
-  .main-foter {
-    background: none;
+  body.tr-on .main-foter {
+    background: none; 
   }
   .trying-on {
     min-height: auto;
