@@ -8,8 +8,11 @@
   &__phone,
   &__whatsapp,
   &__email {
-    @include hover-text();
     font-size: 15px;
     display: block;
+    transition: color .2s;
+    &:hover {
+      color: $main;
+    }
   }
 }

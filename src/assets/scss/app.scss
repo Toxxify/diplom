@@ -13,6 +13,8 @@ $color-black: #000000;
 $color-dark: #222222;
 $color-gray: #B8B5B5;
 $color-alt: #8D8D8D;
+$color-form: #9D9DAD;
+$color-border: #DADADA;
 
 $bg-page: #fafafa;
 $bg-alt: #252831;
@@ -33,6 +35,8 @@ $attention: #E20613;
 @import 'brand';
 @import 'favorites';
 @import 'registration';
+@import 'delivery';
+@import 'ordering';
 
 @import 'components/footer';
 @import 'components/header';
@@ -46,6 +50,7 @@ $attention: #E20613;
 @import 'components/contact-details';
 @import 'components/full-menu';
 @import 'components/modals';
+@import 'components/animation';
 
 
 a {

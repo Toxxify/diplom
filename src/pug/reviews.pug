@@ -9,8 +9,25 @@ block content
   .reviews
     .container
 
-      h2.reviews__title Отзывы
-      include components/reviews-video
+      .reviews-video
+        h2.reviews__title Отзывы
+        include components/reviews-video
+
+      .reviews-text
+        h2.reviews__title Наши звёздные клиенты
+        include components/clients-and-review
       
-      h2.reviews__title Наши звёздные клиенты
-      include components/clients-and-review
+      .reviews-form 
+        h2.showroom-form__title Оставить отзыв
+        form(action="https://jsonplaceholder.typicode.com/posts" method="POST").showroom-form__form
+          .showroom-form__input.showroom-form__input--name
+            input(type="text", name="Имя" required placeholder="введите имя").showroom-form__name
+          .showroom-form__input.showroom-form__input--phone
+            input(type="tel", name="Номер телефона" required placeholder="введите телефон").showroom-form__phone
+          .showroom-form__input.showroom-form__input--date
+            input(type="text", name="Время" required placeholder="введите удобное время").showroom-form__date
+          textarea(name="Комментарий", placeholder="добавить комментарий").showroom-form__comment
+          input(type="submit", value="Отправить").showroom-form__btn
+          label(for="reviews_file").reviews-form__file-label Добавить фотографию
+          input(type="file" id="reviews_file").reviews-form__file
+          .showroom-form__prompt Поля отмеченные “*” обязательны для заполнения

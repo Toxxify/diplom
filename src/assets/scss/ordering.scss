@@ -1,0 +1,5 @@
+.ordering {
+  &__title {
+    @include section-title();
+  }
+}

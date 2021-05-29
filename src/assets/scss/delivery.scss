@@ -1,0 +1,8 @@
+.delivery {
+  &__title {
+    @include section-title();
+  }
+  &__subtitle {
+    @include section-title();
+  }
+}

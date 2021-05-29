@@ -1,58 +1,118 @@
+include contact-details
+
 mixin full-list-item(link_href, item)
-    li.full-menu__list-item
-        a(href=link_href).full-menu__list-link=item
+    li.menu-tab__list-item
+        a(href=link_href).menu-tab__list-link=item
 
-.full-menu__tab
-    input(type="checkbox" id="tab-1" name="tab-group")
-    label(for="tab-1").full-menu__label Коллекции
-    ul.full-menu__list
-        +full-list-item('#', 'Осень-зима 20-21')
-        +full-list-item('#', 'Вечерние комплекты')
-        +full-list-item('#', 'Предзаказ')
-        +full-list-item('#', 'Свадьба и выпускной')
+//- mixin full-list-item(link_href, item)
+//-     li.footer-full__list-item
+//-         a(href=link_href).footer-full__list-link=item
 
-.full-menu__tab
-    input(type="checkbox" id="tab-2" name="tab-group")
-    label(for="tab-2").full-menu__label Шоурум
-    ul.full-menu__list
-        +full-list-item('#', 'Первый пункт')
-        +full-list-item('#', 'Второй пункт')
-        +full-list-item('#', 'Третий пункт')
-        +full-list-item('#', 'Четвёртый пункт')
-        +full-list-item('#', 'Пятый пункт')
+mixin menu-tab--categories(tab_id)
+    .menu-tab
+        input(type="checkbox" id=tab_id name="tab-group").menu-tab__switch
+        label(for=tab_id).menu-tab__label Категории
+        ul.menu-tab__list
+            +full-list-item('#', 'Юбки')
+            +full-list-item('#', 'Смокинг')
+            +full-list-item('#', 'Костюмы')
+            +full-list-item('#', 'Аксессуары')
+            +full-list-item('#', 'Брюки')
+            +full-list-item('#', 'Блузы')
+            +full-list-item('#', 'Платья')
+            +full-list-item('#', 'Топы и жилеты')
+
+mixin menu-tab--collections(tab_id)
+    .menu-tab
+        input(type="checkbox" id=tab_id name="tab-group").menu-tab__switch
+        label(for=tab_id).menu-tab__label Коллекции
+        ul.menu-tab__list
+            +full-list-item('#', 'Осень-зима 20-21')
+            +full-list-item('#', 'Вечерние комплекты')
+            +full-list-item('#', 'Предзаказ')
+            +full-list-item('#', 'Свадьба и выпускной')
+
+mixin menu-tab--for-buyers(tab_id)
+    .menu-tab
+        input(type="checkbox" id=tab_id name="tab-group").menu-tab__switch
+        label(for=tab_id).menu-tab__label Покупателям
+        ul.menu-tab__list
+            +full-list-item('#', 'Доставка')
+            +full-list-item('#', 'Акции')
+            +full-list-item('#', 'Возврат')
+            +full-list-item('#', 'Размерная таблица')
+            +full-list-item('#', 'Примерка')
+            +full-list-item('#', 'Оптовым покупателям')
+
+mixin menu-tab--brand(tab_id)
+    .menu-tab
+        input(type="checkbox" id=tab_id name="tab-group").menu-tab__switch
+        label(for=tab_id).menu-tab__label О бренде
+        ul.menu-tab__list
+            +full-list-item('#', 'Шоурум')
+            +full-list-item('reviews.html', 'Отзывы')
+            +full-list-item('#', 'Статьи')
+            +full-list-item('#', 'Блог')
+
+mixin menu-tab--contacts(tab_id)
+    .menu-tab
+        input(type="checkbox" id=tab_id name="tab-group").menu-tab__switch
+        label(for=tab_id).menu-tab__label Контакты
+        ul.menu-tab__list
+            li.menu-tab__list-item
+                +contact-phone()
+            li.menu-tab__list-item
+                +contact-whatsapp()
+            li.menu-tab__list-item
+                +contact-email()
+            li.menu-tab__list-item 
+                +contact-address()
+
+mixin menu-tab--showroom(tab_id)
+    .menu-tab
+        input(type="checkbox" id=tab_id name="tab-group").menu-tab__switch
+        label(for=tab_id).menu-tab__label Шоурум
+        ul.menu-tab__list
+            +full-list-item('#', 'Первый пункт')
+            +full-list-item('#', 'Второй пункт')
+            +full-list-item('#', 'Третий пункт')
+            +full-list-item('#', 'Четвёртый пункт')
+            +full-list-item('#', 'Пятый пункт')
+
+mixin menu-tab--company(tab_id)
+    .menu-tab
+        input(type="checkbox" id=tab_id name="tab-group").menu-tab__switch
+        label(for=tab_id).menu-tab__label О компании
+        ul.menu-tab__list
+            +full-list-item('#', 'О бренде')
+            +full-list-item('#', 'Об основателях')
+            +full-list-item('#', 'Контакты')
+            +full-list-item('#', 'Блог')
+
+mixin menu-tab--reviews(tab_id)
+    .menu-tab
+        input(type="checkbox" id=tab_id name="tab-group").menu-tab__switch
+        label(for=tab_id).menu-tab__label Отзывы
+        ul.menu-tab__list
+            +full-list-item('#', 'Первый пункт')
+            +full-list-item('#', 'Второй пункт')
+            +full-list-item('#', 'Третий пункт')
+            +full-list-item('#', 'Четвёртый пункт')
+            +full-list-item('#', 'Пятый пункт')
 
 
-.full-menu__tab
-    input(type="checkbox" id="tab-3" name="tab-group")
-    label(for="tab-3").full-menu__label Покупателям
-    ul.full-menu__list
-        +full-list-item('#', 'Доставка')
-        +full-list-item('#', 'Акции')
-        +full-list-item('#', 'Возврат')
-        +full-list-item('#', 'Размерная таблица')
-        +full-list-item('#', 'Примерка')
-        +full-list-item('#', 'Оптовым покупателям')
-
-.full-menu__tab
-    input(type="checkbox" id="tab-4" name="tab-group")
-    label(for="tab-4").full-menu__label О компании
-    ul.full-menu__list
-        +full-list-item('#', 'О бренде')
-        +full-list-item('#', 'Об основателях')
-        +full-list-item('#', 'Контакты')
-        +full-list-item('#', 'Блог')
-
-.full-menu__tab
-    input(type="checkbox" id="tab-5" name="tab-group")
-    label(for="tab-5").full-menu__label Отзывы
-    ul.full-menu__list
-        +full-list-item('#', 'Первый пункт')
-        +full-list-item('#', 'Второй пункт')
-        +full-list-item('#', 'Третий пункт')
-        +full-list-item('#', 'Четвёртый пункт')
-        +full-list-item('#', 'Пятый пункт')
-
-
+//- mixin menu-tab--contacts()
+//-     .full-menu__tab
+//-         input(type="checkbox" id="tab-6" name="tab-group")
+//-         label(for="tab-6").full-menu__label Контакты
+//-             ul.full__list
+//-                 li.footer-full__list-item
+//-                     a(href="tel:+8(495)150-14-77") ТЕЛ.: 8 (495) 150-14-77
+//-                 li.footer-full__list-item
+//-                     a(href="tel:+7(977)728-27-38") WHATSAPP: +7 (977) 728-27-38
+//-                 li.footer-full__list-item
+//-                     a(href="mailto:http://info@eleanboutique.ru") EMAIL: info@eleanboutique.ru
+//-                 li.footer-full__list-item г. Москва, Новая площадь 8, стр.2, 5 этаж
 
 
 

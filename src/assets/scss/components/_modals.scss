@@ -1,6 +1,9 @@
 // для каждого компонента нужно импортить переменные, чтобы их использовать
 @import "../main/parameters";
 $animation-transition: all ease .3s;
+.close {
+  cursor: pointer;
+}
 
 .cart {
   position: fixed;
@@ -29,8 +32,8 @@ $animation-transition: all ease .3s;
     right: 5%;
     max-width: 640px;
     padding: 46px;
-    background-color: #fff;
-    color: #242424;
+    background-color: $bg-white;
+    color: $color-dark;
     transition: $animation-transition;
     opacity: 0;
     transform: translate(0, -100%);
@@ -67,17 +70,7 @@ $animation-transition: all ease .3s;
       }
     }
   }
-  &__product-img-box {
-    max-width: 148px;
-    max-height: 197px;
-    grid-row: span 4;
-    margin-right: 18px;
-  }
-  &__product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  
   &__title {
     font-family: 'FuturaMediumC';
     font-weight: 500;
@@ -106,9 +99,19 @@ $animation-transition: all ease .3s;
   }
   &__product {
     display: grid;
-    row-gap: 30px;
     grid-template-columns: 148px 1fr 1fr;
+    column-gap: 18px;
     margin-bottom: 40px;
+  }
+  &__product-img-box {
+    max-width: 148px;
+    max-height: 197px;
+    grid-row: span 4;
+  }
+  &__product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   &__product-name {
     font-family: 'FuturaMediumC';
@@ -117,12 +120,16 @@ $animation-transition: all ease .3s;
     line-height: 111%;
     grid-column: 2;
     max-width: 240px;
+    margin: 10px 0 18px;
   }
   &__product-size, &__product-amount {
     font-family: 'FuturaBookC';
     font-size: 17px;
     line-height: 135%;
     grid-column: 2;
+  }
+  &__product-size {
+    margin-bottom: 18px;
   }
   &__product-counter {
     display: flex;
@@ -134,7 +141,7 @@ $animation-transition: all ease .3s;
   &__product-count {
     width: 40px;
     height: 40px;
-    border: 1px solid #DADADA;
+    border: 1px solid $color-border;
     line-height: 40px;
     text-align: center;
     color: #C6C6C6;
@@ -168,7 +175,7 @@ $animation-transition: all ease .3s;
     height: 40px;
     padding-left: 12px;
     margin-left: auto;
-    border: 1px solid #DADADA;
+    border: 1px solid $color-border;
     position: relative;
     cursor: pointer;
     grid-column: 3;
@@ -196,6 +203,7 @@ $animation-transition: all ease .3s;
     font-size: 18px;
     line-height: 111%;
     grid-column: 3;
+    margin-top: 10px;
   }
   &__btn {
     @include btn--alt();
@@ -278,19 +286,19 @@ $animation-transition: all ease .3s;
     font-size: 30px;
     line-height: 77%;
     letter-spacing: 0.03em;
-    margin-bottom: 20px;
     text-transform: uppercase;
     font-family: 'FuturaMediumC';
     font-weight: 500;
+    margin-bottom: 30px;
   }
   &__subtitle {
     font-size: 18px;
     line-height: 128%;
     letter-spacing: 0.03em;
-    margin-bottom: 20px;
     text-transform: uppercase;
     font-family: 'FuturaMediumC';
     font-weight: 500;
+    margin-bottom: 30px;
   }
   &__block {
     column-count: 2;
@@ -299,7 +307,7 @@ $animation-transition: all ease .3s;
   &__item {
     font-size: 18px;
     line-height: 128%;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     span {
       font-family: 'FuturaBookC';
       color: $main;
@@ -335,6 +343,7 @@ $animation-transition: all ease .3s;
       padding: 16px;
       border: 1px solid #000000;
       position: relative;
+      font-size: 13px;
       &::placeholder {
         text-transform: uppercase;
       }
@@ -347,8 +356,7 @@ $animation-transition: all ease .3s;
       height: 100px;
       resize: none;
       grid-column: 2 span;
-      &::placeholder {
-      }
+      font-size: 13px;
     }
     &-selection {
       font-size: 0;

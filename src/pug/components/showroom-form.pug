@@ -1,12 +1,13 @@
 .showroom-form
   h2.showroom-form__title Записаться на примерку в шоуруме
-  form(action="").showroom-form__form
+  form(action="https://jsonplaceholder.typicode.com/posts" method="POST" id="form-showroom").showroom-form__form
     .showroom-form__input.showroom-form__input--name
-      input(type="text", name="" placeholder="введите имя").showroom-form__name
+      input(type="text", name="ФИО" placeholder="введите имя" required id="form-name").showroom-form__name
     .showroom-form__input.showroom-form__input--phone
-      input(type="tel", name="" placeholder="введите телефон").showroom-form__phone
+      input(type="tel", name="Номер телефона" placeholder="введите телефон" required id="form-phone").showroom-form__phone
     .showroom-form__input.showroom-form__input--date
-      input(type="text", name="" placeholder="введите удобное время").showroom-form__date
-    textarea(name="", placeholder="добавить комментарий").showroom-form__comment
+      input(type="text", name="Время" placeholder="введите удобное время" required id="form-date").showroom-form__date
+    textarea(name="Комментарий", placeholder="добавить комментарий" id="form-comment").showroom-form__comment
     input(type="submit", value="Записаться").showroom-form__btn
     .showroom-form__prompt Поля отмеченные “*” обязательны для заполнения
+//- https://jsonplaceholder.typicode.com/posts

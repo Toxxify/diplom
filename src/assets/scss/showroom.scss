@@ -35,6 +35,31 @@
     }
   }
 }
-@media screen and (max-width: 991px) {}
-@media screen and (max-width: 767px) {}
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 991px) {
+  .showroom .showroom-form {
+    border-right: 0;
+    border-left: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .showroom .showroom-form {
+    border: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .showroom {
+    padding: 30px 0;
+    .showroom-gallery {
+      &__slider {
+        margin-bottom: 0;
+      }
+    }
+    .showroom-form {
+      border: 1px solid #DCDCDC;
+      margin-bottom: 0;
+      &__form {
+        padding: 0 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.vibration {
+  animation-name: vibration;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  }
+  @keyframes vibration {
+  5%, 15%, 25%, 35%, 45% {
+    transform: rotate3d(0, 0, 1, 3deg);
+  }
+  10%, 20%, 30%, 40% {
+    transform: rotate3d(0, 0, 1, -3deg);
+  }
+  50% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+

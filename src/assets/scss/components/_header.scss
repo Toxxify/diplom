@@ -19,7 +19,7 @@
       &--vkontakte:hover { fill: #5d84ae; }
       &--facebook:hover { fill: #3b5998; }
     }
-    & .topbar__phone-link {
+    & .contact-details__phone {
       color: #ffffff;  
       &:hover { color: $main; }
     }
@@ -103,7 +103,7 @@
   &__phone {
     margin-bottom: 5px;
   }
-  &__phone-link {
+  .contact-details__phone {
     font-family: 'Lato';
     font-weight: bold;
     letter-spacing: -0.2px;
@@ -112,7 +112,6 @@
     color: #222222;
     @include hover-text();
   }
-  &__follow {  }
   &__favorites-link {
     margin: 0 9px 0 15px;
     position: relative;
@@ -229,9 +228,14 @@
     border-radius: 23px;
     margin-bottom: 8px;
     transition: all .6s;
+    user-select: none;
     &:hover {
       border-radius: 50%;
       background: darken(#E1C4A9, 5%);
+      animation-name: vibration;
+      animation-duration: 2.5s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
     }
   }
   &__link-post {
@@ -318,6 +322,13 @@
   }
 }
 @media screen and (max-width: 767px) {
+  .header {
+    padding: 20px 0 15px;
+    max-height: 65px;
+    &.active {
+      max-height: 100vh;
+    }
+  }
   .topbar {
     grid-template-columns: 90px 1fr 49px 29px;
     &__social {
@@ -330,6 +341,7 @@
 }
 @media screen and (max-width: 576px) {
   .topbar {
+    margin-bottom: 0;
     grid-template-columns: 40px 40px 1fr 90px;
     &__borger {
       transform: scale(.8);
@@ -354,7 +366,6 @@
       margin-left: auto;
     }
   }
-  
   .connection {
     &__group {
       transform: scale(.7);
@@ -364,6 +375,11 @@
     }
   }
   .header {
+    padding: 15px 0;
+    max-height: 55px;
+    &.active {
+      max-height: 100vh;
+    }
   }
   .full__wrapper {
     padding: 0;

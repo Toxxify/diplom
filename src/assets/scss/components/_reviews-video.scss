@@ -45,3 +45,14 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .reviews-video {
+    &__video {
+      overflow: hidden;
+      height: 401px;
+      width: 300px;
+      object-fit: cover;
+    }
+  }
+}

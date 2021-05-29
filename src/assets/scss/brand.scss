@@ -62,20 +62,18 @@
     fill: #ffffff;
   }
   .social-icon {
+    fill: $main;
     &--instagram {
-      fill: #ffffff;
       &:hover {
         fill: #3f729b;
       }
     }
     &--vkontakte {
-      fill: #ffffff;
       &:hover {
         fill: #5d84ae;
       }
     }
     &--facebook {
-      fill: #ffffff;
       &:hover {
         fill: #3b5998;
       }
@@ -207,21 +205,36 @@
 }
 
 @media screen and (max-width: 576px) {
-  .brand-advantages {
-    &__item {
-      flex: 0 0 100%;
+  .brand {
+    padding: 30px 0 20px;
+    &__video {
+      &-preview {
+        height: 100%;
+        min-height: 600px;
+        object-fit: cover;
+      }
+    }
+    &-person {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &-advantages {
+      &__item {
+        flex: 0 0 100%;
+      }
+    }
+    .showroom-form {
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
-  .footer--brand {
+  .footer.footer--brand {
     background: $bg-page;
     .footer__logo {
       fill: #2F2F2F;
     }
-    .footer__social-icon {
+    .social-icon {
       fill: #2F2F2F;
-    }
-    .footer__nav-link {
-      color: $color-dark;
     }
   }
 }

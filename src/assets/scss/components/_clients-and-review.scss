@@ -5,6 +5,7 @@
   margin-bottom: 90px;
   &__box {
     position: relative;
+    margin: 0 8px;
   }
   &__name {
     margin-top: 13px;
@@ -36,6 +37,9 @@
       height: 34px;
       border: 1px solid #E1E1E1;
       border-radius: 50%;
+    }
+    &:hover::before {
+      border-color: $main;
     }
   }
   &__slide {
@@ -188,5 +192,16 @@
 @media screen and (max-width: 576px) {
   .client-swiper__img {
     height: 410px; 
+  }
+  .text-reviews__comment {
+    &-topbar {
+      flex-wrap: wrap;
+    }
+    &-name {
+      width: 100%;
+    }
+    &-text {
+      padding: 20px 18px;
+    }
   }
 }

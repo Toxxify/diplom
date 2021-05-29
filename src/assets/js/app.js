@@ -13,6 +13,24 @@ function openMenu() {
 $(function () {
   'use strict';
 
+  new Swiper('.big-slider', {
+    loop: true,
+    speed: 1000,
+    effect: 'fade',
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+  
   new Swiper('.instagram__slider', {
     slidesPerView: 5,
     spaceBetween: 9,
@@ -28,20 +46,6 @@ $(function () {
     },
   });
 
-  new Swiper('.big-slider', {
-    loop: true,
-    speed: 1000,
-    effect: 'fade',
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-  });
-
   let productMain = new Swiper('.product__slider-main', {
     direction: 'vertical',
     spaceBetween: 10,
@@ -51,6 +55,7 @@ $(function () {
     watchSlidesProgress: true,
     slidesPerView: 'auto', /* для слайда в CSS указать width: auto; */
   });
+
   new Swiper('.product__slider-additional', {
     slidesPerView: 1,
     speed: 0,
@@ -193,3 +198,38 @@ $(function () {
     }
   }
 });
+
+
+
+// let reg = /[0-9]/;
+
+// let inp = document.querySelector('#form-name')
+
+// document.querySelector('.showroom-form__btn').onclick = function(e){
+//   e.preventDefault();
+//   if (!reg.test(inp.value)) {
+//     console.log('Неверно')
+//   } else {
+//     console.log('Верно')
+//   }
+// }
+
+
+
+// const x_form = document.querySelector('#form-showroom');
+// const x_email = document.querySelector('#form-phone');
+// const x_name = document.querySelector('#form-name');
+// x_form.addEventListener('submit', function(evt) {
+//   evt.preventDefault();
+//   if(!x_name.value) {
+//     alert('Поле имя не заполнено');
+//     return;
+//   }
+  
+//   if(!email.value) {
+//     alert('Поле email не заполнено');
+//     return;
+//   }
+  
+//   this.submit();
+// });

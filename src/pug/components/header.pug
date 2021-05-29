@@ -1,3 +1,6 @@
+include contact-details
+include full-menu
+
 header.header(id="header")
     .container
         .topbar
@@ -8,11 +11,12 @@ header.header(id="header")
                 include social-list
                         
             .topbar__logo
+                h1.hidden Elean - женский смокинг
                 a(href="index.html").topbar__logo-link
                     +icon('logo').topbar__logo
                 
             .topbar__phone
-                a(href="tel:+7(495)1501477").topbar__phone-link +7 (495) 150 - 14 - 77
+                +contact-phone-2().topbar__phone-link
                 
             .topbar__follow.topbar__follow--favorites
                 a(href="favorites.html").topbar__favorites-link
@@ -31,13 +35,13 @@ header.header(id="header")
         nav.nav
             ul.nav__list 
                 li.nav__list-item
-                    a(href="product.html").nav__list-link Новинки
+                    a(href="trying-on.html").nav__list-link Новинки
                 li.nav__list-item
                     a(href="catalog.html").nav__list-link Категории
                 li.nav__list-item
                     a(href="catalog.html").nav__list-link Наши коллекции
                 li.nav__list-item
-                    a(href="delivery.html").nav__list-link Покупателям
+                    a(href="reviews.html").nav__list-link Покупателям
                 li.nav__list-item
                     a(href="brand.html").nav__list-link О бренде
                 li.nav__list-item
@@ -47,68 +51,66 @@ header.header(id="header")
                     
     .full(id="full").hidden
         .container
-            .full__wrapper
-                mixin full-list-item(link_href, item)
-                    li.full__list-item
-                        a(href=link_href).full__list-link=item
-                .full__inner
-                    h3.full__title Категории
-                    ul.full__list
-                        +full-list-item('#', 'Юбки')
-                        +full-list-item('#', 'Смокинг')
-                        +full-list-item('#', 'Костюмы')
-                        +full-list-item('#', 'Аксессуары')
-                        +full-list-item('#', 'Брюки')
-                        +full-list-item('#', 'Блузы')
-                        +full-list-item('#', 'Платья')
-                        +full-list-item('#', 'Топы и жилеты')
-                .full__inner
-                    h3.full__title Коллекции
-                    ul.full__list
-                        +full-list-item('#', 'Осень-зима 20-21')
-                        +full-list-item('#', 'Вечерние комплекты')
-                        +full-list-item('#', 'Предзаказ')
-                        +full-list-item('#', 'Свадьба и выпускной')
-                .full__inner
-                    h3.full__title Покупателям
-                    ul.full__list
-                        +full-list-item('#', 'Доставка')
-                        +full-list-item('#', 'Акции')
-                        +full-list-item('#', 'Возврат')
-                        +full-list-item('#', 'Размерная таблица')
-                        +full-list-item('trying-on.html', 'Примерка')
-                        +full-list-item('#', 'Оптовым покупателям')
-                .full__inner
-                    h3.full__title О бренде
-                    ul.full__list
-                        +full-list-item('#', 'Шоурум')
-                        +full-list-item('reviews.html', 'Отзывы')
-                        +full-list-item('#', 'Статьи')
-                        +full-list-item('#', 'Блог')
-                .full__inner
-                    h3.full__title Контакты
-                    ul.full__list
-                        li.footer-full__list-item
-                            a(href="tel:+8 (495) 150-14-77") ТЕЛ.: 8 (495) 150-14-77
-                        li.footer-full__list-item
-                            a(href="tel:+7 (977) 728-27-38") WHATSAPP: +7 (977) 728-27-38
-                        li.footer-full__list-item
-                            a(href="mailto:http://info@eleanboutique.ru") EMAIL: info@eleanboutique.ru
-                        li.footer-full__list-item г. Москва, Новая площадь 8, стр.2, 5 этаж
-                //- .full-menu__tab
-                //-     input(type="checkbox" id="tab-1" name="tab-group")
-                //-     label(for="tab-1").full-menu__label Коллекции
-                //-     ul.full-menu__list
+            .full__wrapper.expanded-menu
+                //- mixin full-list-item(link_href, item)
+                //-     li.full__list-item
+                //-         a(href=link_href).full__list-link=item
+                +menu-tab--categories("tab-h-1")
+                //- .full__inner
+                //-     h3.full__title Категории
+                //-     ul.full__list
+                //-         +full-list-item('#', 'Юбки')
+                //-         +full-list-item('#', 'Смокинг')
+                //-         +full-list-item('#', 'Костюмы')
+                //-         +full-list-item('#', 'Аксессуары')
+                //-         +full-list-item('#', 'Брюки')
+                //-         +full-list-item('#', 'Блузы')
+                //-         +full-list-item('#', 'Платья')
+                //-         +full-list-item('#', 'Топы и жилеты')
+                +menu-tab--collections("tab-h-2")
+                //- .full__inner
+                //-     h3.full__title Коллекции
+                //-     ul.full__list
                 //-         +full-list-item('#', 'Осень-зима 20-21')
                 //-         +full-list-item('#', 'Вечерние комплекты')
                 //-         +full-list-item('#', 'Предзаказ')
                 //-         +full-list-item('#', 'Свадьба и выпускной')
+                +menu-tab--for-buyers("tab-h-3")
+                //- .full__inner
+                //-     h3.full__title Покупателям
+                //-     ul.full__list
+                //-         +full-list-item('#', 'Доставка')
+                //-         +full-list-item('#', 'Акции')
+                //-         +full-list-item('#', 'Возврат')
+                //-         +full-list-item('#', 'Размерная таблица')
+                //-         +full-list-item('trying-on.html', 'Примерка')
+                //-         +full-list-item('#', 'Оптовым покупателям')
+                +menu-tab--brand("tab-h-4")
+                //- .full__inner
+                //-     h3.full__title О бренде
+                //-     ul.full__list
+                //-         +full-list-item('#', 'Шоурум')
+                //-         +full-list-item('reviews.html', 'Отзывы')
+                //-         +full-list-item('#', 'Статьи')
+                //-         +full-list-item('#', 'Блог')
+                +menu-tab--contacts("tab-h-5")
+                //- .full__inner
+                //-     h3.full__title Контакты
+                //-     ul.full__list
+                //-         li.footer-full__list-item
+                //-             a(href="tel:+8(495)150-14-77") ТЕЛ.: 8 (495) 150-14-77
+                //-         li.footer-full__list-item
+                //-             a(href="tel:+7(977)728-27-38") WHATSAPP: +7 (977) 728-27-38
+                //-         li.footer-full__list-item
+                //-             a(href="mailto:http://info@eleanboutique.ru") EMAIL: info@eleanboutique.ru
+                //-         li.footer-full__list-item г. Москва, Новая площадь 8, стр.2, 5 этаж
+
 
     .connection
         .connection__wrapper
             a(href="#header").connection__link-top вверх
             .connection__group
-                a(href="#").connection__link.connection__link-telephone
-                    img(src="../../assets/imgs/icons/smartphone-icon.svg", alt="")
-                a(href="#").connection__link.connection__link-post
-                    img(src="../../assets/imgs/icons/dialogue-icon.svg", alt="")
+                a(href="tel:+74951501477").connection__link.connection__link-telephone
+                    img(src="../../assets/imgs/icons/smartphone-icon.svg", alt="звонок")
+                a(href="mailto:http://info@eleanboutique.ru").connection__link.connection__link-post
+                    img(src="../../assets/imgs/icons/dialogue-icon.svg", alt="письмо")

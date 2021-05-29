@@ -1,5 +1,6 @@
 .product-card {
   &__cell {
+    display: block;
     max-width: 280px;
     padding: 10px 10px 0;
     grid-row: span 2;
@@ -91,6 +92,135 @@
     .product-card__favorites-icon {
       fill: $main;
       filter: drop-shadow(0 0 1px $main);
+    }
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .catalog {
+    &__gallery {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .product-card {
+    &__cell {
+      &:nth-child(4) {
+        grid-row: span 2;
+        grid-column: span 1;
+        .product-card__img {
+          height: 373px;
+        }
+      }
+      &:nth-child(11) {
+        grid-row: span 2;
+        grid-column: span 1;
+        .product-card__img {
+          height: 373px;
+        }
+      }
+      &:nth-child(12) {
+        grid-row: span 2;
+        grid-column: span 1;
+        .product-card__img {
+          height: 373px;
+        }
+      }
+      &:nth-child(19) {
+        grid-row: span 2;
+        grid-column: span 1;
+        .product-card__img {
+          height: 373px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .catalog {
+    &__gallery {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .product-card {
+    &__cell:hover {
+      box-shadow: none;
+      box-shadow: none;
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .catalog {
+    &__gallery {
+      row-gap: 10px;
+    }
+    &__categories {
+      display: none;
+    }
+    &__loading-btn {
+      left: 50%;
+    }
+  }
+  .product-card {
+    &__cell {
+      &:nth-child(5n + 5) {
+        max-width: 100%;
+        grid-row: span 4;
+        grid-column: span 2;
+        .product-card__img {
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .catalog {
+    &__gallery {
+      column-gap: 0px;
+      row-gap: 10px;
+    }
+  }
+  .product-card {
+    &__cell {
+      padding-left: 5px;
+      padding-right: 5px;
+      &:nth-child(5n + 5) .product-card__img {
+        min-height: 480px;
+      }
+    }
+    &__down-bar {
+      display: block;
+    }
+    &__feature {
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .catalog {
+    &__gallery {
+      display: block;
+      width: 100%;
+    }
+  }
+  .product-card {
+    &__cell {
+      display: block;
+      margin: 0 auto; 
+      &:nth-child(5n + 5) {
+        display: block;
+        margin: 0 auto;
+        max-width: 280px;
+        .product-card__img {
+          min-height: 373px;
+        }
+      }
     }
   }
 }

@@ -157,6 +157,7 @@ body.tr-on {
 
 @media screen and (max-width: 576px) {
   .trying-on {
+    padding: 30px 0;
     .showroom-form {
       @include showroom-form--sm ();
     }

@@ -1,136 +1,215 @@
-@mixin full-title() {
-  font-size: 15px;
-  line-height: 140%;
-  text-transform: uppercase;
-}
-.full-menu {
-  &__wrapper {
+// @mixin full-title() {
+//   font-size: 15px;
+//   line-height: 140%;
+//   text-transform: uppercase;
+// }
+
+// .full-menu {
+//   &__wrapper {
+//     display: none;
+//   }
+//   input,
+//   &__list {
+//     display: none;
+//   }
+//   &__tab {
+//     color: $color-dark;
+//     margin-top: -1px;
+//   }
+//   &__label {
+//     @include full-title();
+//     position: relative;
+//     padding: 14px 13px;
+//     display: block;
+//     cursor: pointer;
+//     border-top: 1px solid #E6E6E6;
+//     border-bottom: 1px solid #E6E6E6;
+//   }
+//   &__list {
+//     padding: 0px 13px;
+//     border-bottom: 1px solid #E6E6E6;
+//   }
+//   &__list-item {
+//     display: flex;
+//     font-size: 15px;
+//     line-height: 130%;
+//     color: #242424;
+//     margin-bottom: 21px;
+//   }
+//   &__list-naming {
+//     flex: 0 0 55%;
+//   }
+//   &__list-value {
+//     font-family: 'FuturaBookC';
+//     font-weight: normal;
+//     position: relative;
+//     &::after {
+//       position: absolute;
+//       content: '';
+//       height: 1px;
+//       width: 40px;
+//       bottom: -10px;
+//       left: -10px;
+//       display: block;
+//       background-color: #E6E6E6;
+//     }
+//   }
+//   &__tab :checked + &__label {
+//     border-bottom: none;
+//   }
+//   &__label:after, 
+//   &__tab :checked + &__label:after {
+//     position: absolute;
+//     content: '';
+//     right: 9px;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     display: block;
+//     background-size: cover;
+//   }
+//   &__label:after {
+//     background: url(../imgs/icons/plus.svg);
+//     width: 11px;
+//     height: 11px;
+//   }
+//   &__tab :checked + .full-menu__label:after {
+//     background: url(../imgs/icons/minus.svg);
+//     width: 11px;
+//     height: 1px;
+//   }
+//   &__tab :checked ~ .full-menu__list {
+//     display: block;
+//   }
+//   &__next {
+//     width: 22px;
+//     height: 2px;
+//     background: gray;
+//   }
+//   &__form { 
+//     .step-one,
+//     .step-two {
+//     display: flex;
+//     input {
+//       font-family: 'FuturaMediumC';
+//       font-weight: 500;
+//       font-size: 14px;
+//       line-height: 30px;
+//       letter-spacing: 0.1em;
+//       height: 30px;
+      
+//       display: block;
+//       border: none;
+//       background: $bg-page;
+//       width: 80%;
+//       &::placeholder {
+//         color: #000000;
+//       }
+//     }
+//   }
+
+//   }
+//   .full-menu__form-email {
+//     &::placeholder {
+//       color: red;
+//       font-size: 22px;
+//     }
+
+//   }
+// }
+
+.menu-tab {
+  &__switch {
     display: none;
-  }
-  &__tab input,
-  &__list {
-    display: none;
-  }
-  &__tab {
-    color: $color-dark;
-    margin-top: -1px;
   }
   &__label {
-    @include full-title();
+    // @include full-title();
     position: relative;
-    padding: 14px 13px;
     display: block;
-    cursor: pointer;
-    border-top: 1px solid #E6E6E6;
-    border-bottom: 1px solid #E6E6E6;
-  }
-  &__list {
-    padding: 0px 13px;
-    border-bottom: 1px solid #E6E6E6;
-  }
-  &__list-item {
-    display: flex;
-    font-size: 15px;
-    line-height: 130%;
-    color: #242424;
-    margin-bottom: 21px;
-  }
-  &__list-naming {
-    flex: 0 0 55%;
-  }
-  &__list-value {
-    font-family: 'FuturaBookC';
-    font-weight: normal;
-    position: relative;
-    &::after {
-      position: absolute;
-      content: '';
-      height: 1px;
-      width: 40px;
-      bottom: -10px;
-      left: -10px;
-      display: block;
-      background-color: #E6E6E6;
-    }
-  }
-  &__tab :checked + &__label {
-    border-bottom: none;
-  }
-  &__label:after, 
-  &__tab :checked + &__label:after {
-    position: absolute;
-    content: '';
-    right: 9px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: block;
-    background-size: cover;
-  }
-  &__label:after {
-    background: url(../imgs/icons/plus.svg);
-    width: 11px;
-    height: 11px;
-  }
-  &__tab :checked + .full-menu__label:after {
-    background: url(../imgs/icons/minus.svg);
-    width: 11px;
-    height: 1px;
-  }
-  &__tab :checked ~ .full-menu__list {
-    display: block;
-  }
-  &__next {
-    width: 22px;
-    height: 2px;
-    background: gray;
-  }
-  &__form { 
-    .step-one,
-    .step-two {
-    display: flex;
-    input {
-      font-family: 'FuturaMediumC';
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 30px;
-      letter-spacing: 0.1em;
-      height: 30px;
-      
-      display: block;
-      border: none;
-      background: $bg-page;
-      width: 80%;
-      &::placeholder {
-        color: #000000;
-      }
-    }
-  }
-
-  }
-  .full-menu__form-email {
-    &::placeholder {
-      color: red;
-      font-size: 22px;
-    }
-
   }
 }
 
 
+/*   в будущем заменить новым классом  .expanded-menu   */
+.expanded-menu {
+  font-family: 'FuturaMediumC';
+  font-weight: 500;
+  .menu-tab__label {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    margin-bottom: 50px;
+  }
+  .menu-tab__list-item {
+    display: block;
+    font-size: 19px;
+    line-height: 253%;
+    color: #FFFFFF;
+  }
+}
 
 
 
 
 @media screen and (max-width: 1380px) {
+  
 }
 
 @media screen and (max-width: 1199px) {
+  .full__wrapper {
+    padding-top: 70px;
+    padding-bottom: 20px;
+    .menu-tab {
+      min-width: 220px;
+      padding: 0 10px;
+      margin-bottom: 50px;
+    }
+    .menu-tab__label {
+      margin-bottom: 25px;
+    }
+  }
 }
 
 @media screen and (max-width: 991px) {
 }
 
 @media screen and (max-width: 767px) {
+  
+  .full__wrapper {
+    display: block;
+    .menu-tab {
+      margin-bottom: 40px;
+    }
+    .menu-tab__label {
+      cursor: pointer;
+    }
+    .menu-tab__list {
+      display: none;
+    }
+    .menu-tab__switch:checked ~ .menu-tab__list {
+      display: block;
+    }
+    .menu-tab__label:after {
+      position: absolute;
+      display: block;
+      content: '';
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .menu-tab__label:after {
+      background: url(../imgs/icons/plus.svg) center;
+      width: 11px;
+      height: 11px;
+    }
+    .menu-tab__switch:checked + .menu-tab__label {
+      border-bottom: none;
+    }
+    .menu-tab__switch:checked + .menu-tab__label:after {
+      background: url(../imgs/icons/minus.svg) center;
+      width: 11px;
+      height: 1px;
+    }
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -139,10 +218,58 @@
       display: block;
     }
   }
+
+  .expanded-menu--footer {
+    .menu-tab__list {
+      display: none;
+      padding: 0px 13px;
+    }
+    .menu-tab__list-item {
+      display: flex;
+      font-size: 15px;
+      line-height: 130%;
+      color: #242424;
+      margin-bottom: 21px;
+    }
+    .menu-tab__label {
+      font-size: 15px;
+      line-height: 140%;
+      text-transform: uppercase;
+      position: relative;
+      padding: 14px 13px;
+      display: block;
+      cursor: pointer;
+      border-top: 1px solid #E6E6E6;
+      border-bottom: 1px solid #E6E6E6;
+    }
+    .menu-tab__label:after {
+      position: absolute;
+      content: '';
+      right: 9px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-size: cover;
+      display: block;
+    }
+    .menu-tab__label:after {
+      background: url(../imgs/icons/plus.svg);
+      width: 11px;
+      height: 11px;
+    }
+    .menu-tab__switch:checked + .menu-tab__label {
+      border-bottom: none;
+    }
+    .menu-tab__switch:checked + .menu-tab__label:after {
+      background: url(../imgs/icons/minus.svg);
+      width: 11px;
+      height: 1px;
+    }
+    .menu-tab__switch:checked ~ .menu-tab__list {
+      display: block;
+    }
+  }
 }
 
-@media screen and (max-width: 360px) {
-}
 
 /* 
 описать два состояния:
@@ -153,3 +280,4 @@
 - в футере должно быть на два пункта больше чем в хеадере
 - в футере собственная форма со своими стилями
 */
+

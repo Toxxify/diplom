@@ -56,4 +56,18 @@
   }
 }
 @media screen and (max-width: 767px) {}
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+  .showroom-gallery {
+    &__slider {
+      margin-bottom: 0;
+    }
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &__pagination {
+      top: -30px;
+    }
+  }
+}

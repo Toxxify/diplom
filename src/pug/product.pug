@@ -13,25 +13,20 @@ block content
                 .product__slider-box
                     .swiper-container.product__slider-main
                         .swiper-wrapper
-                            .swiper-slide
-                                img(src="../assets/imgs/gallery/foto-11.jpg", alt=name)
-                            .swiper-slide
-                                img(src="../assets/imgs/gallery/foto-10.jpg", alt=name)
-                            .swiper-slide
-                                img(src="../assets/imgs/gallery/foto-12.jpg", alt=name)
-                            .swiper-slide
-                                img(src="../assets/imgs/gallery/foto-13.jpg", alt=name)
+                            mixin product-slide(img_src, name)
+                                .swiper-slide
+                                    img(src=img_src, alt=name)
+                            +product-slide("../assets/imgs/gallery/foto-11-mini.jpg", "фото")
+                            +product-slide("../assets/imgs/gallery/foto-10-mini.jpg", "фото")
+                            +product-slide("../assets/imgs/gallery/foto-12-mini.jpg", "фото")
+                            +product-slide("../assets/imgs/gallery/foto-13-mini.jpg", "фото")
                         .swiper-pagination
                 .swiper-container.product__slider-additional
                     .swiper-wrapper
-                        .swiper-slide
-                            img(src="../assets/imgs/gallery/foto-11.jpg", alt=name)
-                        .swiper-slide
-                            img(src="../assets/imgs/gallery/foto-10.jpg", alt=name)
-                        .swiper-slide
-                            img(src="../assets/imgs/gallery/foto-12.jpg", alt=name)
-                        .swiper-slide
-                            img(src="../assets/imgs/gallery/foto-13.jpg", alt=name)
+                            +product-slide("../assets/imgs/gallery/foto-11.jpg", "фото")
+                            +product-slide("../assets/imgs/gallery/foto-10.jpg", "фото")
+                            +product-slide("../assets/imgs/gallery/foto-12.jpg", "фото")
+                            +product-slide("../assets/imgs/gallery/foto-13.jpg", "фото")
                     .swiper-pagination
                 
 
@@ -96,6 +91,7 @@ block content
                             +product-list-item('Для примера:', 'Тут что-то написано')
                             +product-list-item('Для примера', 'Тут что-то написано')
                             +product-list-item('Для примера', 'Тут что-то написано')
+                        
     .offer
         .container
             .offer__wrapper
@@ -133,13 +129,14 @@ block content
                     .advantages__inner.advantages__inner--two
                         h2.advantages__title.advantages__title-two Закажите доставку
                         .advantages__text Закажите доставку с выездным стилистом бренда в удобное место по Москве и МО. Вы сможете оценить посадку, качество изделий и не захотите их снимать!
-                        ol.advantages__list.advantages__list--a
+                        ol.advantages__list
                             li.advantages__item Выберите модели для примерки.
                             li.advantages__item Оставьте заявку, нажав на кноку ниже.
                             li.advantages__item Наш стилист подтвердит Вашу заявку и согласует удобное для вас время и место
                             li.advantages__item В назначеное время стилист привезет заказаные модели и проведет консультацию.
                             li.advantages__item Вы можете оплатить понравившиеся модели после примерки.
-                            a(href="#").advantages__btn Заказать доставку
+                            li.advantages__item 
+                                a(href="#").advantages__btn Заказать доставку
                     .advantages__img-box
                         img(src="../assets/imgs/advantages/foto-2.jpg", alt="").advantages__img.advantages__img--two
 

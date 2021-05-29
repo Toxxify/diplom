@@ -8,19 +8,25 @@ block vars
 block content
     .swiper-container.big-slider
         .swiper-wrapper
-            img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 1").swiper-slide
-            img(src="../assets/imgs/big-slider/slide-2.jpg", alt="Слайд 2").swiper-slide
-            img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 3").swiper-slide
-            img(src="../assets/imgs/big-slider/slide-2.jpg", alt="Слайд 4").swiper-slide
-            img(src="../assets/imgs/big-slider/slide-1.jpg", alt="Слайд 5").swiper-slide
+            mixin big-slide(img_src, alt_txt, slogan)
+                .swiper-slide.big-slider__slide
+                    img(src=img_src, alt=alt_txt).big-slider__img
+                    .big-slider__slogan=slogan
+            +big-slide("../assets/imgs/big-slider/slide-1.jpg", "Слайд 1", "Яркие комплекты на вечерние мероприятия")
+            +big-slide("../assets/imgs/big-slider/slide-2.jpg", "Слайд 2", "Яркие комплекты на вечерние мероприятия")
+            +big-slide("../assets/imgs/big-slider/slide-1.jpg", "Слайд 1", "Яркие комплекты на вечерние мероприятия")
+            +big-slide("../assets/imgs/big-slider/slide-2.jpg", "Слайд 2", "Яркие комплекты на вечерние мероприятия")
+            +big-slide("../assets/imgs/big-slider/slide-1.jpg", "Слайд 1", "Яркие комплекты на вечерние мероприятия")
         .swiper-pagination.big-slider__pagination
+        .swiper-button-next.big-slider__btn-next
+        .swiper-button-prev.big-slider__btn-prev
 
     .gallery
         .container
             .gallery__wrapper
                 mixin gallery-cell(img_src, title)
                     .gallery__cell
-                        a(href="#").gallery__cell-link
+                        a(href="catalog.html").gallery__cell-link
                             .gallery__cell-title=title
                             .gallery__cell-wrap
                                 img(src=img_src, alt=title).gallery__cell-img
@@ -41,13 +47,13 @@ block content
             .about-brand__frame
                 .about-brand__inner
                     .about-brand__shutters--left
-                    img(src="../assets/imgs/foto/about-brand.jpg", alt="").about-brand__frame-img
+                    img(src="../assets/imgs/brand/about-brand.jpg", alt="").about-brand__frame-img
                     .about-brand__shutters--right
             p.about-brand__text  Сегодня ELEAN - это первый в России магазин готового женского смокинга. У нас каждая женщина может подобрать для себя образ со смокингом, такой же как у голливудских див и звезд светской хроники.
             p.about-brand__text  Костюм со смокингом ELEAN - выбор звёзд эстрады и кино, телеведущих, fashion-стилистов, успешных женщин-руководителей, представительниц научной и деловой элиты.
             p.about-brand__text  История бренда началась задолго до первого показа, который состоялся 12 марта 2016 года, с мечты автора коллекции, Елены Писаревой о собственном бренде элегантной одежды и продолжалась долгие 30 лет накопления профессионального опыта. Вся первая коллекция была выполнена из 100% натурального шелка, в нее вошли жентсвенные платья и костюмы.
             .about-brand__text
-                a(href="#").about-brand__btn Подробнее
+                a(href="brand.html").about-brand__btn Подробнее
 
     .showroom-section
         .container
